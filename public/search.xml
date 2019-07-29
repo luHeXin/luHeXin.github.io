@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[初心]]></title>
-    <url>%2F2019%2F07%2F28%2F%E5%88%9D%E5%BF%83%2F</url>
-    <content type="text"><![CDATA[初心 搭建此博客是为了总结学习过程中遇到的一些问题及其解决方法。 博客内容可能过于浅显，但是我将通过不断地学习来增加自身的知识储备，希望有朝一日此博客可以称谓“硬核”技术博客，并能实实在在的帮助自己及所需之人解决生活中一些细微的问题。]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>-初心</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[patB1024]]></title>
     <url>%2F2019%2F07%2F28%2FpatB1024%2F</url>
     <content type="text"><![CDATA[12345678910111213#include &lt;cstdio&gt;int main() &#123; int n, step = 0; scanf("%d", &amp;n); while (n != 1) &#123;//while 循环 if (n % 2 == 0) n = n / 2; else n = (3 * n + 1) / 2; step++; &#125; printf("%d\n", step); return 0;&#125; 你说scanf() 下划线 你说啥 创建脚注格式类似这样 [^RUNOOB]。 [^RUNOOB]: 菜鸟教程 – 学的不仅是技术，更是梦想！！！ 第一项： 第一项嵌套的第一个元素 第一项嵌套的第二个元素 第二项： 第二项嵌套的第一个元素 第二项嵌套的第一个元素 区块中使用列表 第一项 第二项 第一项 第二项 第三项 左对齐 右对齐 居中对齐 1 单元格 单元格 单元格 单元格 单元格 12int n=123;printf() 现在该说点什么呢]]></content>
@@ -20,6 +9,17 @@
       </categories>
       <tags>
         <tag>-Pat Basic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[初心]]></title>
+    <url>%2F2019%2F07%2F28%2F%E5%88%9D%E5%BF%83%2F</url>
+    <content type="text"><![CDATA[初心 搭建此博客是为了总结学习过程中遇到的一些问题及其解决方法。 博客内容可能过于浅显，但是我将通过不断地学习来增加自身的知识储备，希望有朝一日此博客可以称谓“硬核”技术博客，并能实实在在的帮助自己及所需之人解决生活中一些细微的问题。]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>-初心</tag>
       </tags>
   </entry>
 </search>

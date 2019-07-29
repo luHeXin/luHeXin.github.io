@@ -1159,3 +1159,6 @@ vendors:
 css: css
 js: js
 images: images
+
+# fireworks
+fireworks: true

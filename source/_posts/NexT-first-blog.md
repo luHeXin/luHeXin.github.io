@@ -5,5 +5,6 @@ tags:
     - 导航
     - 分享
 categories: markdown
+comments: false
 ---
 #.MD

@@ -84,10 +84,10 @@
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     search: {
       root: '/',
-      path: ''
+      path: 'search.xml'
     },
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -99,18 +99,18 @@
   };
 </script>
 
-  <meta name="description" content="12312 123  无序列表  无序列表 有序列表    有序列表 有序列表   google 你好">
+  <meta name="description" content="12312 123无序列表  无序列表    有序列表  有序列表 有序列表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="鲁合鑫的博客">
 <meta property="og:url" content="http://luHeXin.github.io/2019/07/29/MarkDown/index.html">
 <meta property="og:site_name" content="鲁合鑫的博客">
-<meta property="og:description" content="12312 123  无序列表  无序列表 有序列表    有序列表 有序列表   google 你好">
+<meta property="og:description" content="12312 123无序列表  无序列表    有序列表  有序列表 有序列表">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://image.baidu.com/search/detail?ct=503316480&z=0&ipn=false&word=%E5%9B%BE%E7%89%87%20%E7%BE%8E%E5%A5%B3&step_word=&hs=0&pn=4&spn=0&di=194810&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=24401&cl=2&lm=-1&st=-1&cs=2299113196%2C3410006479&os=52628973%2C4266935317&simid=0%2C0&adpicid=0&lpn=0&ln=1998&fr=ala&fmq=1402900904181_R&fm=&ic=0&s=&se=1&sme=&tab=&width=&height=&face=0&ist=&jit=&cg=girl&bdtype=0&oriquery=&objurl=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F828e72e2855b51a005732f4e007c58c92417a61e1bcb1-61VzNc_fw658&fromurl=ippr_z2C%24qAzdH3FAzdH3Fi7wkwg_z%26e3Bv54AzdH3FrtgfAzdH3F8clbdb08a8AzdH3F&gsm=0&islist=&querylist=">
-<meta property="og:updated_time" content="2019-07-29T06:52:47.372Z">
+<meta property="og:updated_time" content="2019-07-29T09:10:48.174Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="鲁合鑫的博客">
-<meta name="twitter:description" content="12312 123  无序列表  无序列表 有序列表    有序列表 有序列表   google 你好">
+<meta name="twitter:description" content="12312 123无序列表  无序列表    有序列表  有序列表 有序列表">
 <meta name="twitter:image" content="http://image.baidu.com/search/detail?ct=503316480&z=0&ipn=false&word=%E5%9B%BE%E7%89%87%20%E7%BE%8E%E5%A5%B3&step_word=&hs=0&pn=4&spn=0&di=194810&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=24401&cl=2&lm=-1&st=-1&cs=2299113196%2C3410006479&os=52628973%2C4266935317&simid=0%2C0&adpicid=0&lpn=0&ln=1998&fr=ala&fmq=1402900904181_R&fm=&ic=0&s=&se=1&sme=&tab=&width=&height=&face=0&ist=&jit=&cg=girl&bdtype=0&oriquery=&objurl=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F828e72e2855b51a005732f4e007c58c92417a61e1bcb1-61VzNc_fw658&fromurl=ippr_z2C%24qAzdH3FAzdH3Fi7wkwg_z%26e3Bv54AzdH3FrtgfAzdH3F8clbdb08a8AzdH3F&gsm=0&islist=&querylist=">
 
 
@@ -283,11 +283,38 @@
 
       
       
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
     </ul>
   
 
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -366,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2019-07-29 14:26:35 / 修改时间：14:52:47" itemprop="dateCreated datePublished" datetime="2019-07-29T14:26:35+08:00">2019-07-29</time>
+              <time title="创建时间：2019-07-29 14:26:35 / 修改时间：17:10:48" itemprop="dateCreated datePublished" datetime="2019-07-29T14:26:35+08:00">2019-07-29</time>
             </span>
           
 
@@ -406,19 +433,17 @@
 
       
         <h1 id="123"><a href="#123" class="headerlink" title="123"></a>123</h1><h1 id="12"><a href="#12" class="headerlink" title="12"></a>12</h1><blockquote>
-<p>123</p>
-</blockquote>
-<p>无序列表</p>
+<p>123<br>无序列表</p>
 <ul>
-<li><p>无序列表</p>
-<p>有序列表</p>
-</li>
+<li>无序列表</li>
 </ul>
+</blockquote>
+<p> 有序列表</p>
 <ol>
 <li>有序列表</li>
-<li>有序列表</li>
+<li>有序列表<a id="more"></a>
+<img src="http://image.baidu.com/search/detail?ct=503316480&z=0&ipn=false&word=%E5%9B%BE%E7%89%87%20%E7%BE%8E%E5%A5%B3&step_word=&hs=0&pn=4&spn=0&di=194810&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=24401&cl=2&lm=-1&st=-1&cs=2299113196%2C3410006479&os=52628973%2C4266935317&simid=0%2C0&adpicid=0&lpn=0&ln=1998&fr=ala&fmq=1402900904181_R&fm=&ic=0&s=&se=1&sme=&tab=&width=&height=&face=0&ist=&jit=&cg=girl&bdtype=0&oriquery=&objurl=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F828e72e2855b51a005732f4e007c58c92417a61e1bcb1-61VzNc_fw658&fromurl=ippr_z2C%24qAzdH3FAzdH3Fi7wkwg_z%26e3Bv54AzdH3FrtgfAzdH3F8clbdb08a8AzdH3F&gsm=0&islist=&querylist=" alt="Mypicture"></li>
 </ol>
-<p><img src="http://image.baidu.com/search/detail?ct=503316480&z=0&ipn=false&word=%E5%9B%BE%E7%89%87%20%E7%BE%8E%E5%A5%B3&step_word=&hs=0&pn=4&spn=0&di=194810&pi=0&rn=1&tn=baiduimagedetail&is=0%2C0&istype=2&ie=utf-8&oe=utf-8&in=24401&cl=2&lm=-1&st=-1&cs=2299113196%2C3410006479&os=52628973%2C4266935317&simid=0%2C0&adpicid=0&lpn=0&ln=1998&fr=ala&fmq=1402900904181_R&fm=&ic=0&s=&se=1&sme=&tab=&width=&height=&face=0&ist=&jit=&cg=girl&bdtype=0&oriquery=&objurl=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F828e72e2855b51a005732f4e007c58c92417a61e1bcb1-61VzNc_fw658&fromurl=ippr_z2C%24qAzdH3FAzdH3Fi7wkwg_z%26e3Bv54AzdH3FrtgfAzdH3F8clbdb08a8AzdH3F&gsm=0&islist=&querylist=" alt="Mypicture"></p>
 <p><a href="www.baidu.com">google</a></p>
 <p align="center"><font face="楷体" color="purple" size="60">你好</font></p>
 
@@ -489,6 +514,13 @@
           </div>
           
   
+    
+    
+  <div class="comments" id="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NTY2OC8yMjE3OQ=="></div>
+  </div>
+  
+  
 
 
 
@@ -555,7 +587,9 @@
         
           
         
-        <span class="site-state-item-count">1</span>
+          
+        
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -576,7 +610,9 @@
         
           
         
-        <span class="site-state-item-count">2</span>
+          
+        
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -658,7 +694,7 @@
   
 </div>
 
-
+<!--
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
 
 
@@ -668,7 +704,7 @@
 
 
   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
-
+-->
 
 
 
@@ -792,6 +828,7 @@
 
 
 
+  <script src="/js/local-search.js?v=7.2.0"></script>
 
 
 
@@ -807,6 +844,28 @@
 
 
 
+
+
+
+
+  
+    
+
+
+
+<script>
+  window.livereOptions = {
+    refer: '2019/07/29/MarkDown/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
 
 
   

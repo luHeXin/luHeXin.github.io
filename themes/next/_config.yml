@@ -1155,10 +1155,10 @@ vendors:
   disqusjs_js:
   disqusjs_css:
 
+# Click
+love: true
+
 # Assets
 css: css
 js: js
 images: images
-
-# fireworks
-fireworks: true

@@ -460,7 +460,7 @@ pre code {
   text-shadow: none;
 }
 .highlight *::selection {
-  background: #373b41;
+  background: #36f;
 }
 .highlight pre {
   border: none;
@@ -1646,7 +1646,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #78ff4f;
+  background: #4dff6b;
 }
 .feed-link,
 .chat {
@@ -2837,4 +2837,8 @@ ul.breadcrumb li+li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+::selection {
+  background: #36f;
+  color: #fff;
 }

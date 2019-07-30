@@ -1155,8 +1155,8 @@ vendors:
   disqusjs_js:
   disqusjs_css:
 
-# Click
-love: true
+# special-effect
+special-effect: true
 
 # Assets
 css: css

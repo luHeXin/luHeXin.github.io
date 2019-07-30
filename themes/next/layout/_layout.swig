@@ -110,9 +110,9 @@
   {% endfor %}
 
 
-{% if theme.love %}
-<script type="text/javascript" src="/js/love.js"></script>
-{% endif %}
+
+<script type="text/javascript" src="/js/special-effect.js"></script>
+
 
 </body>
 </html>

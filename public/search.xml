@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[博客美化_更改选中字符及超链接颜色]]></title>
+    <url>%2F2019%2F07%2F30%2F%E5%8D%9A%E5%AE%A2%E9%80%89%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E8%B6%85%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%2F</url>
+    <content type="text"><![CDATA[前言NesT主题默认的选中字符颜色以及超链接颜色和周围网页、文字颜色相近不易区分。因此，选择手动更改二者颜色。 修改步骤第一步打开主题配置文件_config.yml查看自己选择的主题方案。在这里我选择的是scheme: Gemini，因此，接下来我也将以该方案为例。 第二步打开\themes\next\source\css\_schemes\Gemini\index.styl若已选择其他主题，则只需按路径打开_schemes文件夹下对应的方案，在选择打开对应的inde.styl文件即可。 第三步修改选中字符的颜色在上一步打开的文件末尾添加如下代码 12345// 修改选中字符的颜色::selection &#123; background: #3366ff; color: #FFFFFF; &#125; 选中字符后字符的颜色变为白色，选中的背景为蓝色。当然，也可以根据RGB颜色对照表在这里随意改成自己喜欢颜色。 第四步修改代码块选中的颜色打开，如下路径\themes\next\source\css\_common\components\highlight\highlight.style找到 123*::selection &#123; background: $highlight-selection; &#125; 修改为 1234//修改代码块颜色*::selection &#123; background: #3366ff; &#125; 这里更改代码块选中背景色为蓝色。 第五步修改超链接颜色打开\themes\next\source\css\_schemes\Gemini\index.styl在文件末尾添加如下代码 1234567891011// 文章内链接文本样式 .post-body p a&#123; color: #0593d3; border-bottom: none; border-bottom: 1px solid #0593d3; &amp;:hover &#123; color: #fc6423; border-bottom: none; border-bottom: 1px solid #fc6423; &#125; &#125; 参考文章https://www.jianshu.com/p/2a8d399f1266]]></content>
+      <categories>
+        <category>博客美化</category>
+      </categories>
+      <tags>
+        <tag>博客美化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[博客美化_点击特效的实现]]></title>
     <url>%2F2019%2F07%2F30%2F%E5%8D%9A%E5%AE%A2%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88%2F</url>
     <content type="text"><![CDATA[简介本博客基于Hexo博客框架，主题选择的是NexT( NexT使用文档)。通过使用jQuery，为博客添加点击特效。 思路 通过jQuery click()函数，获取html标签中点击的事件，并调用相应方法 12$("html").click(function(e) &#123;&#125; 内置一个数组用来存储点击时出现的内容，通过jQuery设置返回的元素内容 123var a = new Array("奋斗!!!","努力!!!","Learning~","Coding~","Summarizing~","Advancing~","VENI","VIDI","VICI","٩(•̤̀ᵕ•̤́๑)ᵒᵏᵎᵎᵎᵎ");var i = $("&lt;span&gt;&lt;/span&gt;").text(a[a_index]);a_index = (a_index + 1) % a.length; 在这里jQuery返回的数组内容顺序是按照数组a[0]有序读到最后的。若将 1a_index = (a_index + 1) % a.length; 替换为 1a_index = Math.round(Math.random()*a.length); 则将随机返回数组内的内容。 获取点击时鼠标的位置，将横纵坐标分别存储在变量x、y中。并在css中添加字体特效颜色，以及出现字体的位置。 123456789var x = e.pageX,y = e.pageY;i.css(&#123; "z-index": 66666666666666666666666666666666666666666666666666666666666, "top": y -10, "left": x, "position": "absolute", "font-weight": "bold", "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")" &#125;); 这里为保证特效不被遮挡一次设置一个较大的z-index。字体出现的初始位置为鼠标点击位置正上方10单位的位置上. 将字体添加到html中 1$("html").append(i); 通过jQuery animate()方法制作点击特效 12345678i.animate(&#123; "top": y-180 , "opacity": 0 &#125;, 1500, function() &#123; i.remove(); &#125;); 在这里设置动画的效果为特效字体从鼠标点击位置开始逐渐向上180个单位，上升的过程中逐渐淡化，在1.5秒后消失。 完整代码12345678910111213141516171819202122232425262728var a_index = 0;jQuery(document).ready(function($) &#123; $("html").click(function(e) &#123; var a = new Array("奋斗!!!","努力!!!","Learning~","Coding~","Summarizing~","Advancing~","VENI","VIDI","VICI","٩(•̤̀ᵕ•̤́๑)ᵒᵏᵎᵎᵎᵎ"); var i = $("&lt;span&gt;&lt;/span&gt;").text(a[a_index]); a_index = (a_index + 1) % a.length; // a_index = Math.round(Math.random()*a.length);//随机出现点击内容 var x = e.pageX, y = e.pageY; i.css(&#123; "z-index": 66666666666666666666666666666666666666666666666666666666666, "top": y -10, "left": x, "position": "absolute", "font-weight": "bold", "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")" &#125;); $("html").append(i); i.animate(&#123; "top": y - 180 , "opacity": 0 &#125;, 1500, function() &#123; i.remove(); &#125;); &#125;);&#125;); 相关配置由于此博客选择的主题是NexT，因此有关的配置我也以NexT为例。 将上述js代码命名为special-effect.js，并移动到如下目录：\themes\next\source\js 在如下路径：\themes\next\layout\layout.swig找到倒数第二行的标签的前面添加如下代码 123&#123;% if theme.special-effect %&#125;&lt;script type="text/javascript" src="/js/special-effect.js"&gt;&lt;/script&gt;&#123;% endif %&#125; 在主题配置文件（\themes\next_congig.yml）末尾加入： 12#special-effectspecial-effect: true]]></content>
@@ -10,6 +21,7 @@
       <tags>
         <tag>点击特效</tag>
         <tag>JS</tag>
+        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>
@@ -20,7 +32,7 @@
         <category>随笔</category>
       </categories>
       <tags>
-        <tag>-初心</tag>
+        <tag>初心</tag>
       </tags>
   </entry>
 </search>

@@ -122,8 +122,8 @@
 <meta property="og:image" content="http://localhost:4000/images/%E5%88%9D%E6%8E%A2git/3.png">
 <meta property="og:image" content="https://luhexin.github.io/images/%E5%88%9D%E6%8E%A2git/3.png">
 <meta property="og:image" content="http://luhexin.github.io/source/images/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/1.jpg">
-<meta property="og:image" content="https://luhexin.github.io/images/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/1.png">
-<meta property="og:updated_time" content="2019-08-01T03:26:16.911Z">
+<meta property="og:image" content="https://luhexin.github.io/images/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/1.jpg">
+<meta property="og:updated_time" content="2019-08-01T03:28:32.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于hexo框架的博客，Markdown文章无法插入图片问题的解决">
 <meta name="twitter:description" content="br/&amp;gt;(d:\Blog\luHeXin\source_posts\images\初探git\2.png)).  前言：在使用Markdown编辑博客文章时，发现在Next主题以及很多其他主题下，博客页面均无法显示图片，而hexo框架的内置主题landscape缺可以正常加载图片。在查询了很多资料无果后，发现是简单的存储路径问题。因此，此篇文章除了着手于该问题的解决外，还将总结相对路径与绝">
@@ -409,7 +409,7 @@
                 
               
 
-              <time title="创建时间：2019-08-01 01:20:46 / 修改时间：11:26:16" itemprop="dateCreated datePublished" datetime="2019-08-01T01:20:46+08:00">2019-08-01</time>
+              <time title="创建时间：2019-08-01 01:20:46 / 修改时间：11:28:32" itemprop="dateCreated datePublished" datetime="2019-08-01T01:20:46+08:00">2019-08-01</time>
             </span>
           
 
@@ -467,7 +467,7 @@
 <p><img src="images/%E5%88%9D%E6%8E%A2git/2.png" alt="3">br/&gt;<br>(d:\Blog\luHeXin\source_posts\images\初探git\2.png)).</p>
 <p><img src="/source/images/%E5%88%9D%E6%8E%A2git/1.jpg" alt="tip"><br><img src="../images/%E5%88%9D%E6%8E%A2git/3.png" alt="2"><br><img src="http://localhost:4000/images/%E5%88%9D%E6%8E%A2git/3.png" alt="tip"><br><img src="https://luhexin.github.io/images/%E5%88%9D%E6%8E%A2git/3.png" alt="ti2p"></p>
 <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p>在使用Markdown编辑博客文章时，发现在Next主题以及很多其他主题下，博客页面均无法显示图片，而hexo框架的内置主题<code>landscape</code>缺可以正常加载图片。在查询了很多资料无果后，发现是简单的存储路径问题。因此，此篇文章除了着手于该问题的解决外，还将总结相对路径与绝对路径的区别与使用。</p>
-<h1 id="使用Markdown将图片插入文章"><a href="#使用Markdown将图片插入文章" class="headerlink" title="使用Markdown将图片插入文章"></a>使用Markdown将图片插入文章</h1><p>Markdown支持图片的后缀名为<code>.jpg</code>,<code>.png</code>, <code>.gif</code>,<br><br>通过Markdown语法<code>![图片描述]（图片路径）</code>即可。<br><br>如，我将一个图片保存到<code>D:\Blog\luHeXin\source\images\文件路径\1.jdg</code>路径，而此篇文章保存在<code>D:\Blog\luHeXin\source\_posts</code>如下路径，<br><br>则只需要使用语法<code>![图片](/source/images/文件路径/1.jpg)</code>便可在本地中看到图片，但是部署到githubPages时却出现如下效果<img src="/source/images/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/1.jpg" alt="图片">,只有将上述路径修改为![图片]<img src="https://luhexin.github.io/images/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/1.png" alt></p>
+<h1 id="使用Markdown将图片插入文章"><a href="#使用Markdown将图片插入文章" class="headerlink" title="使用Markdown将图片插入文章"></a>使用Markdown将图片插入文章</h1><p>Markdown支持图片的后缀名为<code>.jpg</code>,<code>.png</code>, <code>.gif</code>,<br><br>通过Markdown语法<code>![图片描述]（图片路径）</code>即可。<br><br>如，我将一个图片保存到<code>D:\Blog\luHeXin\source\images\文件路径\1.jdg</code>路径，而此篇文章保存在<code>D:\Blog\luHeXin\source\_posts</code>如下路径，<br><br>则只需要使用语法<code>![图片](/source/images/文件路径/1.jpg)</code>便可在本地中看到图片，但是部署到githubPages时却出现如下效果<img src="/source/images/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/1.jpg" alt="图片">,只有将上述路径修改为![图片]<img src="https://luhexin.github.io/images/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/1.jpg" alt></p>
 <h1 id="相对路径的表示方法"><a href="#相对路径的表示方法" class="headerlink" title="相对路径的表示方法"></a>相对路径的表示方法</h1><ul>
 <li><p><strong>./ ：代表文件所在的目录（可以省略不写）</strong></p>
 </li>

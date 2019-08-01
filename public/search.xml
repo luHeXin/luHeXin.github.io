@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[title]]></title>
-    <url>%2F2019%2F07%2F31%2Ftitle%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <title><![CDATA[关于hexo框架的博客，Markdown文章无法插入图片问题的解决]]></title>
+    <url>%2F2019%2F08%2F01%2F%E5%85%B3%E4%BA%8Ehexo%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%8Cmarkdown%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%2F</url>
+    <content type="text"><![CDATA[br/&gt;(d:\Blog\luHeXin\source_posts\images\初探git\2.png)). 前言：在使用Markdown编辑博客文章时，发现在Next主题以及很多其他主题下，博客页面均无法显示图片，而hexo框架的内置主题landscape缺可以正常加载图片。在查询了很多资料无果后，发现是简单的存储路径问题。因此，此篇文章除了着手于该问题的解决外，还将总结相对路径与绝对路径的区别与使用。 使用Markdown将图片插入文章Markdown支持图片的后缀名为.jpg,.png, .gif,通过Markdown语法![图片描述]（图片路径）即可。如，我将一个图片保存到D:\Blog\luHeXin\source\images\文件路径\1.jdg路径，而此篇文章保存在D:\Blog\luHeXin\source\_posts如下路径，则只需要使用语法![图片](/source/images/文件路径/1.jpg)便可在本地中看到图片，但是部署到githubPages时却出现如下效果,只有将上述路径修改为![图片] 相对路径的表示方法 ./ ：代表文件所在的目录（可以省略不写） ../ ：代表文件所在的父级目录 ../../ ：代表文件所在的父级目录的父级目录 / ：代表文件所在的根目录]]></content>
+      <categories>
+        <category>文件路径问题</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>路径</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[初探git和github]]></title>

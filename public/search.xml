@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[关于hexo框架的博客，Markdown文章无法插入图片问题的解决]]></title>
     <url>%2F2019%2F08%2F01%2F%E5%85%B3%E4%BA%8Ehexo%E6%A1%86%E6%9E%B6%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%8Cmarkdown%E6%96%87%E7%AB%A0%E6%97%A0%E6%B3%95%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%2F</url>
-    <content type="text"><![CDATA[br/&gt;(d:\Blog\luHeXin\source_posts\images\初探git\2.png)). 前言：在使用Markdown编辑博客文章时，发现在Next主题以及很多其他主题下，博客页面均无法显示图片，而hexo框架的内置主题landscape缺可以正常加载图片。在查询了很多资料无果后，发现是简单的存储路径问题。因此，此篇文章除了着手于该问题的解决外，还将总结相对路径与绝对路径的区别与使用。 使用Markdown将图片插入文章Markdown支持图片的后缀名为.jpg,.png, .gif,通过Markdown语法![图片描述]（图片路径）即可。如，我将一个图片保存到D:\Blog\luHeXin\source\images\文件路径\1.jdg路径，而此篇文章保存在D:\Blog\luHeXin\source\_posts如下路径，则只需要使用语法![图片](/source/images/文件路径/1.jpg)便可在本地中看到图片，但是部署到githubPages时却出现如下效果。.只有将上述路径修改为![图片]![](https://luhexin.github.io/images/文件路径/1.jpg)并重新部署到服务器上时，才能正常显示图片，效果如下.。 相对路径的表示方法 ./ ：代表文件所在的目录（可以省略不写） ../ ：代表文件所在的父级目录 ../../ ：代表文件所在的父级目录的父级目录 / ：代表文件所在的根目录 问题的解决其实在，上述例子中第一种路径的写法/source/images/文件路径/1.jpg便是在文件所在的根目录(D:\Blog\luHeXin\)中去寻找图片,寻找的路径为d:\Blog\luHeXin\images\文件路径\1.jpg,所以在本地查看是没有问题的。 但是部署到服务其上时，所显示的页面的index.html文件，是hexo博客框架静态生成的，而该文件的位置的位置与Markdown所编辑的文章并在一个文件夹里。所以，使用相对路径的写法，即使在文章中可以看到图片，但，在所生成的静态文件中，也会因为所在目录的不同找不到对应的图片。 在网页中，复制一下未显示的图片的地址为：http://luhexin.github.io/source/images/%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84/1.jpg(中间部分为中文乱码，不必理会)，访问时，发现是一个404的页面，所以是，页面路径的问题因此，我们一律采用绝对路径的方式添加图片![](https://luhexin.github.io/images/文件路径/1.jpg)。 参考文章https://baijiahao.baidu.com/s?id=1606046350230601762&amp;wfr=spider&amp;for=pc]]></content>
+    <content type="text"><![CDATA[前言：在使用Markdown编辑博客文章时，在markdown文件中可以看到插入的图片，但是，在Next主题以及很多其他主题下，博客页面均无法显示图片。在查询了很多资料无果后，发现是简单的存储路径的问题。 使用Markdown将图片插入文章Markdown支持图片的后缀名为.jpg,.png, .gif,通过Markdown语法![图片描述]（图片路径）即可插入图片。如，我将一个图片保存到D:\Blog\luHeXin\source\images\文件路径\1.jdg路径，此篇Markdown文章保存在D:\Blog\luHeXin\source\_posts路径，则只需要使用语法![图片](/source/images/文件路径/1.jpg)便可在本地中看到图片，但是部署到githubPages时却出现如下效果。.只有将上述路径修改为![图片]![](https://luhexin.github.io/images/文件路径/1.jpg)并重新部署到服务器上时，才能正常显示图片，效果如下. 相对路径的表示方法在解决此问题前，我们应了解一下相对路径的几种表示方法， ./ ：代表文件所在的目录（可以省略不写） ../ ：代表文件所在的父级目录 ../../ ：代表文件所在的父级目录的父级目录 / ：代表文件所在的根目录 产生问题的原因上述例子中第一种路径的写法/source/images/文件路径/1.jpg便是告诉计算机去文件所在的根目录(D:\Blog\luHeXin\)中寻找图片,寻找的路径为 d:\Blog\luHeXin\images\文件路径\1.jpg 这正是图片所在的路径，所以在markdown文件中查看是没有问题的。 但是部署到服务器上时，所显示页面的index.html文件，是由hexo博客框架静态生成的，而该文件的位置与Markdown所编辑的文章并在一个文件夹里。所以，使用相对路径的写法，即使在markdown文件中可以看到图片，但，在所生成的静态文件中，也会因为index.html文件所在目录的不同，而导致寻找图片路径不同。 问题的最终解决我发现部署在服务器上图片的绝对路径是https://luhexin.github.io/images/文件路径/1.jpg,（此图片在工作区文件夹中的位置为D:\Blog\luHeXin\source\images\文件路径\1.jpg）因此，我们一律采用绝对路径的方式添加图片![](https://luhexin.github.io/images/文件路径/1.jpg)。 参考文章https://baijiahao.baidu.com/s?id=1606046350230601762&amp;wfr=spider&amp;for=pc]]></content>
       <categories>
         <category>文件路径问题</category>
       </categories>
@@ -42,9 +42,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
+        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
-        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>

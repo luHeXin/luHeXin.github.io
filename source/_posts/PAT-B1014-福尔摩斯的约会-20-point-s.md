@@ -45,7 +45,7 @@ THU 14:04
 - 第三步：扫描后两对字符串，确定出现的第一对相同字母的位置，第几个位置表示第几分钟。
 
 # 参考代码：
-``` c++
+``` C++
 #include<cstdio>
 #include<cstring>
 int main() {

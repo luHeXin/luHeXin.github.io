@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PAT B1029 旧键盘 (20 分)]]></title>
+    <url>%2F2019%2F08%2F20%2FB1029%2F</url>
+    <content type="text"><![CDATA[题目描述旧键盘上坏了几个键，于是在敲一段文字的时候，对应的字符就不会出现。现在给出应该输入的一段文字、以及实际被输入的文字，请你列出肯定坏掉的那些键。 输入格式：输入在 2 行中分别给出应该输入的文字、以及实际被输入的文字。每段文字是不超过 80 个字符的串，由字母 A-Z（包括大、小写）、数字 0-9、以及下划线 _（代表空格）组成。题目保证 2 个字符串均非空。 输出格式：按照发现顺序，在一行中输出坏掉的键。其中英文字母只输出大写，每个坏键只输出一次。题目保证至少有 1 个坏键。 输入样例：7_This_is_a_test _hs_s_a_es 输出样例：7TI 题目分析：散列问题 思路： 设置一个bool型的数组HashTable[128]表示字符是否坏掉. 枚举输入样例第一行的每一个字符，与第二行进行枚举比较，如果某一个字符被输出，则说明该字符没有问题。 注意点： 小写字母的ASCII值比其对应的大写字母大32。 ASCII值规定了128个因此哈希表大小定义为128个。 小写字母输出为其对应的大写形式。 参考代码：12345678910111213141516171819202122232425262728#include&lt;cstdio&gt;#include&lt;cstring&gt;int main() &#123; char str1[100], str2[100]; bool HashTable[128] = &#123; false &#125;;//ASCII定义了128个字符,记录是否已经输出 fgets(str1, 100, stdin); fgets(str2, 100, stdin); int len1 = strlen(str1); int len2 = strlen(str2); for (int i = 0; i &lt; len1; i++) &#123; int j; char c1, c2; for ( j = 0; j &lt; len2; j++) &#123; c1 = str1[i]; c2 = str2[j]; if (c1 &gt;= 'a'&amp;&amp;c1 &lt;= 'z') c1 -= 32; if (c2 &gt;= 'a'&amp;&amp;c2 &lt;= 'z') c2 -= 32; if (c1 == c2) break; &#125; if (j == len2 &amp;&amp; HashTable[c1] == false) &#123; printf("%c", c1); HashTable[c1] = true; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Springboot中JPA扩展查询]]></title>
     <url>%2F2019%2F08%2F12%2FSpringboot%E4%B8%ADJPA%E6%89%A9%E5%B1%95%E6%9F%A5%E8%AF%A2%2F</url>
     <content type="text"><![CDATA[前言JPA的出现，使得在开发过程中，几乎不需要写什么sql语句，便可完成对数据的增删改查。但是，其查询功能有时并不能完全满足我们的需求，因此，就需要开发者基于JPA进行扩展查询，本文将结合一个小案例来阐述Springboot中JPA扩展查询的使用。 添加依赖12345678&lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;&lt;/dependency&gt;&lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;&lt;/dependency&gt; 建立一个实体类123456789101112131415161718192021222324252627import lombok.Data;import javax.persistence.Entity;import javax.persistence.Id;import java.math.BigDecimal;@Entity@Datapublic class ProductInfo &#123; @Id private String productId; private String productName; private BigDecimal productPrice; private Integer productStock; private String productDescription; private String productIcon; private Integer categoryType; private Integer productStatus;&#125; 进行查询将产品状态（productStatus）作为关键字进行查询。 12345678import com.imooc.sell.dataobject.ProductInfo;import org.springframework.data.jpa.repository.JpaRepository;import java.util.List;public interface ProdctInfoRepository extends JpaRepository&lt;ProductInfo,String&gt; &#123;//&lt;对象，主键类型&gt; List&lt;ProductInfo&gt; findByProductStatus(Integer productStatus);&#125; 注意findByProductStatus这并不是随便的一个变量名，findBy格式是固定的，后面的ProductStatus和实体类中的属性要一一对应。 测试代码@RunWith(SpringRunner.class) @SpringBootTest public class ProdctInfoRepositoryTest { @Autowired private ProdctInfoRepository repository; @Test public void findByProductStatus() {//根据产品状态进行查询 List&lt;ProductInfo&gt; productInfoList=repository.findByProductStatus(1);//0是上架 Assert.assertNotEquals(0,productInfoList.size()); } } JPA扩展查询语句结构]]></content>

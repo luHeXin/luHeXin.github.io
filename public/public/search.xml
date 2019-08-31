@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2019%2F08%2F31%2F%E8%93%9D%E6%A1%A5%E6%9D%AF%20N%E5%86%85%E7%B4%A0%E6%95%B0%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[PAT B1033 旧键盘打字 (20 分)]]></title>
     <url>%2F2019%2F08%2F20%2FB1033%2F</url>
     <content type="text"><![CDATA[题目描述：旧键盘上坏了几个键，于是在敲一段文字的时候，对应的字符就不会出现。现在给出应该输入的一段文字、以及坏掉的那些键，打出的结果文字会是怎样？ 输入格式：输入在 2 行中分别给出坏掉的那些键、以及应该输入的文字。其中对应英文字母的坏键以大写给出；每段文字是不超过 105个字符的串。可用的字符包括字母 [a-z, A-Z]、数字 0-9、以及下划线 _（代表空格）、,、.、-、+（代表上档键）。题目保证第 2 行输入的文字串非空。 注意：如果上档键坏掉了，那么大写的英文字母无法被打出。 输出格式：在一行中输出能够被打出的结果文字。如果没有一个字符能被打出，则输出空行。 输入样例：7+IE. 7_This_is_a_test. 输出样例：_hs_s_a_tst 题目分析：散列问题 思路： 设置bool类型变量hashTable[128]，表示字符是否完好，初值设置为true，全部完好，在读入第一行字符串是时，将其出现的字符变为false。 将大写字母转化为小写字母。 遍历第二行字符串，如果hashTable数组中对应的值为true（有效），且有hashTable[+]为true，则可输出大写字母；如果只是hashTable数组中对应的值为true（有效），则只能输出小写字母。参考代码：12345678910111213141516171819202122232425262728293031323334#include&lt;cstdio&gt;#include&lt;cstring&gt;const int maxn = 100010;bool HashTable[128];char str[maxn];int main() &#123; memset(HashTable,true,sizeof(HashTable));//所有键都没问题 fgets(str, 100010, stdin); int len = strlen(str); for (int i = 0; i &lt; len; i++) &#123; if (str[i] &gt;= 'A'&amp;&amp;str[i] &lt;= 'Z') &#123; str[i] = str[i] + 32; &#125; HashTable[str[i]] = false; &#125; fgets(str, 100010, stdin); len = strlen(str); for (int i = 0; i &lt; len; i++) &#123; if (str[i] &gt;= 'A'&amp;&amp;str[i] &lt;= 'Z') &#123; int low = str[i] + 32; if (HashTable[low] == true &amp;&amp; HashTable['+'] == true) &#123; printf("%c", str[i]); &#125; &#125; else if (HashTable[str[i]] == true) &#123; printf("%c", str[i]); &#125; &#125; printf("\n"); return 0;&#125;]]></content>
@@ -199,9 +204,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
+        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
-        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>

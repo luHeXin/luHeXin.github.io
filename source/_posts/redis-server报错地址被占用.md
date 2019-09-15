@@ -12,12 +12,10 @@ tags:
 
 ![](https://luhexin.github.io/images/redis-server报错/2.png)
 
-通过指令`kill -9 1473`终止1473进程：
-
-![](https://luhexin.github.io/images/redis-server报错/3.png)
+通过指令`kill -9 1473`终止1473进程。
 
 这时，问题就已经解决了，重新运行服务器：
 
-![](https://luhexin.github.io/images/redis-server报错/4.png)
+![](https://luhexin.github.io/images/redis-server报错/3.png)
 
 此时已经可以正常运行服务器了。

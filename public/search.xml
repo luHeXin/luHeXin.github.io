@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[redis-server报错：Could not create server TCP listening socket *:6379 问题的解决]]></title>
     <url>%2F2019%2F09%2F15%2Fredis-server%E6%8A%A5%E9%94%99%E5%9C%B0%E5%9D%80%E8%A2%AB%E5%8D%A0%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[问题描述： 问题解决：输入指令ps -ef | grep -i redis检测后台进程： 通过指令kill -9 1473终止1473进程： 这时，问题就已经解决了，重新运行服务器： 此时已经可以正常运行服务器了。]]></content>
+    <content type="text"><![CDATA[问题描述： 问题解决：输入指令ps -ef | grep -i redis检测后台进程： 通过指令kill -9 1473终止1473进程。 这时，问题就已经解决了，重新运行服务器： 此时已经可以正常运行服务器了。]]></content>
       <tags>
         <tag>redis</tag>
       </tags>

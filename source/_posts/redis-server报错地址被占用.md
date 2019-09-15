@@ -1,6 +1,5 @@
 ---
-title: redis-server报错：Could not create server TCP listening socket *:6379: bind: Address already in use 解决
-date: 2019-09-15 19:49:14
+title: redis-server报错：Could not create server TCP listening socket *:6379 问题的解决
 tags:
 - redis
 ---

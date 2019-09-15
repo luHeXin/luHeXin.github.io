@@ -9,38 +9,38 @@ categories: Linux
 # 使用secureCRT上传文件至linux服务器
 
 1. 以SSH2的连接方式，通过secureCRT连接到Linux服务器。<br/>
-![](https://luhexin.github.io/images/secureCRT对Linux上传删除/1.jpg)<br/>
+![](https://luhexin.github.io/images/secureCRT对Linux上传删除/1.png)<br/>
 
-![](https://luhexin.github.io/images/secureCRT对Linux上传删除/2.jpg)
+![](https://luhexin.github.io/images/secureCRT对Linux上传删除/2.png)
 
 2. 在终端使用快捷键`Alt+p`，打开sftp连接窗口。
 
-![](https://luhexin.github.io/images/secureCRT对Linux上传删除/3.jpg)
+![](https://luhexin.github.io/images/secureCRT对Linux上传删除/3.png)
 
 3. 拖动需上传的文件到该窗口即可。但要注意的一点是，默认上传的位置是根目录。例如我们将一个本地文件`1.txt`进行上传，将出现如下效果：
 
-![](https://luhexin.github.io/images/secureCRT对Linux上传删除/4.jpg)
+![](https://luhexin.github.io/images/secureCRT对Linux上传删除/4.png)
 
-![](https://luhexin.github.io/images/secureCRT对Linux上传删除/5.jpg)
+![](https://luhexin.github.io/images/secureCRT对Linux上传删除/5.png)
 
 4. 上传文件到指定linux指定目录下(以`home`目录为例)，先在sftp连接窗口中进入目录：
 
-![](https://luhexin.github.io/images/secureCRT对Linux上传删除/6.jpg)
+![](https://luhexin.github.io/images/secureCRT对Linux上传删除/6.png)
 
 
 进行上传操作：
 
-![](https://luhexin.github.io/images/secureCRT对Linux上传删除/7.jpg)
+![](https://luhexin.github.io/images/secureCRT对Linux上传删除/7.png)
 
 
 结果：
 
-![](https://luhexin.github.io/images/secureCRT对Linux上传删除/8.jpg)
+![](https://luhexin.github.io/images/secureCRT对Linux上传删除/8.png)
 
 # 使用secureCRT删除linux服务器上的文件
 与在linux服务器上的删除操作相同通过指令`rm 文件名`即可，例如，
 删除刚刚上传的`1.txt文件`：
 
-![](https://luhexin.github.io/images/secureCRT对Linux上传删除/9.jpg)
+![](https://luhexin.github.io/images/secureCRT对Linux上传删除/9.png)
 
-![](https://luhexin.github.io/images/secureCRT对Linux上传删除/10.jpg)
+![](https://luhexin.github.io/images/secureCRT对Linux上传删除/10.png)

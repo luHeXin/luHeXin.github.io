@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[redis-server报错：Could not create server TCP listening socket *:6379 问题的解决]]></title>
+    <url>%2F2019%2F09%2F15%2Fredis-server%E6%8A%A5%E9%94%99%E5%9C%B0%E5%9D%80%E8%A2%AB%E5%8D%A0%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[问题描述： 问题解决：输入指令ps -ef | grep -i redis检测后台进程： 通过指令kill -9 1473终止1473进程： 这时，问题就已经解决了，重新运行服务器： 此时已经可以正常运行服务器了。]]></content>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用secureCRT对Linux进行文件上传与删除操作]]></title>
     <url>%2F2019%2F09%2F15%2F%E4%BD%BF%E7%94%A8secureCRT%E4%B8%8A%E4%BC%A0%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E5%88%B0linux%2F</url>
     <content type="text"><![CDATA[使用secureCRT上传文件至linux服务器 以SSH2的连接方式，通过secureCRT连接到Linux服务器。 在终端使用快捷键Alt+p，打开sftp连接窗口。 拖动需上传的文件到该窗口即可。但要注意的一点是，默认上传的位置是根目录。例如我们将一个本地文件1.txt进行上传，将出现如下效果： 上传文件到指定linux指定目录下(以home目录为例)，先在sftp连接窗口中进入目录： 进行上传操作： 结果： 使用secureCRT删除linux服务器上的文件与在linux服务器上的删除操作相同通过指令rm 文件名即可，例如，删除刚刚上传的1.txt文件：]]></content>

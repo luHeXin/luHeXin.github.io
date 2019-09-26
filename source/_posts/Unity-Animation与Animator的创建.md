@@ -22,7 +22,7 @@ Animator:有一个动画控制器，俗称动画状态机，是5.X之后新设�
 
 ![](https://luhexin.github.io/images/Unity-Animation与Animator的创建/2.png)
 
-点击New Animation查看属性(此处留意，通过Animator创建的Animation与今创建的Animation属性有所不同)：
+点击New Animation查看属性(此处留意，通过Animator创建的Animation与Animation属性有所不同，单单Animation的创建将在后文进行演示)：
 
 ![](https://luhexin.github.io/images/Unity-Animation与Animator的创建/3.png)
 

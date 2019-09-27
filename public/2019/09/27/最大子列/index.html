@@ -106,18 +106,18 @@
   };
 </script>
 
-  <meta name="description" content="题目描述：给定K个整数组成的序列{ N​1​​ , N​2​​ , …, N​K​​  }，“连续子列”被定义为{ N​i​​ , N​i+1​​ , …, N​j​​  }，其中 1≤i≤j≤K。“最大子列和”则被定义为所有连续子列元素的和中最大者。例如给定序列{ -2, 11, -4, 13, -5, -2 }，其连续子列{ 11, -4, 13 }有最大的和20。现要求你编写程序，计算给定整">
+  <meta name="description" content="题目描述：给定K个整数组成的序列{ N1, N2 , …, NK }，“连续子列”被定义为{ Ni, N​i+1, …, Nj}，其中 1≤i≤j≤K。“最大子列和”则被定义为所有连续子列元素的和中最大者。例如给定序列{ -2, 11, -4, 13, -5, -2 }，其连续子列{ 11, -4, 13 }有最大的和20。现要求你编写程序，计算给定整数序列的最大子列和。 本题旨在测试各种不同的算">
 <meta name="keywords" content="浙大数据结构编程练习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="01-复杂度1 最大子列和问题 (20 分)">
 <meta property="og:url" content="http://luHeXin.github.io/2019/09/27/最大子列/index.html">
 <meta property="og:site_name" content="鲁合鑫的博客">
-<meta property="og:description" content="题目描述：给定K个整数组成的序列{ N​1​​ , N​2​​ , …, N​K​​  }，“连续子列”被定义为{ N​i​​ , N​i+1​​ , …, N​j​​  }，其中 1≤i≤j≤K。“最大子列和”则被定义为所有连续子列元素的和中最大者。例如给定序列{ -2, 11, -4, 13, -5, -2 }，其连续子列{ 11, -4, 13 }有最大的和20。现要求你编写程序，计算给定整">
+<meta property="og:description" content="题目描述：给定K个整数组成的序列{ N1, N2 , …, NK }，“连续子列”被定义为{ Ni, N​i+1, …, Nj}，其中 1≤i≤j≤K。“最大子列和”则被定义为所有连续子列元素的和中最大者。例如给定序列{ -2, 11, -4, 13, -5, -2 }，其连续子列{ 11, -4, 13 }有最大的和20。现要求你编写程序，计算给定整数序列的最大子列和。 本题旨在测试各种不同的算">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-27T13:42:50.200Z">
+<meta property="og:updated_time" content="2019-09-27T13:45:45.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01-复杂度1 最大子列和问题 (20 分)">
-<meta name="twitter:description" content="题目描述：给定K个整数组成的序列{ N​1​​ , N​2​​ , …, N​K​​  }，“连续子列”被定义为{ N​i​​ , N​i+1​​ , …, N​j​​  }，其中 1≤i≤j≤K。“最大子列和”则被定义为所有连续子列元素的和中最大者。例如给定序列{ -2, 11, -4, 13, -5, -2 }，其连续子列{ 11, -4, 13 }有最大的和20。现要求你编写程序，计算给定整">
+<meta name="twitter:description" content="题目描述：给定K个整数组成的序列{ N1, N2 , …, NK }，“连续子列”被定义为{ Ni, N​i+1, …, Nj}，其中 1≤i≤j≤K。“最大子列和”则被定义为所有连续子列元素的和中最大者。例如给定序列{ -2, 11, -4, 13, -5, -2 }，其连续子列{ 11, -4, 13 }有最大的和20。现要求你编写程序，计算给定整数序列的最大子列和。 本题旨在测试各种不同的算">
 
 
 
@@ -399,7 +399,7 @@
                 
               
 
-              <time title="创建时间：2019-09-27 18:12:53 / 修改时间：21:42:50" itemprop="dateCreated datePublished" datetime="2019-09-27T18:12:53+08:00">2019-09-27</time>
+              <time title="创建时间：2019-09-27 18:12:53 / 修改时间：21:45:45" itemprop="dateCreated datePublished" datetime="2019-09-27T18:12:53+08:00">2019-09-27</time>
             </span>
           
 
@@ -453,18 +453,17 @@
       
 
       
-        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><p>给定K个整数组成的序列{ N<br>​1<br>​​ , N<br>​2<br>​​ , …, N<br>​K<br>​​  }，“连续子列”被定义为{ N<br>​i<br>​​ , N<br>​i+1<br>​​ , …, N<br>​j<br>​​  }，其中 1≤i≤j≤K。“最大子列和”则被定义为所有连续子列元素的和中最大者。例如给定序列{ -2, 11, -4, 13, -5, -2 }，其连续子列{ 11, -4, 13 }有最大的和20。现要求你编写程序，计算给定整数序列的最大子列和。</p>
+        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><p>给定K个整数组成的序列{ N1, N2 , …, NK }，“连续子列”被定义为{ Ni<br>, N​i+1, …, Nj}，其中 1≤i≤j≤K。“最大子列和”则被定义为所有连续子列元素的和中最大者。例如给定序列{ -2, 11, -4, 13, -5, -2 }，其连续子列{ 11, -4, 13 }有最大的和20。现要求你编写程序，计算给定整数序列的最大子列和。</p>
 <p>本题旨在测试各种不同的算法在各种数据情况下的表现。各组测试数据特点如下：</p>
 <ul>
 <li>数据1：与样例等价，测试基本正确性；</li>
 <li>数据2：102个随机整数；</li>
 <li>数据3：103个随机整数；</li>
 <li>数据4：104个随机整数；</li>
-<li>数据5：105个随机整数；<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h2>输入第1行给出正整数K (≤100000)；第2行给出K个整数，其间以空格分隔。<h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2>在一行中输出最大子列和。如果序列中所有整数皆为负数，则输出0。<h2 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h2>6<br></li>
-<li>2 11 -4 13 -5 -2<h2 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h2>20<br>
-
-</li>
+<li>数据5：105个随机整数；<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h2>输入第1行给出正整数K (≤100000)；第2行给出K个整数，其间以空格分隔。<h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2>在一行中输出最大子列和。如果序列中所有整数皆为负数，则输出0。<h2 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h2>6</li>
 </ul>
+<p>-2 11 -4 13 -5 -2</p>
+<h2 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h2><p>20<br><br></p>
 <h1 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h1><p>此题选自中国大学MOOC上浙大数据结构的编程练习题目，本文将提供针对此题的三种解法（C++）。</p>
 <h1 id="解法一："><a href="#解法一：" class="headerlink" title="解法一："></a>解法一：</h1><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ul>
 <li>确立数组中的两个脚标i,j；</li>

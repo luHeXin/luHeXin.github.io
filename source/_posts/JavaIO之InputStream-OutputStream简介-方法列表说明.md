@@ -100,9 +100,9 @@ public class IO {
        FileInputStream inputStream=new FileInputStream("C:\\1.txt");
        FileOutputStream outputStream=new FileOutputStream("C:\\2.txt");
        
-       int length=0;
-       while((length=inputStream.read())!=-1) {
-       	outputStream.write(length);
+       int i=0;
+       while((i=inputStream.read())!=-1) {
+       	outputStream.write(i);
        }
        inputStream.close();
        outputStream.flush();

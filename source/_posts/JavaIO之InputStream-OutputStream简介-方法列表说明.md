@@ -94,8 +94,8 @@ public class IO {
 public class IO {
 	public static void main(String[] args) throws IOException {
 
-              /**
-         * @ 复制文件
+        /**
+         *  复制文件
          */
        FileInputStream inputStream=new FileInputStream("C:\\1.txt");
        FileOutputStream outputStream=new FileOutputStream("C:\\2.txt");

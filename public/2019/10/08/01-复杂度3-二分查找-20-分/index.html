@@ -106,18 +106,18 @@
   };
 </script>
 
-  <meta name="description" content="Problem DescriptionCalculate a+b and output the sum in standard format – that is, the digits must be separated into groups of three by commas (unless there are less than four digits). Input Specificat">
-<meta name="keywords" content="PAT">
+  <meta name="description" content="本题要求实现二分查找算法。 函数接口定义：1Position BinarySearch( List L, ElementType X );  其中List结构定义如下： 123456typedef int Position;typedef struct LNode *List;struct LNode &amp;#123;    ElementType Data[MAXSIZE];    Position">
+<meta name="keywords" content="浙大数据结构编程练习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PAT A1001 A+B Format (20 point(s))">
-<meta property="og:url" content="http://luHeXin.github.io/2019/08/10/A1001/index.html">
+<meta property="og:title" content="01-复杂度3 二分查找 (20 分)">
+<meta property="og:url" content="http://luHeXin.github.io/2019/10/08/01-复杂度3-二分查找-20-分/index.html">
 <meta property="og:site_name" content="鲁合鑫的博客">
-<meta property="og:description" content="Problem DescriptionCalculate a+b and output the sum in standard format – that is, the digits must be separated into groups of three by commas (unless there are less than four digits). Input Specificat">
+<meta property="og:description" content="本题要求实现二分查找算法。 函数接口定义：1Position BinarySearch( List L, ElementType X );  其中List结构定义如下： 123456typedef int Position;typedef struct LNode *List;struct LNode &amp;#123;    ElementType Data[MAXSIZE];    Position">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-10T07:29:03.398Z">
+<meta property="og:updated_time" content="2019-10-07T16:10:25.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PAT A1001 A+B Format (20 point(s))">
-<meta name="twitter:description" content="Problem DescriptionCalculate a+b and output the sum in standard format – that is, the digits must be separated into groups of three by commas (unless there are less than four digits). Input Specificat">
+<meta name="twitter:title" content="01-复杂度3 二分查找 (20 分)">
+<meta name="twitter:description" content="本题要求实现二分查找算法。 函数接口定义：1Position BinarySearch( List L, ElementType X );  其中List结构定义如下： 123456typedef int Position;typedef struct LNode *List;struct LNode &amp;#123;    ElementType Data[MAXSIZE];    Position">
 
 
 
@@ -125,7 +125,7 @@
 
   
   
-  <link rel="canonical" href="http://luHeXin.github.io/2019/08/10/A1001/">
+  <link rel="canonical" href="http://luHeXin.github.io/2019/10/08/01-复杂度3-二分查找-20-分/">
 
 
 
@@ -136,7 +136,7 @@
 </script>
 
   
-  <title>PAT A1001 A+B Format (20 point(s)) | 鲁合鑫的博客</title>
+  <title>01-复杂度3 二分查找 (20 分) | 鲁合鑫的博客</title>
   
 
 
@@ -356,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2019/08/10/A1001/">
+    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2019/10/08/01-复杂度3-二分查找-20-分/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="鲁合鑫">
@@ -373,7 +373,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PAT A1001 A+B Format (20 point(s))
+          <h1 class="post-title" itemprop="name headline">01-复杂度3 二分查找 (20 分)
 
               
             
@@ -399,7 +399,7 @@
                 
               
 
-              <time title="创建时间：2019-08-10 15:00:59 / 修改时间：15:29:03" itemprop="dateCreated datePublished" datetime="2019-08-10T15:00:59+08:00">2019-08-10</time>
+              <time title="创建时间：2019-10-08 00:03:15 / 修改时间：00:10:25" itemprop="dateCreated datePublished" datetime="2019-10-08T00:03:15+08:00">2019-10-08</time>
             </span>
           
 
@@ -418,7 +418,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-甲级/" itemprop="url" rel="index"><span itemprop="name">PAT 甲级</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/浙大数据结构编程练习/" itemprop="url" rel="index"><span itemprop="name">浙大数据结构编程练习</span></a></span>
 
                 
                 
@@ -453,16 +453,26 @@
       
 
       
-        <h1 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h1><p>Calculate a+b and output the sum in standard format – that is, the digits must be separated into groups of three by commas (unless there are less than four digits).</p>
-<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case. Each case contains a pair of integers a and b where -10<sup>6</sup> ≤a,b≤10<sup>6</sup>. the numbers are separated by a space.<br>-10<sup>6</sup></p>
-<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, you should output the sum of a and b in one line. The sum must be written in the standard format.</p>
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h2><p>-1000000 9</p>
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h2><p>-999,991</p>
+        <p>本题要求实现二分查找算法。</p>
+<h1 id="函数接口定义："><a href="#函数接口定义：" class="headerlink" title="函数接口定义："></a>函数接口定义：</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Position <span class="title">BinarySearch</span><span class="params">( List L, ElementType X )</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>List</code>结构定义如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Position;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> *<span class="title">List</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> &#123;</span></span><br><span class="line">    ElementType Data[MAXSIZE];</span><br><span class="line">    Position Last; <span class="comment">/* 保存线性表中最后一个元素的位置 */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>L是用户传入的一个线性表，其中ElementType元素可以通过&gt;、==、&lt;进行比较，并且题目保证传入的数据是递增有序的。函数BinarySearch要查找X在Data中的位置，即数组下标（注意：元素从下标1开始存储）。找到则返回下标，否则返回一个特殊的失败标记NotFound。</p>
+<h1 id="裁判测试程序样例："><a href="#裁判测试程序样例：" class="headerlink" title="裁判测试程序样例："></a>裁判测试程序样例：</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE 10</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NotFound 0</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElementType;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Position;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> *<span class="title">List</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LNode</span> &#123;</span></span><br><span class="line">    ElementType Data[MAXSIZE];</span><br><span class="line">    Position Last; <span class="comment">/* 保存线性表中最后一个元素的位置 */</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">List <span class="title">ReadInput</span><span class="params">()</span></span>; <span class="comment">/* 裁判实现，细节不表。元素从下标1开始存储 */</span></span><br><span class="line"><span class="function">Position <span class="title">BinarySearch</span><span class="params">( List L, ElementType X )</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    List L;</span><br><span class="line">    ElementType X;</span><br><span class="line">    Position P;</span><br><span class="line"></span><br><span class="line">    L = ReadInput();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;X);</span><br><span class="line">    P = BinarySearch( L, X );</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, P);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 你的代码将被嵌在这里 */</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h1><p>5</p>
+<p>12 31 55 89 101</p>
+<p>31</p>
+<h1 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h1><p>2</p>
+<h1 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h1><p>3</p>
+<p>26 78 233</p>
+<p>31</p>
+<h1 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h1><p>0</p>
 <hr>
 
-<h1 id="题目大意："><a href="#题目大意：" class="headerlink" title="题目大意："></a>题目大意：</h1><p>给出a,b两个整数，要求求和，并按格式输出。输出的格式为，数字三个为一组，组与组之间通过<code>,</code>隔开。</p>
-<h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><p>加和之后,先输出符号，然后取绝对值。将数字按从低到高的位数存放到数组中。输出时，从高位到低位输出，要注意每三位一个逗号，且最后一位除外。</p>
-<h1 id="参考代码："><a href="#参考代码：" class="headerlink" title="参考代码："></a>参考代码：</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a, b, sum;</span><br><span class="line">	<span class="keyword">int</span> num[<span class="number">10</span>];</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;a, &amp;b);</span><br><span class="line">	sum = a + b;</span><br><span class="line">	<span class="keyword">if</span> (sum &lt; <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"-"</span>);</span><br><span class="line">		sum = -sum;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (sum == <span class="number">0</span>) num[len++] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (sum)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//依次将最低位放在num[0],num[1],num[2]....中</span></span><br><span class="line">		num[len++] = sum % <span class="number">10</span>;</span><br><span class="line">		sum /= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> k = len - <span class="number">1</span>; k &gt;= <span class="number">0</span>; k--) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>, num[k]);</span><br><span class="line">		<span class="keyword">if</span> (k &gt; <span class="number">0</span> &amp;&amp; k % <span class="number">3</span> == <span class="number">0</span>)<span class="built_in">printf</span>(<span class="string">","</span>);</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="参考代码："><a href="#参考代码：" class="headerlink" title="参考代码："></a>参考代码：</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Position <span class="title">BinarySearch</span><span class="params">( List L, ElementType X )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> max=L-&gt;Last;<span class="comment">//最后一个元素的位置赋给max</span></span><br><span class="line">  <span class="keyword">int</span> min=<span class="number">1</span>;<span class="comment">//第一个元素的位置，元素从下标1开始</span></span><br><span class="line">  <span class="keyword">int</span> binaryNum=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span>(min&lt;=max)</span><br><span class="line">  &#123;</span><br><span class="line">     binaryNum=(max+min)/<span class="number">2</span>;<span class="comment">//进行二分</span></span><br><span class="line">     <span class="keyword">if</span>(L-&gt;Data[binaryNum]&gt;X)&#123;</span><br><span class="line">        max=binaryNum<span class="number">-1</span>;</span><br><span class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span>(L-&gt;Data[binaryNum]&lt;X)&#123;</span><br><span class="line">        min=binaryNum+<span class="number">1</span>;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> binaryNum;</span><br><span class="line">      &#125;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">return</span> NotFound; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -492,7 +502,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/PAT/" rel="tag"># PAT</a>
+            <a href="/tags/浙大数据结构编程练习/" rel="tag"># 浙大数据结构编程练习</a>
           
         </div>
       
@@ -505,8 +515,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/10/B1003/" rel="next" title="PAT B1003 我要通过！ (20 point(s))">
-                <i class="fa fa-chevron-left"></i> PAT B1003 我要通过！ (20 point(s))
+              <a href="/2019/10/06/JavaIO之InputStream-OutputStream简介-方法列表说明/" rel="next" title="JavaIO之InputStream OutputStream常用方法说明">
+                <i class="fa fa-chevron-left"></i> JavaIO之InputStream OutputStream常用方法说明
               </a>
             
           </div>
@@ -514,10 +524,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/10/A1042/" rel="prev" title="PAT A1042 Shuffling Machine (20 point(s))">
-                PAT A1042 Shuffling Machine (20 point(s)) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -748,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.</span> <span class="nav-text">Problem Description</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification"><span class="nav-number">1.2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">1.3.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">1.4.</span> <span class="nav-text">Sample Output:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目大意："><span class="nav-number">2.</span> <span class="nav-text">题目大意：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路："><span class="nav-number">3.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考代码："><span class="nav-number">4.</span> <span class="nav-text">参考代码：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数接口定义："><span class="nav-number">1.</span> <span class="nav-text">函数接口定义：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#裁判测试程序样例："><span class="nav-number">2.</span> <span class="nav-text">裁判测试程序样例：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入样例1："><span class="nav-number">3.</span> <span class="nav-text">输入样例1：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出样例1："><span class="nav-number">4.</span> <span class="nav-text">输出样例1：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入样例2："><span class="nav-number">5.</span> <span class="nav-text">输入样例2：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出样例2："><span class="nav-number">6.</span> <span class="nav-text">输出样例2：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考代码："><span class="nav-number">7.</span> <span class="nav-text">参考代码：</span></a></li></ol></div>
             
 
           </div>
@@ -1011,7 +1017,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/08/10/A1001/'
+    refer: '2019/10/08/01-复杂度3-二分查找-20-分/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];

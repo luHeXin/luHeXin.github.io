@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[01-复杂度3 二分查找 (20 分)]]></title>
+    <url>%2F2019%2F10%2F08%2F01-%E5%A4%8D%E6%9D%82%E5%BA%A63-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-20-%E5%88%86%2F</url>
+    <content type="text"><![CDATA[本题要求实现二分查找算法。 函数接口定义：1Position BinarySearch( List L, ElementType X ); 其中List结构定义如下： 123456typedef int Position;typedef struct LNode *List;struct LNode &#123; ElementType Data[MAXSIZE]; Position Last; /* 保存线性表中最后一个元素的位置 */&#125;; L是用户传入的一个线性表，其中ElementType元素可以通过&gt;、==、&lt;进行比较，并且题目保证传入的数据是递增有序的。函数BinarySearch要查找X在Data中的位置，即数组下标（注意：元素从下标1开始存储）。找到则返回下标，否则返回一个特殊的失败标记NotFound。 裁判测试程序样例：1234567891011121314151617181920212223242526272829303132#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#define MAXSIZE 10#define NotFound 0typedef int ElementType;typedef int Position;typedef struct LNode *List;struct LNode &#123; ElementType Data[MAXSIZE]; Position Last; /* 保存线性表中最后一个元素的位置 */&#125;;List ReadInput(); /* 裁判实现，细节不表。元素从下标1开始存储 */Position BinarySearch( List L, ElementType X );int main()&#123; List L; ElementType X; Position P; L = ReadInput(); scanf("%d", &amp;X); P = BinarySearch( L, X ); printf("%d\n", P); return 0;&#125;/* 你的代码将被嵌在这里 */ 输入样例1：5 12 31 55 89 101 31 输出样例1：2 输入样例2：3 26 78 233 31 输出样例2：0 参考代码：1234567891011121314151617181920Position BinarySearch( List L, ElementType X )&#123; int max=L-&gt;Last;//最后一个元素的位置赋给max int min=1;//第一个元素的位置，元素从下标1开始 int binaryNum=0; while(min&lt;=max) &#123; binaryNum=(max+min)/2;//进行二分 if(L-&gt;Data[binaryNum]&gt;X)&#123; max=binaryNum-1; &#125;else if(L-&gt;Data[binaryNum]&lt;X)&#123; min=binaryNum+1; &#125;else&#123; return binaryNum; &#125; &#125; return NotFound; &#125;]]></content>
+      <categories>
+        <category>浙大数据结构编程练习</category>
+      </categories>
+      <tags>
+        <tag>浙大数据结构编程练习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JavaIO之InputStream OutputStream常用方法说明]]></title>
     <url>%2F2019%2F10%2F06%2FJavaIO%E4%B9%8BInputStream-OutputStream%E7%AE%80%E4%BB%8B-%E6%96%B9%E6%B3%95%E5%88%97%E8%A1%A8%E8%AF%B4%E6%98%8E%2F</url>
     <content type="text"><![CDATA[基本含义InputStream:输入字节流，是一个抽象类，包含了读取方法以及辅助方法。 OutputStream:输出字节流，是一个抽象类，包含了写入方法以及辅助方法。 常用方法详解InputStreamread() read() 从输入流中读取数据的下一个字节。返回 0 到 255 范围内的 int 字节值，如果因为已经到达流末尾而没有可用的字节，则返回值 -1。 方法将会一直阻塞,直到数据可用,检测到流的末尾或者抛出异常。 无参数的read() 是抽象方法,由实现类提供实现。 无参数的read()返回的数据为读取到的字节值，而有参数的则是读取到字节数组中,所以返回值为读取到的个数。 read方法关键点就是要么就是直接返回读取的字节，要么就是将读取到的字节放入字节数组中,字节数组是你传递进去的。close() 关闭流并释放与此流有关的系统资源,可能抛出IOException。 close方法是空方法。 示例代码12345678910111213141516171819202122232425262728public class IO &#123; public static void main(String[] args) throws IOException &#123; File file=new File("C:\\1.txt"); /** * 读取数据 * 为了防止中文乱码，一个汉字需三个字节 */ //输入流读取数据 InputStream inputStream = new FileInputStream(file); int length; byte[] bs = new byte[100];//设置缓冲byte数组接受读取文件内容 //一次读取一个字节 while ((length=inputStream.read(bs))!=-1) &#123;//读取数据存到bs中 System.out.print(new String(bs)); &#125; //关闭IO流 inputStream.close(); //方式二，会导致中文乱码,因为一个中文是三个字节// InputStream inputStream2=new FileInputStream(file);// int i;// while((i=inputStream2.read())!=-1) &#123;//读取的数据存到i中// System.out.println((char)i);// &#125;// inputStream2.close(); &#125;&#125; OutputStreamwrite(int b) 将指定的字节写入此输出流。 虽然参数是int，但写入的是byte。write(byte[] b) 将 b.length 个字节从指定的 byte 数组写入此输出流write(byte[] b,int off,int len) 将指定 byte 数组中从偏移量 off 开始的 len 个字节写入此输出流,write(b, off, len) 的常规协定是：将数组 b 中的某些字节按顺序写入输出流；元素 b[off] 是此操作写入的第一个字节，b[off+len-1] 是此操作写入的最后一个字节。flush() flush的含义为刷新,在写入数据时使用 之所以需要刷新,是因为有的输出流的写方法实现,可能已经缓冲了以前写入的任何字节,那么,这个方法用于提供能够立即将数据写入到磁盘的功能,不过,只是立即请求操作系统进行处理,而不保证这些字节实际已经写入到物理设备,比如磁盘。示例代码1234567891011121314151617public class IO &#123; public static void main(String[] args) throws IOException &#123; File file=new File("C:\\1.txt"); /** * 写入数据 */ //输出流写入数据,没有指定文件则创建 OutputStream outputStream = new FileOutputStream(file); // 写入数据 byte[] datas="你好".getBytes(); outputStream.write(datas); outputStream.flush();//内存中数据刷新到硬盘 // 关闭IO流 outputStream.close(); &#125;&#125; 运用字节流，复制文件示例代码123456789101112131415161718public class IO &#123; public static void main(String[] args) throws IOException &#123; /** * 复制文件 */ FileInputStream inputStream=new FileInputStream("C:\\1.txt"); FileOutputStream outputStream=new FileOutputStream("C:\\2.txt"); int i=0; while((i=inputStream.read())!=-1) &#123; outputStream.write(i); &#125; inputStream.close(); outputStream.flush(); outputStream.close(); System.out.println("复制完毕")&#125; 参考文章：JavaIO之InputStream OutputStream简介 方法列表说明]]></content>
@@ -289,9 +300,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
-        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
+        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>

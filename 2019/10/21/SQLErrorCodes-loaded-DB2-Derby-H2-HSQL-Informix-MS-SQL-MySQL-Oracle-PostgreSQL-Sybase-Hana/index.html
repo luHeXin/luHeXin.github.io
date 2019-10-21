@@ -115,7 +115,7 @@
 <meta property="og:description" content="错误描述学习使用SpringMVC框架，在进行数据的插入时出现如下错误: 问题原因哎，问题原因很简单sql传参与该字段在数据库的数据类型不匹配…… 网上其实很多针对于该问题的回答，几乎全是将问题归于字段在数据库的数据类型不匹配，这确实是对的，以SpringMVC为例，我的问题就是由于mapper中的SQL语句里的一个字段与数据库不匹配而造成的。 解决办法 查找sql传参与该字段在数据库的数据类型是">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://luhexin.github.io/images/SQLERROR/1.png">
-<meta property="og:updated_time" content="2019-10-21T15:23:55.076Z">
+<meta property="og:updated_time" content="2019-10-21T15:43:56.607Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content=" SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]">
 <meta name="twitter:description" content="错误描述学习使用SpringMVC框架，在进行数据的插入时出现如下错误: 问题原因哎，问题原因很简单sql传参与该字段在数据库的数据类型不匹配…… 网上其实很多针对于该问题的回答，几乎全是将问题归于字段在数据库的数据类型不匹配，这确实是对的，以SpringMVC为例，我的问题就是由于mapper中的SQL语句里的一个字段与数据库不匹配而造成的。 解决办法 查找sql传参与该字段在数据库的数据类型是">
@@ -401,7 +401,7 @@
                 
               
 
-              <time title="创建时间：2019-10-21 23:05:15 / 修改时间：23:23:55" itemprop="dateCreated datePublished" datetime="2019-10-21T23:05:15+08:00">2019-10-21</time>
+              <time title="创建时间：2019-10-21 23:05:15 / 修改时间：23:43:56" itemprop="dateCreated datePublished" datetime="2019-10-21T23:05:15+08:00">2019-10-21</time>
             </span>
           
 
@@ -447,6 +447,8 @@
 <li><p>查找sql传参与该字段在数据库的数据类型是不是匹配。</p>
 </li>
 <li><p>在可视化界面（plsql,navicat）里面执行一下自己的sql是不是有语法错误，可视化界面里面报的错误要比项目日志里面报的明确得多。</p>
+</li>
+<li><p>SQL语句与数据库中的字段可以相匹配，但是前端js代码中可能存在对非数据库字段进行例如插进数据库等操作，导致该问题的发生，因此还需留意前端代码关于数据的处理。</p>
 </li>
 </ol>
 

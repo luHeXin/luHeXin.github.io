@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]]]></title>
+    <url>%2F2019%2F10%2F21%2FSQLErrorCodes-loaded-DB2-Derby-H2-HSQL-Informix-MS-SQL-MySQL-Oracle-PostgreSQL-Sybase-Hana%2F</url>
+    <content type="text"><![CDATA[错误描述]]></content>
+      <tags>
+        <tag>SpringMVC</tag>
+        <tag>报错</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[01-复杂度3 二分查找 (20 分)]]></title>
     <url>%2F2019%2F10%2F08%2F01-%E5%A4%8D%E6%9D%82%E5%BA%A63-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-20-%E5%88%86%2F</url>
     <content type="text"><![CDATA[本题要求实现二分查找算法。 函数接口定义：1Position BinarySearch( List L, ElementType X ); 其中List结构定义如下： 123456typedef int Position;typedef struct LNode *List;struct LNode &#123; ElementType Data[MAXSIZE]; Position Last; /* 保存线性表中最后一个元素的位置 */&#125;; L是用户传入的一个线性表，其中ElementType元素可以通过&gt;、==、&lt;进行比较，并且题目保证传入的数据是递增有序的。函数BinarySearch要查找X在Data中的位置，即数组下标（注意：元素从下标1开始存储）。找到则返回下标，否则返回一个特殊的失败标记NotFound。 裁判测试程序样例：1234567891011121314151617181920212223242526272829303132#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#define MAXSIZE 10#define NotFound 0typedef int ElementType;typedef int Position;typedef struct LNode *List;struct LNode &#123; ElementType Data[MAXSIZE]; Position Last; /* 保存线性表中最后一个元素的位置 */&#125;;List ReadInput(); /* 裁判实现，细节不表。元素从下标1开始存储 */Position BinarySearch( List L, ElementType X );int main()&#123; List L; ElementType X; Position P; L = ReadInput(); scanf("%d", &amp;X); P = BinarySearch( L, X ); printf("%d\n", P); return 0;&#125;/* 你的代码将被嵌在这里 */ 输入样例1：5 12 31 55 89 101 31 输出样例1：2 输入样例2：3 26 78 233 31 输出样例2：0 参考代码：1234567891011121314151617181920Position BinarySearch( List L, ElementType X )&#123; int max=L-&gt;Last;//最后一个元素的位置赋给max int min=1;//第一个元素的位置，元素从下标1开始 int binaryNum=0; while(min&lt;=max) &#123; binaryNum=(max+min)/2;//进行二分 if(L-&gt;Data[binaryNum]&gt;X)&#123; max=binaryNum-1; &#125;else if(L-&gt;Data[binaryNum]&lt;X)&#123; min=binaryNum+1; &#125;else&#123; return binaryNum; &#125; &#125; return NotFound; &#125;]]></content>
@@ -124,14 +133,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Springboot中JPA扩展查询]]></title>
+    <title><![CDATA[SpringBoot中JPA扩展查询]]></title>
     <url>%2F2019%2F08%2F12%2FSpringboot%E4%B8%ADJPA%E6%89%A9%E5%B1%95%E6%9F%A5%E8%AF%A2%2F</url>
     <content type="text"><![CDATA[前言JPA的出现，使得在开发过程中，几乎不需要写什么sql语句，便可完成对数据的增删改查。但是，其查询功能有时并不能完全满足我们的需求，因此，就需要开发者基于JPA进行扩展查询，本文将结合一个小案例来阐述Springboot中JPA扩展查询的使用。 添加依赖12345678&lt;dependency&gt; &lt;groupId&gt;mysql&lt;/groupId&gt; &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;&lt;/dependency&gt;&lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;&lt;/dependency&gt; 建立一个实体类123456789101112131415161718192021222324252627import lombok.Data;import javax.persistence.Entity;import javax.persistence.Id;import java.math.BigDecimal;@Entity@Datapublic class ProductInfo &#123; @Id private String productId; private String productName; private BigDecimal productPrice; private Integer productStock; private String productDescription; private String productIcon; private Integer categoryType; private Integer productStatus;&#125; 进行查询将产品状态（productStatus）作为关键字进行查询。 12345678import com.imooc.sell.dataobject.ProductInfo;import org.springframework.data.jpa.repository.JpaRepository;import java.util.List;public interface ProdctInfoRepository extends JpaRepository&lt;ProductInfo,String&gt; &#123;//&lt;对象，主键类型&gt; List&lt;ProductInfo&gt; findByProductStatus(Integer productStatus);&#125; 注意findByProductStatus这并不是随便的一个变量名，findBy格式是固定的，后面的ProductStatus和实体类中的属性要一一对应。 测试代码@RunWith(SpringRunner.class) @SpringBootTest public class ProdctInfoRepositoryTest { @Autowired private ProdctInfoRepository repository; @Test public void findByProductStatus() {//根据产品状态进行查询 List&lt;ProductInfo&gt; productInfoList=repository.findByProductStatus(1);//0是上架 Assert.assertNotEquals(0,productInfoList.size()); } } JPA扩展查询语句结构]]></content>
       <categories>
-        <category>Springboot</category>
+        <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>Springboot</tag>
+        <tag>SpringBoot</tag>
         <tag>Spring JPA</tag>
       </tags>
   </entry>
@@ -221,8 +230,8 @@
         <category>Springboot</category>
       </categories>
       <tags>
-        <tag>Springboot</tag>
         <tag>MySQL</tag>
+        <tag>Springboot</tag>
       </tags>
   </entry>
   <entry>

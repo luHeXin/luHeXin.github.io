@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[01-复杂度2 Maximum Subsequence Sum (25 分)]]></title>
+    <url>%2F2019%2F10%2F26%2F01-%E5%A4%8D%E6%9D%82%E5%BA%A62-Maximum-Subsequence-Sum-25-%E5%88%86%2F</url>
+    <content type="text"><![CDATA[Problem DescriptionGiven a sequence of K integers { N​1​​ , N​2​​ , …, N​K​​ }. A continuous subsequence is defined to be { N​i​​ , N​i+1​​ , …, N​j​​ } where 1≤i≤j≤K. The Maximum Subsequence is the continuous subsequence which has the largest sum of its elements. For example, given sequence { -2, 11, -4, 13, -5, -2 }, its maximum subsequence is { 11, -4, 13 } with the largest sum being 20. Now you are supposed to find the largest sum, together with the first and the last numbers of the maximum subsequence. Input SpecificationEach input file contains one test case. Each case occupies two lines. The first line contains a positive integer K (≤10000). The second line contains K numbers, separated by a space. Output SpecificationFor each test case, output in one line the largest sum, together with the first and the last numbers of the maximum subsequence. The numbers must be separated by one space, but there must be no extra space at the end of a line. In case that the maximum subsequence is not unique, output the one with the smallest indices i and j (as shown by the sample case). If all the K numbers are negative, then its maximum sum is defined to be 0, and you are supposed to output the first and the last numbers of the whole sequence. Sample Input10-10 1 2 3 4 -5 -23 3 7 -21 Sample Output10 1 4 题目类型最大子列问题 参考代码12345678910111213141516171819202122232425262728293031323334#include&lt;iostream&gt;using namespace std;int main() &#123; int A[10010],K=0; cin &gt;&gt;K; //在线处理 int thisSum=0, maxSum=-1;//此处注意，maxSum赋值为-1，否则负数和0通不过 int tempL = 0,left=0,right=K-1; for (int i = 0; i &lt; K; i++) &#123; cin &gt;&gt; A[i]; thisSum += A[i]; if (thisSum &gt; maxSum) &#123;//在线更新 maxSum = thisSum; right = i;//当前子列右侧 left = tempL;//当前子列的左侧 &#125; else if(thisSum&lt;0)&#123;//当前子列是负的，肯定不是最大子列;且可满足最大子列小于零结果置零的条件 thisSum = 0; tempL = i+1;//子列"另起山头"。当前子列左端为i，因此，新子列左端从i+1开始。 &#125; &#125; if (maxSum&lt;0) &#123; cout &lt;&lt; 0 &lt;&lt; " " &lt;&lt; A[0] &lt;&lt; " " &lt;&lt; A[K - 1] &lt;&lt; endl; //全为负数，输出第一个和最后一个 &#125; else&#123; cout &lt;&lt; maxSum &lt;&lt; " " &lt;&lt; A[left] &lt;&lt; " " &lt;&lt; A[right] &lt;&lt; endl; //存在最大子列和，正常输出 &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>浙大数据结构编程练习</category>
+      </categories>
+      <tags>
+        <tag>浙大数据结构编程练习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]]]></title>
     <url>%2F2019%2F10%2F21%2FSQLErrorCodes-loaded-DB2-Derby-H2-HSQL-Informix-MS-SQL-MySQL-Oracle-PostgreSQL-Sybase-Hana%2F</url>
     <content type="text"><![CDATA[错误描述学习使用SpringMVC框架，在进行数据的插入时出现如下错误: 问题原因哎，问题原因很简单sql传参与该字段在数据库的数据类型不匹配…… 网上其实很多针对于该问题的回答，几乎全是将问题归于字段在数据库的数据类型不匹配，这确实是对的，以SpringMVC为例，我的问题就是由于mapper中的SQL语句里的一个字段与数据库不匹配而造成的。 解决办法 查找sql传参与该字段在数据库的数据类型是不是匹配。 在可视化界面（plsql,navicat）里面执行一下自己的sql是不是有语法错误，可视化界面里面报的错误要比项目日志里面报的明确得多。 SQL语句与数据库中的字段可以相匹配，但是前端js代码中可能存在对非数据库字段进行例如插进数据库等操作，导致该问题的发生，因此还需留意前端代码关于数据的处理。]]></content>
@@ -309,9 +320,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
-        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
+        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>

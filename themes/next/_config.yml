@@ -1163,6 +1163,3 @@ css: css
 js: js
 images: images
 
-# Online contact 
-daovoice: true
-daovoice_app_id: "0f05887b"

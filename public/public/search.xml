@@ -304,7 +304,7 @@
   <entry>
     <title><![CDATA[博客美化_更改选中字符及超链接颜色]]></title>
     <url>%2F2019%2F07%2F30%2F%E5%8D%9A%E5%AE%A2%E9%80%89%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%BB%A5%E5%8F%8A%E8%B6%85%E9%93%BE%E6%8E%A5%E9%A2%9C%E8%89%B2%2F</url>
-    <content type="text"><![CDATA[前言NesT主题默认的选中字符颜色以及超链接颜色和周围网页、文字颜色相近不易区分。因此，选择手动更改二者颜色。 修改步骤第一步打开主题配置文件_config.yml查看自己选择的主题方案。在这里我选择的是scheme: Gemini，因此，接下来我也将以该方案为例。 第二步打开\themes\next\source\css\_schemes\Gemini\index.styl若已选择其他主题，则只需按路径打开_schemes文件夹下对应的方案，在选择打开对应的inde.styl文件即可。 第三步修改选中字符的颜色在上一步打开的文件末尾添加如下代码 12345// 修改选中字符的颜色::selection &#123; background: #3366ff; color: #FFFFFF; &#125; 选中字符后字符的颜色变为白色，选中的背景为蓝色。当然，也可以根据RGB颜色对照表在这里随意改成自己喜欢颜色。 第四步修改代码块选中的颜色打开，如下路径\themes\next\source\css\_common\components\highlight\highlight.style找到 123*::selection &#123; background: $highlight-selection; &#125; 修改为 1234//修改代码块颜色*::selection &#123; background: #3366ff; &#125; 这里更改代码块选中背景色为蓝色。 第五步修改超链接颜色打开\themes\next\source\css\_schemes\Gemini\index.styl在文件末尾添加如下代码 1234567891011// 文章内链接文本样式 .post-body p a&#123; color: #0593d3; border-bottom: none; border-bottom: 1px solid #0593d3; &amp;:hover &#123; color: #fc6423; border-bottom: none; border-bottom: 1px solid #fc6423; &#125; &#125; 参考文章https://www.jianshu.com/p/2a8d399f1266]]></content>
+    <content type="text"><![CDATA[前言NesT主题默认的选中字符颜色以及超链接颜色和周围网页、文字颜色相近不易区分。因此，选择手动更改二者颜色。 修改步骤第一步打开主题配置文件_config.yml查看自己选择的主题方案。在这里我选择的是scheme: Gemini，因此，接下来我也将以该方案为例。 第二步打开\themes\next\source\css\_schemes\Gemini\index.styl若已选择其他主题，则只需按路径打开_schemes文件夹下对应的方案，在选择打开对应的index.styl文件即可。 第三步修改选中字符的颜色在上一步打开的文件末尾添加如下代码 12345// 修改选中字符的颜色::selection &#123; background: #3366ff; color: #FFFFFF; &#125; 选中字符后字符的颜色变为白色，选中的背景为蓝色。当然，也可以根据RGB颜色对照表在这里随意改成自己喜欢颜色。 第四步修改代码块选中的颜色打开，如下路径\themes\next\source\css\_common\components\highlight\highlight.style找到 123*::selection &#123; background: $highlight-selection; &#125; 修改为 1234//修改代码块颜色*::selection &#123; background: #3366ff; &#125; 这里更改代码块选中背景色为蓝色。 第五步修改超链接颜色打开\themes\next\source\css\_schemes\Gemini\index.styl在文件末尾添加如下代码 1234567891011// 文章内链接文本样式 .post-body p a&#123; color: #0593d3; border-bottom: none; border-bottom: 1px solid #0593d3; &amp;:hover &#123; color: #fc6423; border-bottom: none; border-bottom: 1px solid #fc6423; &#125; &#125; 参考文章https://www.jianshu.com/p/2a8d399f1266]]></content>
       <categories>
         <category>博客美化</category>
       </categories>
@@ -320,9 +320,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
+        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
-        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>

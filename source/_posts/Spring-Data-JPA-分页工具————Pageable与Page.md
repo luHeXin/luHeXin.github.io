@@ -5,18 +5,18 @@ tags:
 - SpringBoot
 - 分页
 ---
-# 预先导入的包：
+# 预先导入的包
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
-# Pageable：
-## 概述：
+# Pageable
+## 概述
 ``` java
 Page<OrderMaster> findByBuyerOpenid(String buyerOpenid, Pageable pageable);
 ```
 `Pageable`是Spring Data库中定义的一个接口，用于构造翻页查询，是所有分页相关信息的一个抽象，通过该接口，我们可以得到和分页相关所有信息（例如pageNumber、pageSize等），这样，Jpa就能够通过pageable参数来得到一个带分页信息的Sql语句。
 `PageRequest`是`Pageable`的实现。
-## 接口：
+## 接口
 ``` java
 public interface Pageable {
 
@@ -38,14 +38,14 @@ public interface Pageable {
 }
 ```
 
-# Page：
-## 概述：
+# Page
+## 概述
 ``` java
 Page<OrderMaster> result=repository.findByBuyerOpenid(OPENID,request);
 ```
 用于储存查询的结果集。
 
-## 接口：
+## 接口
 ``` java
 
 public interface Page<T> extends Iterable<T> {
@@ -78,7 +78,7 @@ public interface Page<T> extends Iterable<T> {
 }
 ```
 
-# Pageable与Page实例：
+# Pageable与Page实例
 采用单元测试的形式进行实例说明。
 ```java
 public interface OrderMasterRepository extends JpaRepository<OrderMaster,String> {
@@ -96,7 +96,7 @@ public class OrderMasterRepositoryTest {
 
     private final String OPENID="110110";
     @Test
-    public void saveTest(){
+    public void saveTest(){//存储两条数据
         OrderMaster orderMaster=new OrderMaster();
         orderMaster.setOrderId("123456");
         orderMaster.setBuyerName("师兄");
@@ -122,7 +122,7 @@ public class OrderMasterRepositoryTest {
     @Test
     public void findByBuyerOpenid() {
         //PageRequest request=new PageRequest(0,2);//从第1页开始，每页2个数据;Pageable实现：PageRequest
-        PageRequest request=PageRequest.of(0,2);
+        PageRequest request=PageRequest.of(0,2);//此写法为新写法
         Page<OrderMaster> result=repository.findByBuyerOpenid(OPENID,request);
         logger.info(result.toString());//Page 1 of 1(第一页共一页)
         Assert.assertNotNull(result.getTotalElements());

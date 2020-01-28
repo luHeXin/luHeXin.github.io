@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[DFS and BFS]]></title>
+    <url>%2F2020%2F01%2F28%2FDFS-and-BFS%2F</url>
+    <content type="text"><![CDATA[DFS简述DFS即深度优先搜索，是一种枚举所有完整路径以遍历所有情况的搜索方法。以“深度”为前进的关键词，不碰到死胡同就不回头。使用递归可以很好地实现深度优先搜索，递归中的递归式就是岔道口，递归边界就是死胡同。 模板12345678DFS(depth,..)&#123; if(找到解||死胡同)&#123;//递归边界 ... return; &#125; ... DFS(depth+1,...);//枚举下一种情况&#125; 使用DFS遍历树对于树而言，DFS的“死胡同”就等价于树中的叶子结点，而“岔道口”相当于树的非叶子结点。 123456789void DFS(int index)&#123; if(Node[index].child.size()==0&#123;//到达叶子结点 return; &#125; for(int i=0;i&lt;Node[index].child.size();i++)&#123; int child=Node[index].child[i]; DFS(child); &#125;&#125; 使用DFS遍历图DFS遍历图的基本思路是将经过的顶点设置为已访问，下次递归碰到该顶点时不再去处理，直到整个图的顶点都被标记为已访问。 12345678910111213141516DFS(U)&#123;//访问顶点u vis[u]=true;//设u为已被访问 for(从u出发能到达的所有顶点v)&#123; if(vis[v]==false)&#123; DFS(v);//访问v &#125; &#125;&#125;DFSTrave(G)&#123;//遍历图G for(G的所有顶点u)&#123; if(vis[u]==false)&#123;//u未被访问 DFS(u);//访问u所在的连通块 &#125; &#125;&#125; 如果图为连通图(任意两个顶点都联通)，则只需要一个DFS即可。 BFS简述BFS即广度优先搜索，以广度为第一搜索。当碰到岔路口时，不是一根筋的往下走，遇到“南墙”为止。而是，依次访问该岔路口可以直接到达的所有结点，然后再按这些结点被访问的顺序去一次访问他们所能达到的所有结点。BFS一般由队列实现，且总是按层次的顺序进行遍历。 模板12345678910void BFS(int s)&#123; queue&lt;int&gt; q; q.push(s); while(!q.empty())&#123; int front=q.front();//取出队首元素 //访问队首元素 q.pop();//队首元素出队 //将下一层为入队的结点入队，并设置为已入队 &#125;&#125; 使用BFS遍历树就树而言，BFS问题可转换为层序遍历问题。 123456789101112void BFS(int root)&#123; queue&lt;int&gt; q; q.push(root); while(!q.empty())&#123; int front=q.front();//取出队首元素 q.pop(); for(int i=0;i&lt;Node[front].child.size();i++)&#123; int child=Node[front].child[i]; q.push(child); &#125; &#125;&#125; 使用BFS遍历图先建立一个队列，把初始顶点加入队列，此后每次都取出队首顶点进行访问，并把该点出发可以达到的未曾加入过队列(而不是未访问)的顶点全部加入队列，直到队列为空。 BFS(u){//遍历u所在的连通块 queue q; 将u入队; inq[u]=true;//设置已入队 while(!q.empty()){ 取出q的队首元素进行访问; for(从u出发可以到达的所有顶点v){ if(inq[v]==false){//如果为入队 将v入队; inq[v]=true; } } } } BFSTrave(G){//遍历图G for(G的所有顶点u){//枚举G的所有顶点 if(inq[u]==false){ BFS(u);//遍历u所在的连通块 } } } 图的BFS和DFS类似，假如图是连通图，则只需要一次BFS即可。]]></content>
+      <categories>
+        <category>PAT模板</category>
+      </categories>
+      <tags>
+        <tag>PAT模板</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT模板———使用Dijkstra算法记录所有最短路径]]></title>
     <url>%2F2020%2F01%2F20%2FPAT%E6%A8%A1%E6%9D%BF%E2%80%94%E2%80%94%E2%80%94%E4%BD%BF%E7%94%A8Dijkstra%E7%AE%97%E6%B3%95%E8%AE%B0%E5%BD%95%E6%89%80%E6%9C%89%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%2F</url>
     <content type="text"><![CDATA[12345678910111213141516171819202122232425262728293031vector&lt;int&gt; pre[maxv];//保留前驱结点int d[maxv];//记录距离，如d[2]便是起点到节点2的距离int n;//n个结点bool vis[maxv]=&#123;false&#125;;//标记结点是否被访问void Dijkstra(int s)&#123;//s为起点2 fill(d,d+maxv,inf);//数组初始化，inf为无穷 d[s]=0; for(int i=0;i&lt;n;i++)&#123;//寻找中介结点 int u=-1,min=inf;//u为中介结点（与起始节点最近的点），min为最近距离 for(int j=0;j&lt;n;j++)&#123; if(vis[j]==false&amp;&amp;d[u]&lt;min)&#123; min=d[j]; u=j; &#125; &#125; if(u==-1) return; vis[u]=true; for(int v=0;v&lt;n;v++)&#123;//进行松弛 if(vis[u]==false&amp;&amp;G[u][v]!=inf)&#123;//中介点u未访问，且中介点u与目标终点v之间连通 if(d[u]+G[u][v]&lt;d[v])&#123;//可以松弛 d[v]=d[u]+G[u][v]; pre[v].clear();//清空pre[v] pre[v].push_back(u);//v的前驱为u &#125;else if(d[u]+G[u][v]==d[v])&#123;//存在长度相同的不同路线的最短路径 pre[v].push_back(u); &#125; &#125; &#125; &#125;&#125;]]></content>
@@ -353,9 +364,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
-        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
+        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>

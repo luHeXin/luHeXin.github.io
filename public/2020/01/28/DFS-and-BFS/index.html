@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Notes">
 <meta property="og:description" content="DFS简述DFS即深度优先搜索，是一种枚举所有完整路径以遍历所有情况的搜索方法。以“深度”为前进的关键词，不碰到死胡同就不回头。使用递归可以很好地实现深度优先搜索，递归中的递归式就是岔道口，递归边界就是死胡同。 模板12345678DFS(depth,..)&amp;#123;    if(找到解||死胡同)&amp;#123;//递归边界        ...        return;    &amp;#125;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-28T03:30:59.866Z">
+<meta property="og:updated_time" content="2020-01-28T03:36:42.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DFS and BFS">
 <meta name="twitter:description" content="DFS简述DFS即深度优先搜索，是一种枚举所有完整路径以遍历所有情况的搜索方法。以“深度”为前进的关键词，不碰到死胡同就不回头。使用递归可以很好地实现深度优先搜索，递归中的递归式就是岔道口，递归边界就是死胡同。 模板12345678DFS(depth,..)&amp;#123;    if(找到解||死胡同)&amp;#123;//递归边界        ...        return;    &amp;#125;">
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2020-01-28 09:56:21 / 修改时间：11:30:59" itemprop="dateCreated datePublished" datetime="2020-01-28T09:56:21+08:00">2020-01-28</time>
+              <time title="创建时间：2020-01-28 09:56:21 / 修改时间：11:36:42" itemprop="dateCreated datePublished" datetime="2020-01-28T09:56:21+08:00">2020-01-28</time>
             </span>
           
 
@@ -466,27 +466,8 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFS</span><span class="params">(<span class="keyword">int</span> root)</span></span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    q.push(root);</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        <span class="keyword">int</span> front=q.front();<span class="comment">//取出队首元素</span></span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;Node[front].child.size();i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> child=Node[front].child[i];</span><br><span class="line">            q.push(child);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="使用BFS遍历图"><a href="#使用BFS遍历图" class="headerlink" title="使用BFS遍历图"></a>使用BFS遍历图</h2><p>先建立一个队列，把初始顶点加入队列，此后每次都取出队首顶点进行访问，并把该点出发可以达到的未曾加入过队列(而不是未访问)的顶点全部加入队列，直到队列为空。</p>
-<pre><code class="c++">BFS(u){<span class="comment">//遍历u所在的连通块</span>
-    <span class="built_in">queue</span> q;
-    将u入队;
-    inq[u]=<span class="literal">true</span>;<span class="comment">//设置已入队</span>
-    <span class="keyword">while</span>(!q.empty()){
-        取出q的队首元素进行访问;
-        <span class="keyword">for</span>(从u出发可以到达的所有顶点v){
-            <span class="keyword">if</span>(inq[v]==<span class="literal">false</span>){<span class="comment">//如果为入队</span>
-                将v入队;
-                inq[v]=<span class="literal">true</span>;
-            }
-        }
-    }
-}
-BFSTrave(G){<span class="comment">//遍历图G</span>
-    <span class="keyword">for</span>(G的所有顶点u){<span class="comment">//枚举G的所有顶点</span>
-        <span class="keyword">if</span>(inq[u]==<span class="literal">false</span>){
-            BFS(u);<span class="comment">//遍历u所在的连通块</span>
-        }
-    }
-}</code></pre>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">BFS(u)&#123;<span class="comment">//遍历u所在的连通块</span></span><br><span class="line">    <span class="built_in">queue</span> q;</span><br><span class="line">    将u入队;</span><br><span class="line">    inq[u]=<span class="literal">true</span>;<span class="comment">//设置已入队</span></span><br><span class="line">    <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        取出q的队首元素进行访问;</span><br><span class="line">        <span class="keyword">for</span>(从u出发可以到达的所有顶点v)&#123;</span><br><span class="line">            <span class="keyword">if</span>(inq[v]==<span class="literal">false</span>)&#123;<span class="comment">//如果为入队</span></span><br><span class="line">                将v入队;</span><br><span class="line">                inq[v]=<span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">BFSTrave(G)&#123;<span class="comment">//遍历图G</span></span><br><span class="line">    <span class="keyword">for</span>(G的所有顶点u)&#123;<span class="comment">//枚举G的所有顶点</span></span><br><span class="line">        <span class="keyword">if</span>(inq[u]==<span class="literal">false</span>)&#123;</span><br><span class="line">            BFS(u);<span class="comment">//遍历u所在的连通块</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>图的BFS和DFS类似，假如图是连通图，则只需要一次BFS即可。</p>
 
       

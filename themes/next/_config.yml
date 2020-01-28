@@ -1156,7 +1156,7 @@ vendors:
   disqusjs_css:
 
 # special-effect
-special-effect: true
+# special-effect: false
 
 # Assets
 css: css

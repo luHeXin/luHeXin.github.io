@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[并查集]]></title>
+    <url>%2F2020%2F01%2F31%2F%E5%B9%B6%E6%9F%A5%E9%9B%86%2F</url>
+    <content type="text"><![CDATA[简介并查集是一种维护集合的数据结构，用于处理一些不相交集合（Disjoint Sets）的合并及查询问题。并查集中的查询指的是判断两个元素是否在一个集合。对同一个集合来说只存在一个根节点，且将其作为所属集合的标识。 并查集实现并查集的实现就是一个数组 1int father[N]; father[i]表示元素i的直属父节点，对于根节点而言，father[i]=i。 并查集的基本操作初始化123456int father[N];void init(int n)&#123; for(int i=;i&lt;n;i++)&#123; father[i]=i; &#125;&#125; 查找由于并查集每个集合只有一个根节点，因此并查集的根节点可视为集合的标识，查找的结果便是返回该集合的根节点。 123456int findFather(int x)&#123; while(x!=father[x])&#123;//根节点的father为自身 x=father[x];//不断地更新x，直至到达根节点 &#125; return x;&#125; 合并合并的基础是查询，先查找两个元素所在集合的根节点，若根节点不相同，则说明元素所在集合不相同，将其中一个集合的根节点的父亲指向另一个集合的根节点即可。 123456789101112131415161718192021void Union(int A,int B)&#123; int faA=findFather(A); int faB=findFather(B); if(faA!=faB)&#123; father[faA]=faB;//进行合并 &#125;&#125;``` ## 计算集合个数``` c++int isRoot[N];//判断该节点是否为根结点，是为1，不是为0，但是注意要进行初始化附零处理，这里不加赘述int calBlock(int n)&#123;//n为总共元素数目，元素序号从1~n int block=0; for(int i=1;i&lt;=n;i++)&#123; isRoot[findFather(i)]=1;//将根节点赋值为1 &#125; for(int i=1;i&lt;=n;i++)&#123; block+=isRoot[i];//计算根节点数目（由于一个集合只有一个根节点，因此几个根节点，便是几个集合） &#125; return block;&#125;]]></content>
+      <categories>
+        <category>PAT模板</category>
+      </categories>
+      <tags>
+        <tag>PAT模板</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[DFS and BFS]]></title>
     <url>%2F2020%2F01%2F28%2FDFS-and-BFS%2F</url>
     <content type="text"><![CDATA[DFS简述DFS即深度优先搜索，是一种枚举所有完整路径以遍历所有情况的搜索方法。以“深度”为前进的关键词，不碰到死胡同就不回头。使用递归可以很好地实现深度优先搜索，递归中的递归式就是岔道口，递归边界就是死胡同。 模板12345678DFS(depth,..)&#123; if(找到解||死胡同)&#123;//递归边界 ... return; &#125; ... DFS(depth+1,...);//枚举下一种情况&#125; 使用DFS遍历树对于树而言，DFS的“死胡同”就等价于树中的叶子结点，而“岔道口”相当于树的非叶子结点。 123456789void DFS(int index)&#123; if(Node[index].child.size()==0&#123;//到达叶子结点 return; &#125; for(int i=0;i&lt;Node[index].child.size();i++)&#123; int child=Node[index].child[i]; DFS(child); &#125;&#125; 使用DFS遍历图DFS遍历图的基本思路是将经过的顶点设置为已访问，下次递归碰到该顶点时不再去处理，直到整个图的顶点都被标记为已访问。 12345678910111213141516DFS(U)&#123;//访问顶点u vis[u]=true;//设u为已被访问 for(从u出发能到达的所有顶点v)&#123; if(vis[v]==false)&#123; DFS(v);//访问v &#125; &#125;&#125;DFSTrave(G)&#123;//遍历图G for(G的所有顶点u)&#123; if(vis[u]==false)&#123;//u未被访问 DFS(u);//访问u所在的连通块 &#125; &#125;&#125; 如果图为连通图(任意两个顶点都联通)，则只需要一个DFS即可。 BFS简述BFS即广度优先搜索，以广度为第一搜索。当碰到岔路口时，不是一根筋的往下走，遇到“南墙”为止。而是，依次访问该岔路口可以直接到达的所有结点，然后再按这些结点被访问的顺序去一次访问他们所能达到的所有结点。BFS一般由队列实现，且总是按层次的顺序进行遍历。 模板12345678910void BFS(int s)&#123; queue&lt;int&gt; q; q.push(s); while(!q.empty())&#123; int front=q.front();//取出队首元素 //访问队首元素 q.pop();//队首元素出队 //将下一层为入队的结点入队，并设置为已入队 &#125;&#125; 使用BFS遍历树就树而言，BFS问题可转换为层序遍历问题。 123456789101112void BFS(int root)&#123; queue&lt;int&gt; q; q.push(root); while(!q.empty())&#123; int front=q.front();//取出队首元素 q.pop(); for(int i=0;i&lt;Node[front].child.size();i++)&#123; int child=Node[front].child[i]; q.push(child); &#125; &#125;&#125; 使用BFS遍历图先建立一个队列，把初始顶点加入队列，此后每次都取出队首顶点进行访问，并把该点出发可以达到的未曾加入过队列(而不是未访问)的顶点全部加入队列，直到队列为空。 123456789101112131415161718192021BFS(u)&#123;//遍历u所在的连通块 queue q; 将u入队; inq[u]=true;//设置已入队 while(!q.empty())&#123; 取出q的队首元素进行访问; for(从u出发可以到达的所有顶点v)&#123; if(inq[v]==false)&#123;//如果为入队 将v入队; inq[v]=true; &#125; &#125; &#125;&#125;BFSTrave(G)&#123;//遍历图G for(G的所有顶点u)&#123;//枚举G的所有顶点 if(inq[u]==false)&#123; BFS(u);//遍历u所在的连通块 &#125; &#125;&#125; 图的BFS和DFS类似，假如图是连通图，则只需要一次BFS即可。]]></content>

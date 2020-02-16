@@ -12,9 +12,7 @@ Each input file contains one test case. For each case, the first line contains a
 ## Output Specification
 For each test case, first print in one line the total number of testees. Then print the final ranklist in the following format:
 
-```
-registration_number final_rank location_number local_rank
-```
+`registration_number final_rank location_number local_rank`
 
 The locations are numbered from 1 to N. The output must be sorted in nondecreasing order of the final ranks. The testees with the same score must have the same rank, and the output must be sorted in nondecreasing order of their registration numbers.
 ## Sample Input

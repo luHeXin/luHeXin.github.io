@@ -109,7 +109,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="大整数又称为高精度整数，其含义就是用基本数据类型无法存储其精度的整数。 大整数的存储12345678struct bign&amp;#123;    int d[1000];    //存储大整数数据    int len;    //存储大整数长度    bign()&amp;#123;        memset(d,0,sizeof(d));        int len=0;    &amp;#125;&amp;#125">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-25T06:19:37.800Z">
+<meta property="og:updated_time" content="2020-02-25T06:26:55.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大整数运算">
 <meta name="twitter:description" content="大整数又称为高精度整数，其含义就是用基本数据类型无法存储其精度的整数。 大整数的存储12345678struct bign&amp;#123;    int d[1000];    //存储大整数数据    int len;    //存储大整数长度    bign()&amp;#123;        memset(d,0,sizeof(d));        int len=0;    &amp;#125;&amp;#125">
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2020-02-25 11:19:10 / 修改时间：14:19:37" itemprop="dateCreated datePublished" datetime="2020-02-25T11:19:10+08:00">2020-02-25</time>
+              <time title="创建时间：2020-02-25 11:19:10 / 修改时间：14:26:55" itemprop="dateCreated datePublished" datetime="2020-02-25T11:19:10+08:00">2020-02-25</time>
             </span>
           
 
@@ -458,8 +458,8 @@
 
 <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
 <li>加法与乘法要注意最后进位的处理，比如99+11，各位相加以后，还要最后进一位，进位到百位。</li>
-<li>乘法的最后进位可能不止一位，所以最后要用while，如100*100=10000最后在百位的基础上又近了两位。</li>
-<li>减法和除法要注意高位零的舍去，但是，假如全是零，例如0000000，则要保留个位的0</li>
+<li>乘法的最后进位可能不止一位，所以最后要用while，如100*100=10000最后在百位的基础上又进了两位。</li>
+<li>减法和除法要注意高位零的舍去，但是，假如全是零，例如0000000，则要保留个位的0。</li>
 </ul>
 
       

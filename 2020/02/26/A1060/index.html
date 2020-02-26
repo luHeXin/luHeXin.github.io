@@ -102,20 +102,18 @@
 
 
 
-  <meta name="description" content="版本MySQL：5.7.27 jdk：12.0.1 Navicat：12.0.20 IDEA：2018.2.4 具体操作1. 引入依赖spring-boot-starter-data-jpa与mysql-connector-java 12345678&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;g">
-<meta name="keywords" content="Springboot,MySQL">
+  <meta name="description" content="Problem DescriptionIf a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered equal since they are both saved as 0.123×10^5 with simple chopping. Now given the">
+<meta name="keywords" content="PAT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过Spring-Data-Jpa连接MySQL,并操作数据库">
-<meta property="og:url" content="http://luHeXin.github.io/2019/08/05/通过Spring-Data-Jpa连接数据库/index.html">
+<meta property="og:title" content="PAT A1060 Are They Equal (25分)">
+<meta property="og:url" content="http://luHeXin.github.io/2020/02/26/A1060/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="版本MySQL：5.7.27 jdk：12.0.1 Navicat：12.0.20 IDEA：2018.2.4 具体操作1. 引入依赖spring-boot-starter-data-jpa与mysql-connector-java 12345678&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;g">
+<meta property="og:description" content="Problem DescriptionIf a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered equal since they are both saved as 0.123×10^5 with simple chopping. Now given the">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://luhexin.github.io/images/Spring-Data-Jpa%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/1.jpg">
-<meta property="og:updated_time" content="2019-08-05T15:56:46.416Z">
+<meta property="og:updated_time" content="2020-02-26T15:26:53.058Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通过Spring-Data-Jpa连接MySQL,并操作数据库">
-<meta name="twitter:description" content="版本MySQL：5.7.27 jdk：12.0.1 Navicat：12.0.20 IDEA：2018.2.4 具体操作1. 引入依赖spring-boot-starter-data-jpa与mysql-connector-java 12345678&amp;lt;dependency&amp;gt;    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;g">
-<meta name="twitter:image" content="https://luhexin.github.io/images/Spring-Data-Jpa%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/1.jpg">
+<meta name="twitter:title" content="PAT A1060 Are They Equal (25分)">
+<meta name="twitter:description" content="Problem DescriptionIf a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered equal since they are both saved as 0.123×10^5 with simple chopping. Now given the">
 
 
 
@@ -123,7 +121,7 @@
 
   
   
-  <link rel="canonical" href="http://luHeXin.github.io/2019/08/05/通过Spring-Data-Jpa连接数据库/">
+  <link rel="canonical" href="http://luHeXin.github.io/2020/02/26/A1060/">
 
 
 
@@ -134,7 +132,7 @@
 </script>
 
   
-  <title>通过Spring-Data-Jpa连接MySQL,并操作数据库 | Blog</title>
+  <title>PAT A1060 Are They Equal (25分) | Blog</title>
   
 
 
@@ -354,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2019/08/05/通过Spring-Data-Jpa连接数据库/">
+    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2020/02/26/A1060/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="鲁合鑫">
@@ -371,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">通过Spring-Data-Jpa连接MySQL,并操作数据库
+          <h1 class="post-title" itemprop="name headline">PAT A1060 Are They Equal (25分)
 
               
             
@@ -397,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-08-05 22:52:54 / 修改时间：23:56:46" itemprop="dateCreated datePublished" datetime="2019-08-05T22:52:54+08:00">2019-08-05</time>
+              <time title="创建时间：2020-02-26 21:38:31 / 修改时间：23:26:53" itemprop="dateCreated datePublished" datetime="2020-02-26T21:38:31+08:00">2020-02-26</time>
             </span>
           
 
@@ -416,7 +414,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Springboot/" itemprop="url" rel="index"><span itemprop="name">Springboot</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-甲级/" itemprop="url" rel="index"><span itemprop="name">PAT 甲级</span></a></span>
 
                 
                 
@@ -451,31 +449,37 @@
       
 
       
-        <h1 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h1><p>MySQL：5.7.27</p>
-<p>jdk：12.0.1</p>
-<p>Navicat：12.0.20</p>
-<p>IDEA：2018.2.4</p>
-<h1 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h1><h2 id="1-引入依赖"><a href="#1-引入依赖" class="headerlink" title="1. 引入依赖"></a>1. 引入依赖</h2><p><code>spring-boot-starter-data-jpa</code>与<br><code>mysql-connector-java</code></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h1 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h1><p>If a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered equal since they are both saved as 0.123×10^5 with simple chopping. Now given the number of significant digits on a machine and two float numbers, you are supposed to tell if they are treated equal in that machine.</p>
+<h2 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h2><p>Each input file contains one test case which gives three numbers N, A and B, where N (&lt;100) is the number of significant digits, and A and B are the two float numbers to be compared. Each float number is non-negative, no greater than 10^100, and that its total digit number is less than 100.</p>
+<h2 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h2><p>For each test case, print in a line YES if the two numbers are treated equal, and then the number in the standard form 0.d[1]…d[N]*10^k (d[1]&gt;0 unless the number is 0); or NO if they are not treated equal, and then the two numbers in their standard form. All the terms must be separated by a space, with no extra space at the end of a line.</p>
+<p>Note: Simple chopping is assumed without rounding.</p>
+<h2 id="Sample-Input1"><a href="#Sample-Input1" class="headerlink" title="Sample Input1:"></a>Sample Input1:</h2><p>3 12300 12358.9</p>
+<h2 id="Sample-Output1"><a href="#Sample-Output1" class="headerlink" title="Sample Output1:"></a>Sample Output1:</h2><p>YES 0.123*10^5</p>
+<h2 id="Sample-Input1-1"><a href="#Sample-Input1-1" class="headerlink" title="Sample Input1:"></a>Sample Input1:</h2><p>3 120 128</p>
+<h2 id="Sample-Output1-1"><a href="#Sample-Output1-1" class="headerlink" title="Sample Output1:"></a>Sample Output1:</h2><p>NO 0.120<em>10^3 0.128</em>10^3</p>
+<hr>
 
-<p> Springboot自动帮我们选择了版本。所以，在这个位置，不必手动选择版本。</p>
-<h2 id="2-新建数据库"><a href="#2-新建数据库" class="headerlink" title="2. 新建数据库"></a>2. 新建数据库</h2><p>命名为test，具体格式如下图所示。<br><br>（Character set与Collation的选择是为了后续项目进行所需，读者可根据所需自行选择。当然，对于仅连接连接MySQL而言，就算全为默认也是可以的。）</p>
-<p> <img src="https://luhexin.github.io/images/Spring-Data-Jpa%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/1.jpg" alt></p>
-<h2 id="3-写配置"><a href="#3-写配置" class="headerlink" title="3. 写配置"></a>3. 写配置</h2> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line"> datasource:</span><br><span class="line">   driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">   url: jdbc:mysql:<span class="comment">//127.0.0.1:3306/test?serverTimezone=UTC</span></span><br><span class="line">   username: root</span><br><span class="line">   password: <span class="number">123456</span></span><br><span class="line"> jpa:</span><br><span class="line">   hibernate:</span><br><span class="line">     ddl-auto: create</span><br><span class="line">   show-sql: <span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+<h1 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h1><ul>
+<li>先将样例格式转换为<code>0.a1a2a3....x10^e</code>(a1不为零),获取数值本体部分和指数部分，进行比较比较。<br></li>
+</ul>
+<p>但是，所给数据可能出现如下特殊情况，需进一步处理：</p>
+<ul>
+<li>000000.0000000xxxx</li>
+<li>000000.xxxxxx</li>
+<li>00000000000xxxxxxxx</li>
+<li>0000xxx.xxxxxx</li>
+</ul>
+<p>大概思路为-&gt;删除多余<code>0</code>位-&gt;找到小数点(并删除)-&gt;确定指数<code>e</code>-&gt;在没有小数点，没有高位<code>0</code>的情况下，可确定整数部分<code>a1a2a3a4</code>-&gt;根据精度，添加<code>0</code>位<br>具体处理过程为：</p>
+<ol>
+<li>第一个非零位前的<code>0</code>均删除</li>
+<li>如果去掉多余零后，是小数点(对应上述前两中情况)，则说明小于1，删除小数点，删除零，继续寻找有效数位。</li>
+<li>如果去掉多余零后，是整数(对应上述后两种情况),则说明大于等于1，寻找小数点，删除小数点。</li>
+<li>如果去掉多余的零后，长度为零，做说明原数为零，将e赋值0。</li>
+<li>如果精度没到要求，补零。<hr>
 
-<p>要注意<code>url</code>中，要添加时域<code>serverTimezone=UTC</code>，<br><br>否则，可能报错<br><code>Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]</code></p>
-<h2 id="4-建表"><a href="#4-建表" class="headerlink" title="4. 建表"></a>4. 建表</h2><p>表中含有id，money，producer，consumer四个字段<br>新建一个类 test.java</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lu.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.persistence.Entity;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.GeneratedValue;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Id;</span><br><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span></span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> BigDecimal money;</span><br><span class="line">    <span class="keyword">private</span> String producer;</span><br><span class="line">    <span class="keyword">private</span> String consumer;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> BigDecimal <span class="title">getMoney</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> money;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMoney</span><span class="params">(BigDecimal money)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.money = money;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getProducer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> producer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setProducer</span><span class="params">(String producer)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.producer = producer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getConsumer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> consumer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setConsumer</span><span class="params">(String consumer)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.consumer = consumer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运行之后，出现如下信息：</p>
-<p>Hibernate: drop table if exists hibernate_sequence</p>
-<p>Hibernate: drop table if exists luckymoney</p>
-<p>Hibernate: create table hibernate_sequence (next_val bigint) engine=MyISAM</p>
-<p>Hibernate: insert into hibernate_sequence values ( 1 )</p>
-<p>Hibernate: create table luckymoney (id integer not null, consumer varchar(255), money decimal(19,2), producer varchar(255), primary key (id)) engine=MyISAM<br>返回到。数据库便可以看到，已经建好了一个名为<code>test</code>的表。</p>
-<h2 id="5-更新表中的内容"><a href="#5-更新表中的内容" class="headerlink" title="5. 更新表中的内容"></a>5. 更新表中的内容</h2><p>在数据库中，向新建的表输入内容并保存之后，返回IDEA再次运行代码，则，springboot会重新建一个名为<code>test</code>表，并覆盖旧表，清空旧表数据。</p>
-<p>因此，在建好表后，需要更新数据，则应先返回到配置文件中，将 <code>ddl-auto: create</code>更改为<code>ddl-auto: update</code>，这样，在下一次运行IDEA时，才会保留数据库表中的信息。</p>
-
+</li>
+</ol>
+<h1 id="参考代码："><a href="#参考代码：" class="headerlink" title="参考代码："></a>参考代码：</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">change</span><span class="params">(<span class="built_in">string</span> &amp;s1,<span class="keyword">int</span> n)</span> </span>&#123; <span class="comment">//返回10的指数,n位有效位数</span></span><br><span class="line">	<span class="keyword">int</span> len=s1.length();</span><br><span class="line">	<span class="keyword">int</span> e=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(s1[<span class="number">0</span>]==<span class="string">'0'</span>&amp;&amp;s1.length()&gt;<span class="number">0</span>) &#123; <span class="comment">//删除多余零</span></span><br><span class="line">		s1.erase(s1.begin());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(s1[<span class="number">0</span>]==<span class="string">'.'</span>) &#123;</span><br><span class="line">		s1.erase(s1.begin());<span class="comment">//删除小数点</span></span><br><span class="line">		<span class="keyword">while</span>(s1[<span class="number">0</span>]==<span class="string">'0'</span>&amp;&amp;s1.length()&gt;<span class="number">0</span>) &#123; <span class="comment">//删除多余零，这是可得到整数部分a1a2a3...(a1&gt;0)</span></span><br><span class="line">			s1.erase(s1.begin());</span><br><span class="line">			e--;<span class="comment">//每删除一位，指数-1</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span>(s1[<span class="number">0</span>]!=<span class="string">'.'</span>) &#123; <span class="comment">//因为多余的零被删除，所以此时，不是小数点 就是整数</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;s1.length(); i++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(s1[i]==<span class="string">'.'</span>) &#123; <span class="comment">//找到小数点</span></span><br><span class="line">				s1.erase(s1.begin()+i);<span class="comment">//删除小数点，保留整数</span></span><br><span class="line">				e=i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123; <span class="comment">//没有小数点纯整数</span></span><br><span class="line">				e=i+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(s1.length()==<span class="number">0</span>) &#123;</span><br><span class="line">		e=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(s1.length()&gt;=n) &#123; <span class="comment">//得舍</span></span><br><span class="line">		s1=s1.substr(<span class="number">0</span>,n);</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">while</span>(s1.length()&lt;n) &#123;</span><br><span class="line">			s1+=<span class="string">'0'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> e;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">string</span> s1,s2;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;s1&gt;&gt;s2;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> poly1=change(s1,n);</span><br><span class="line">	<span class="keyword">int</span> poly2=change(s2,n);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>((s1==s2)&amp;&amp;(poly1==poly2)) &#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"YES 0."</span>&lt;&lt;s1&lt;&lt;<span class="string">"*10^"</span>&lt;&lt;poly1;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"NO 0."</span>&lt;&lt;s1&lt;&lt;<span class="string">"*10^"</span>&lt;&lt;poly1&lt;&lt;<span class="string">" 0."</span>&lt;&lt;s2&lt;&lt;<span class="string">"*10^"</span>&lt;&lt;poly2;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -505,9 +509,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Springboot/" rel="tag"># Springboot</a>
-          
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/PAT/" rel="tag"># PAT</a>
           
         </div>
       
@@ -520,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/03/B1024/" rel="next" title="PAT B1024 科学计数法 (20 point(s))">
-                <i class="fa fa-chevron-left"></i> PAT B1024 科学计数法 (20 point(s))
+              <a href="/2020/02/25/大整数运算/" rel="next" title="大整数运算">
+                <i class="fa fa-chevron-left"></i> 大整数运算
               </a>
             
           </div>
@@ -529,10 +531,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/06/B1048/" rel="prev" title="PAT B1048 数字加密 (20 point(s))">
-                PAT B1048 数字加密 (20 point(s)) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -792,7 +790,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#版本"><span class="nav-number">1.</span> <span class="nav-text">版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#具体操作"><span class="nav-number">2.</span> <span class="nav-text">具体操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-引入依赖"><span class="nav-number">2.1.</span> <span class="nav-text">1. 引入依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-新建数据库"><span class="nav-number">2.2.</span> <span class="nav-text">2. 新建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-写配置"><span class="nav-number">2.3.</span> <span class="nav-text">3. 写配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-建表"><span class="nav-number">2.4.</span> <span class="nav-text">4. 建表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-更新表中的内容"><span class="nav-number">2.5.</span> <span class="nav-text">5. 更新表中的内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.</span> <span class="nav-text">Problem Description</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Specification"><span class="nav-number">1.1.</span> <span class="nav-text">Input Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Specification"><span class="nav-number">1.2.</span> <span class="nav-text">Output Specification:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input1"><span class="nav-number">1.3.</span> <span class="nav-text">Sample Input1:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output1"><span class="nav-number">1.4.</span> <span class="nav-text">Sample Output1:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input1-1"><span class="nav-number">1.5.</span> <span class="nav-text">Sample Input1:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output1-1"><span class="nav-number">1.6.</span> <span class="nav-text">Sample Output1:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路："><span class="nav-number">2.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考代码："><span class="nav-number">3.</span> <span class="nav-text">参考代码：</span></a></li></ol></div>
             
 
           </div>
@@ -1055,7 +1053,7 @@
 
 <script>
   window.livereOptions = {
-    refer: '2019/08/05/通过Spring-Data-Jpa连接数据库/'
+    refer: '2020/02/26/A1060/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];

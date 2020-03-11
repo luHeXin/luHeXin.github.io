@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[二叉搜索树先序遍历与后序遍历之间的转换]]></title>
+    <url>%2F2020%2F03%2F11%2F%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E4%B8%8E%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2%2F</url>
+    <content type="text"><![CDATA[思路二叉搜索树的左子树上所有结点的权值均小于等于其根节点，右子树上所有结点的权值均大于其根节点。根据二叉搜索树的这条特性便可以找到，先序(或后序)遍历数组中对应的左右子树的子序列，在多次递归即可。 已知二叉搜索树的先序遍历求其后序遍历123456789101112131415161718192021222324252627282930313233#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;using namespace std;vector&lt;int&gt; pre,post;void postOrder(int root,int end) &#123;//root与end对应先序遍历数组的第一个元素下标，及最后一个元素下标 if(root&gt;end) return;//递归边界 int i=root+1; int j=end; //根据二叉搜索树right&lt;root&lt;left的特点，进行遍历,找到先序数组中左右子树的范围 //左子树序列是[root+1,j]; //右子树序列是[i,end] while(i&lt;=end&amp;&amp;pre[root]&gt;pre[i]) i++; //i从左子树序列第一个开始，搜索到右子树序列第一个结束 while(j&gt;=root+1&amp;&amp;pre[root]&lt;=pre[j]) j--; //j从右子树最后一个开始，搜索到左子树最后一个结束 if(j+1!=i) return; postOrder(root+1,j);//左子树 postOrder(i,end);//右子树 post.push_back(pre[root]);&#125;int main() &#123; int n; cin&gt;&gt;n; pre.resize(n); for(int i=0;i&lt;n;i++)&#123; cin&gt;&gt;pre[i]; &#125; postOrder(0,n-1); for(auto it=post.begin();it!=post.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" "; &#125; return 0;&#125; 已知二叉搜索树的先序遍历求其后序遍历123456789101112131415161718192021222324252627282930#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;using namespace std;vector&lt;int&gt; pre,post;void preOrder(int root,int start)&#123; if(root&lt;start) return; int i=root-1; int j=start; while(i&gt;=start&amp;&amp;post[root]&lt;=post[i]) i--; while(j&lt;=root-1&amp;&amp;post[root]&gt;post[j]) j++; if(i+1!=j) return; pre.push_back(post[root]); preOrder(i,start); //这里注意，左子树数组为[start,i],但由于数组是后序遍历数组，所以左子树的根是i preOrder(root-1,j); &#125;int main() &#123; int n; cin&gt;&gt;n; post.resize(100); for(int i=0;i&lt;n;i++)&#123; cin&gt;&gt;post[i]; &#125; preOrder(n-1,0); for(auto it=pre.begin();it!=pre.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" "; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>二叉搜索树</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT A1060 Are They Equal (25分)]]></title>
     <url>%2F2020%2F02%2F26%2FA1060%2F</url>
     <content type="text"><![CDATA[Problem DescriptionIf a machine can save only 3 significant digits, the float numbers 12300 and 12358.9 are considered equal since they are both saved as 0.123×10^5 with simple chopping. Now given the number of significant digits on a machine and two float numbers, you are supposed to tell if they are treated equal in that machine. Input Specification:Each input file contains one test case which gives three numbers N, A and B, where N (&lt;100) is the number of significant digits, and A and B are the two float numbers to be compared. Each float number is non-negative, no greater than 10^100, and that its total digit number is less than 100. Output Specification:For each test case, print in a line YES if the two numbers are treated equal, and then the number in the standard form 0.d[1]…d[N]*10^k (d[1]&gt;0 unless the number is 0); or NO if they are not treated equal, and then the two numbers in their standard form. All the terms must be separated by a space, with no extra space at the end of a line. Note: Simple chopping is assumed without rounding. Sample Input1:3 12300 12358.9 Sample Output1:YES 0.123*10^5 Sample Input1:3 120 128 Sample Output1:NO 0.12010^3 0.12810^3 思路： 先将样例格式转换为0.a1a2a3....x10^e(a1不为零),获取数值本体部分和指数部分，进行比较比较。 但是，所给数据可能出现如下特殊情况，需进一步处理： 000000.0000000xxxx 000000.xxxxxx 00000000000xxxxxxxx 0000xxx.xxxxxx 大概思路为-&gt;删除多余0位-&gt;找到小数点(并删除)-&gt;确定指数e-&gt;在没有小数点，没有高位0的情况下，可确定整数部分a1a2a3a4-&gt;根据精度，添加0位具体处理过程为： 第一个非零位前的0均删除 如果去掉多余零后，是小数点(对应上述前两中情况)，则说明小于1，删除小数点，删除零，继续寻找有效数位。 如果去掉多余零后，是整数(对应上述后两种情况),则说明大于等于1，寻找小数点，删除小数点。 如果去掉多余的零后，长度为零，做说明原数为零，将e赋值0。 如果精度没到要求，补零。 参考代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;string&gt;using namespace std;int change(string &amp;s1,int n) &#123; //返回10的指数,n位有效位数 int len=s1.length(); int e=0; while(s1[0]=='0'&amp;&amp;s1.length()&gt;0) &#123; //删除多余零 s1.erase(s1.begin()); &#125; if(s1[0]=='.') &#123; s1.erase(s1.begin());//删除小数点 while(s1[0]=='0'&amp;&amp;s1.length()&gt;0) &#123; //删除多余零，这是可得到整数部分a1a2a3...(a1&gt;0) s1.erase(s1.begin()); e--;//每删除一位，指数-1 &#125; &#125; else if(s1[0]!='.') &#123; //因为多余的零被删除，所以此时，不是小数点 就是整数 for(int i=0; i&lt;s1.length(); i++) &#123; if(s1[i]=='.') &#123; //找到小数点 s1.erase(s1.begin()+i);//删除小数点，保留整数 e=i; break; &#125; else &#123; //没有小数点纯整数 e=i+1; &#125; &#125; &#125; if(s1.length()==0) &#123; e=0; &#125; if(s1.length()&gt;=n) &#123; //得舍 s1=s1.substr(0,n); &#125; else &#123; while(s1.length()&lt;n) &#123; s1+='0'; &#125; &#125; return e;&#125;int main() &#123; int n; string s1,s2; cin&gt;&gt;n&gt;&gt;s1&gt;&gt;s2; int poly1=change(s1,n); int poly2=change(s2,n); if((s1==s2)&amp;&amp;(poly1==poly2)) &#123; cout&lt;&lt;"YES 0."&lt;&lt;s1&lt;&lt;"*10^"&lt;&lt;poly1; &#125; else &#123; cout&lt;&lt;"NO 0."&lt;&lt;s1&lt;&lt;"*10^"&lt;&lt;poly1&lt;&lt;" 0."&lt;&lt;s2&lt;&lt;"*10^"&lt;&lt;poly2; &#125; return 0;&#125;]]></content>
@@ -64,6 +75,9 @@
     <title><![CDATA[二叉树几种遍历方法间的转换]]></title>
     <url>%2F2020%2F01%2F06%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E5%87%A0%E7%A7%8D%E9%81%8D%E5%8E%86%E6%96%B9%E6%B3%95%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2%2F</url>
     <content type="text"><![CDATA[前言二叉树的遍历是指通过一定顺序访问二叉树的所有结点。遍历方法一般有四种：先序遍历、中序遍历、后序遍历及层序遍历。其中已知先序(或后序)与中序可以求出后序(或先序)遍历。但是，若只知道先序与后序则就不出中序遍历。 案例已知如下一棵二叉树：先序遍历：4 1 3 2 6 5 7中序遍历：1 2 3 4 5 6 7后序遍历：2 3 1 5 7 6 4层序遍历：4 1 6 3 5 7 2 思路 先序遍历数组中第一个元素为根结点。 后序遍历数组最后一个元素则为根结点。 中序遍历数组中，找到根结点，则根结点左侧为左子树，右侧为右子树。 对于求层序遍历的问题，只需在先序或者是后序遍历过程中，用一个变量来记录当前根结点在⼆叉树中所对应的下标，根据下标进行结构体的排序，按顺序输出即可。已知先序与中序求后序12345678910111213141516171819202122232425#include&lt;cstdio&gt;int pre[32],in[32];//pre[]是先序遍历数组，in[]是中序遍历数组 void post(int root,int start,int end)&#123;//root是先序遍历数组中的根节点脚标 if(start&gt;end) return; int i=start; while(i&lt;end&amp;&amp;in[i]!=pre[root]) i++;//i是中序遍历数组中根节点脚标 post(root+1,start,i-1);//左子树递归 post(root+1-start+i,i+1,end);//右子树递归 printf("%d ",pre[root]);&#125;int main()&#123; int n; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;pre[i]); &#125; for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;in[i]); &#125; post(0,0,n-1); return 0;&#125; 已知先序与中序求层序123456789101112131415161718192021222324252627282930313233343536373839404142434445#include&lt;cstdio&gt;#include&lt;vector&gt;#include&lt;algorithm&gt;using namespace std;struct node&#123; int index,value;&#125;; bool cmp(node a,node b)&#123; return a.index&lt;b.index;&#125;vector&lt;node&gt; ans;vector&lt;int&gt; pre,in;void post(int root,int start,int end,int index)&#123;//root是现需遍历数组中的根节点位置 if(start&gt;end) return; int i=start; while(i&lt;end&amp;&amp;in[i]!=pre[root]) i++;//i是中序遍历数组中根节点位置 post(root+1,start,i-1,index*2+1); post(root+1-start+i,i+1,end,index*2+2); ans.push_back(&#123;index,pre[root]&#125;);&#125;int main()&#123; int n; scanf("%d",&amp;n); pre.resize(n); in.resize(n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;pre[i]); &#125; for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;in[i]); &#125; post(0,0,n-1,0); sort(ans.begin(),ans.end(),cmp); for(int i=0;i&lt;ans.size();i++)&#123; if(i!=0) printf(" "); printf("%d",ans[i].value); &#125; return 0;&#125; 已知后序与中序求先序1234567891011121314151617181920212223242526#include&lt;cstdio&gt;int post[32],in[32];//pre[]是先序遍历数组，in[]是中序遍历数组 void pre(int root,int start,int end)&#123;//root是现需遍历数组中的根节点位置 if(start&gt;end) return; int i=start; while(i&lt;end&amp;&amp;in[i]!=post[root]) i++;//i是中序遍历数组中根节点位置 printf("%d ",post[root]); post(root-1-end+i,start,i-1); post(root-1,i+1,end);&#125;int main()&#123; int n; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;post[i]); &#125; for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;in[i]); &#125; post(n-1,0,n-1); return 0;&#125; 已知后序与中序求层序1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;using namespace std;struct node&#123; int index,value;&#125;; bool cmp(node a,node b)&#123; return a.index&lt;b.index;&#125;vector&lt;node&gt; ans;vector&lt;int&gt; post,in;void pre(int root,int start,int end,int index)&#123; if(start&gt;end)&#123; return; &#125; int i=start; while(i&lt;end&amp;&amp;post[root]!=in[i]) i++; ans.push_back(&#123;index,post[root]&#125;); pre(root-1-end+i,start,i-1,2*index+1); pre(root-1,i+1,end,2*index+2);&#125;int main()&#123; int n; scanf("%d",&amp;n); post.resize(n); in.resize(n); for(int i=0;i&lt;n;i++) scanf("%d",&amp;post[i]); for(int i=0;i&lt;n;i++) scanf("%d",&amp;in[i]); pre(n-1,0,n-1,0); sort(ans.begin(),ans.end(),cmp); for(int i=0;i&lt;ans.size();i++)&#123; if(i!=0) cout&lt;&lt;" "; cout&lt;&lt;ans[i].value; &#125; return 0;&#125; 参考文章已知后序与中序输出前序（先序）]]></content>
+      <tags>
+        <tag>二叉树树</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Spring Data JPA 分页工具————Pageable与Page]]></title>
@@ -323,8 +337,8 @@
         <category>Springboot</category>
       </categories>
       <tags>
-        <tag>Springboot</tag>
         <tag>MySQL</tag>
+        <tag>Springboot</tag>
       </tags>
   </entry>
   <entry>
@@ -402,9 +416,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
-        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
+        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>

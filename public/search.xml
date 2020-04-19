@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CCF201412-2]]></title>
+    <url>%2F2020%2F04%2F19%2Fcsp201412-2%2F</url>
+    <content type="text"><![CDATA[问题链接：CCF201412-2 问题描述给定一个n×n的矩阵，左上角到右下角Z字形扫描输出该矩阵的元素。先输入正整数n，再输入n×n个整数。 题目分析模拟关键在于找到下标的变化规律，可以发现扫描过程中共有四种方向，即右，下，右上，左下四个方向每进行一次的右或下的扫描后,则会进行若干次的右上或左下的扫描。不难发现最后一次扫描必定是右或下,第一次扫描必定是右若此次是右扫描,且扫描位置在矩形的上边界,则下次一定会进行若干次的左下扫描。直至到达矩形的左边界或下边界若此次是右扫描,且扫描位置在矩形的上边界,则下次一定会进行若干次的右上扫描。直至到达矩形的右边界或上边界同理，此次若为上扫描，亦然，不在此多加赘述。 参考代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include&lt;iostream&gt;using namespace std;int main() &#123; int n; cin&gt;&gt;n; int a[n+1][n+1]; for(int i=1; i&lt;=n; i++) &#123; for(int j=1; j&lt;=n; j++) &#123; cin&gt;&gt;a[i][j]; &#125; &#125; if(n==1) &#123; cout&lt;&lt;a[1][1]; return 0; &#125; cout&lt;&lt;a[1][1]&lt;&lt;" "; int ii=1,jj=1; //flag1=1表示可以右走，-1为向下走，为0是代表斜着走 //flag2=1代表斜向上走 ,-1表示斜向下走 int flag1=1,flag2=1; while(1) &#123; if(flag1==1)&#123;//右走 jj++; cout&lt;&lt;a[ii][jj]; flag1=0; if(ii==1) flag2=-1; if(ii==n) flag2=1; &#125; else if(flag1==-1)&#123;//下走 ii++; cout&lt;&lt;a[ii][jj]; flag1=0; if(jj==1) flag2=1; if(jj==n) flag2=-1; &#125; if(ii&gt;=n&amp;&amp;jj&gt;=n) break; else cout&lt;&lt;" "; while(flag2==-1&amp;&amp;flag1==0) &#123; //斜向下走 ii++; jj--; cout&lt;&lt;a[ii][jj]&lt;&lt;" "; if(jj==1&amp;&amp;ii!=n)&#123; flag1=-1;//向下走 break; &#125; if(ii==n)&#123; flag1=1;//向右走 break; &#125; &#125; while(flag2==1&amp;&amp;flag1==0) &#123; //斜向上走 ii--; jj++; cout&lt;&lt;a[ii][jj]&lt;&lt;" "; if(ii==1&amp;&amp;jj!=n)&#123; flag1=1;//向右走 break; &#125; if(jj==n)&#123; flag1=-1;//向下走 break; &#125; &#125; &#125; return 0;&#125; 小结 当n=1时，需特殊讨论 因为赋值时，数组脚标从1至n的，因此开辟的数组大小为n+1]]></content>
+      <categories>
+        <category>CCF计算机软件能力认证</category>
+      </categories>
+      <tags>
+        <tag>CCF</tag>
+        <tag>模拟</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[二叉搜索树先序遍历与后序遍历之间的转换]]></title>
     <url>%2F2020%2F03%2F11%2F%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86%E4%B8%8E%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2%2F</url>
     <content type="text"><![CDATA[思路在二叉搜索树中，左子树的所有结点的权值小于根结点的权值，右子树的所有结点的权值大于等于根结点的权值根据二叉搜索树的这条特性便可以找到，先序(或后序)遍历数组中对应的左右子树的子序列，在多次递归即可。 已知二叉搜索树的先序遍历求其后序遍历123456789101112131415161718192021222324252627282930313233#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;using namespace std;vector&lt;int&gt; pre,post;void postOrder(int root,int end) &#123;//root与end对应先序遍历数组的第一个元素下标，及最后一个元素下标 if(root&gt;end) return;//递归边界 int i=root+1; int j=end; //根据二叉搜索树right&lt;root&lt;left的特点，进行遍历,找到先序数组中左右子树的范围 //左子树序列是[root+1,j]; //右子树序列是[i,end] while(i&lt;=end&amp;&amp;pre[root]&gt;pre[i]) i++; //i从左子树序列第一个开始，搜索到右子树序列第一个结束 while(j&gt;=root+1&amp;&amp;pre[root]&lt;=pre[j]) j--; //j从右子树最后一个开始，搜索到左子树最后一个结束 if(j+1!=i) return; postOrder(root+1,j);//左子树 postOrder(i,end);//右子树 post.push_back(pre[root]);&#125;int main() &#123; int n; cin&gt;&gt;n; pre.resize(n); for(int i=0;i&lt;n;i++)&#123; cin&gt;&gt;pre[i]; &#125; postOrder(0,n-1); for(auto it=post.begin();it!=post.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" "; &#125; return 0;&#125; 已知二叉搜索树的先序遍历求其后序遍历123456789101112131415161718192021222324252627282930#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;vector&gt;using namespace std;vector&lt;int&gt; pre,post;void preOrder(int root,int start)&#123; if(root&lt;start) return; int i=root-1; int j=start; while(i&gt;=start&amp;&amp;post[root]&lt;=post[i]) i--; while(j&lt;=root-1&amp;&amp;post[root]&gt;post[j]) j++; if(i+1!=j) return; pre.push_back(post[root]); preOrder(i,start); //这里注意，左子树数组为[start,i],但由于数组是后序遍历数组，所以左子树的根是i preOrder(root-1,j); &#125;int main() &#123; int n; cin&gt;&gt;n; post.resize(100); for(int i=0;i&lt;n;i++)&#123; cin&gt;&gt;post[i]; &#125; preOrder(n-1,0); for(auto it=pre.begin();it!=pre.end();it++)&#123; cout&lt;&lt;*it&lt;&lt;" "; &#125; return 0;&#125;]]></content>
@@ -416,9 +428,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
+        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
-        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>

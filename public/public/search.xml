@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PAT B1034 有理数四则运算 (20分)]]></title>
+    <url>%2F2021%2F01%2F04%2FB1034%2F</url>
+    <content type="text"><![CDATA[题目描述本题要求编写程序，计算 2 个有理数的和、差、积、商。 输入格式：输入在一行中按照 a1/b1 a2/b2 的格式给出两个分数形式的有理数，其中分子和分母全是整型范围内的整数，负号只可能出现在分子前，分母不为 0。 输出格式：分别在 4 行中按照 有理数1 运算符 有理数2 = 结果 的格式顺序输出 2 个有理数的和、差、积、商。注意输出的每个有理数必须是该有理数的最简形式 k a/b，其中 k 是整数部分，a/b 是最简分数部分；若为负数，则须加括号；若除法分母为 0，则输出 Inf。题目保证正确的输出中没有超过整型范围的整数。 输入样例 1：2/3 -4/2 输出样例 1：2/3 + (-2) = (-1 1/3)2/3 - (-2) = 2 2/32/3 * (-2) = (-1 1/3)2/3 / (-2) = (-1/3) 输入样例 2：5/3 0/6 输出样例 2：1 2/3 + 0 = 1 2/31 2/3 - 0 = 1 2/31 2/3 * 0 = 01 2/3 / 0 = Inf 参考代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114#include&lt;cstdio&gt;#include&lt;iostream&gt;#include&lt;algorithm&gt;#include&lt;cmath&gt; using namespace std;//最大公因式,分数化简 //递归式：gcd(a,b)=gcd(b,a%b)//递归边界：gcd(a,0)=a; long long gcd(long long a,long long b) &#123; if(b==0) return a; else return gcd(b,a%b);&#125;struct fraction &#123; long long up; long long down;&#125;;//分数化简 fraction reduction(fraction result) &#123; //分母小于零，分子分母变为相反数 if(result.down&lt;0)&#123; result.down*=-1; result.up*=-1; &#125; //分子为零，分母变为1 if(result.up==0)&#123; result.down=1; &#125;else&#123;//分子分母同除最大公因数，化简 long long temp=gcd(abs(result.up),abs(result.down)); result.up/=temp; result.down/=temp; &#125; return result;&#125;//分数相加，最后输出化简后的结果 fraction add(fraction f1,fraction f2)&#123; fraction result; result.up=f1.down*f2.up+f1.up*f2.down; result.down=f1.down*f2.down; return reduction(result);&#125;//减fraction sub(fraction f1,fraction f2)&#123; fraction result; result.up=f1.up*f2.down-f1.down*f2.up; result.down=f1.down*f2.down; return reduction(result);&#125; //乘fraction mult(fraction f1,fraction f2)&#123; fraction result; result.up=f1.up*f2.up; result.down=f1.down*f2.down; return reduction(result);&#125; //除fraction divide(fraction f1,fraction f2)&#123; fraction result; result.up=f1.up*f2.down; result.down=f1.down*f2.up; return reduction(result);&#125; //分数输出void show(fraction f)&#123; f=reduction(f); if(f.up&lt;0) printf("("); //整数 if(f.down==1) printf("%lld",f.up); //假分数 else if(abs(f.up)&gt;f.down) &#123;//化简之后f.down是正数，但是f.up不确定 printf("%lld %lld/%lld",f.up/f.down,abs(f.up)%f.down,f.down); &#125;else&#123;//真分数 printf("%lld/%lld",f.up,f.down); &#125; if(f.up&lt;0) printf(")");&#125; int main() &#123; fraction a,b; scanf("%lld/%lld %lld/%lld",&amp;a.up,&amp;a.down,&amp;b.up,&amp;b.down); //加法 show(a); printf(" + "); show(b); printf(" = "); show(add(a,b)); printf("\n"); //减法 show(a); printf(" - "); show(b); printf(" = "); show(sub(a,b)); printf("\n"); //乘法 show(a); printf(" * "); show(b); printf(" = "); show(mult(a,b)); printf("\n"); //除法 show(a); printf(" / "); show(b); printf(" = "); if(b.up==0) printf("Inf"); else show(divide(a,b)); return 0;&#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CCF201412-2]]></title>
     <url>%2F2020%2F04%2F19%2Fcsp201412-2%2F</url>
     <content type="text"><![CDATA[问题链接：CCF201412-2 问题描述给定一个n×n的矩阵，左上角到右下角Z字形扫描输出该矩阵的元素。先输入正整数n，再输入n×n个整数。 题目分析模拟关键在于找到下标的变化规律，可以发现扫描过程中共有四种方向，即右，下，右上，左下四个方向每进行一次的右或下的扫描后,则会进行若干次的右上或左下的扫描。不难发现最后一次扫描必定是右或下,第一次扫描必定是右若此次是右扫描,且扫描位置在矩形的上边界,则下次一定会进行若干次的左下扫描。直至到达矩形的左边界或下边界若此次是右扫描,且扫描位置在矩形的上边界,则下次一定会进行若干次的右上扫描。直至到达矩形的右边界或上边界同理，此次若为上扫描，亦然，不在此多加赘述。 参考代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576#include&lt;iostream&gt;using namespace std;int main() &#123; int n; cin&gt;&gt;n; int a[n+1][n+1]; for(int i=1; i&lt;=n; i++) &#123; for(int j=1; j&lt;=n; j++) &#123; cin&gt;&gt;a[i][j]; &#125; &#125; if(n==1) &#123; cout&lt;&lt;a[1][1]; return 0; &#125; cout&lt;&lt;a[1][1]&lt;&lt;" "; int ii=1,jj=1; //flag1=1表示可以右走，-1为向下走，为0是代表斜着走 //flag2=1代表斜向上走 ,-1表示斜向下走 int flag1=1,flag2=1; while(1) &#123; if(flag1==1)&#123;//右走 jj++; cout&lt;&lt;a[ii][jj]; flag1=0; if(ii==1) flag2=-1; if(ii==n) flag2=1; &#125; else if(flag1==-1)&#123;//下走 ii++; cout&lt;&lt;a[ii][jj]; flag1=0; if(jj==1) flag2=1; if(jj==n) flag2=-1; &#125; if(ii&gt;=n&amp;&amp;jj&gt;=n) break; else cout&lt;&lt;" "; while(flag2==-1&amp;&amp;flag1==0) &#123; //斜向下走 ii++; jj--; cout&lt;&lt;a[ii][jj]&lt;&lt;" "; if(jj==1&amp;&amp;ii!=n)&#123; flag1=-1;//向下走 break; &#125; if(ii==n)&#123; flag1=1;//向右走 break; &#125; &#125; while(flag2==1&amp;&amp;flag1==0) &#123; //斜向上走 ii--; jj++; cout&lt;&lt;a[ii][jj]&lt;&lt;" "; if(ii==1&amp;&amp;jj!=n)&#123; flag1=1;//向右走 break; &#125; if(jj==n)&#123; flag1=-1;//向下走 break; &#125; &#125; &#125; return 0;&#125; 小结 当n=1时，需特殊讨论 因为赋值时，数组脚标从1至n的，因此开辟的数组大小为n+1]]></content>
@@ -428,9 +439,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
-        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
+        <tag>博客美化</tag>
       </tags>
   </entry>
   <entry>

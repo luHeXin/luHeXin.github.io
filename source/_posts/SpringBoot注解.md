@@ -1,10 +1,10 @@
 ---
-title: SpringBoot注解详解
+title: Spring Boot注解详解
 date: 2019-08-08 17:27:48
 tags:
-- Springboot
-- Springboot注解
-categories: Springboot
+- Spring Boot
+- Spring Boot注解
+categories: Spring Boot
 ---
 # 注解的含义
 >Java 注解用于为 Java 代码提供元数据。作为元数据，注解不直接影响你的代码执行，但也有一些类型的注解实际上可以用于这一目的。Java 注解是从 Java5 开始添加到 Java 的。<br/>

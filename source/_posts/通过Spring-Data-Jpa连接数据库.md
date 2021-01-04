@@ -3,8 +3,8 @@ title: 通过Spring-Data-Jpa连接MySQL,并操作数据库
 date: 2019-08-05 22:52:54
 tags:
 - MySQL
-- Springboot
-categories: Springboot
+- Spring Boot
+categories: Spring Boot
 ---
 # 版本
 MySQL：5.7.27

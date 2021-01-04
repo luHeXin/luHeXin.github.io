@@ -7,7 +7,6 @@ tags:
 categories: git
 ---
 # 简介
-此篇文章内容浅显，针对于未接触过git的小白。<br/>
 该篇文章将简单的介绍如何通过git来上传自己的代码至github，如何进行分支开发，以及如何克隆github中的代码到本地。
 # 第一步
 [下载git](https://git-scm.com/downloads)<br/>

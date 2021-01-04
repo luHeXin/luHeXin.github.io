@@ -1,10 +1,10 @@
 ---
-title: SpringBoot中JPA扩展查询
+title: Spring Boot中JPA扩展查询
 date: 2019-08-12 17:56:30
 tags:
-- SpringBoot
+- Spring Boot
 - Spring JPA
-categories: SpringBoot
+categories: Spring Boot
 ---
 # 前言
 JPA的出现，使得在开发过程中，几乎不需要写什么sql语句，便可完成对数据的增删改查。但是，其查询功能有时并不能完全满足我们的需求，因此，就需要开发者基于JPA进行扩展查询，本文将结合一个小案例来阐述Springboot中JPA扩展查询的使用。

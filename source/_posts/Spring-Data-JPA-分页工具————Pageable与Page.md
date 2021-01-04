@@ -2,7 +2,7 @@
 title: 'Spring Data JPA  分页工具————Pageable与Page '
 date: 2020-01-05 21:38:27
 tags:
-- SpringBoot
+- Spring Boot
 - 分页
 ---
 # 预先导入的包

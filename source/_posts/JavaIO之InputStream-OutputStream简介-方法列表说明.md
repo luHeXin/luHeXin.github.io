@@ -2,9 +2,9 @@
 title: JavaIO之InputStream OutputStream常用方法说明
 date: 2019-10-06 13:00:33
 tags:
-- JAVA基础
+- Java
 - IO流
-categories: JAVA基础
+categories: Java
 ---
 # 基本含义
 InputStream:输入字节流，是一个抽象类，包含了读取方法以及辅助方法。

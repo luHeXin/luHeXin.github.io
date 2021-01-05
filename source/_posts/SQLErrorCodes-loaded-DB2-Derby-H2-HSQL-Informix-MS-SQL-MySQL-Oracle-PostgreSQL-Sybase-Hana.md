@@ -3,7 +3,6 @@ title: ' SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, O
 date: 2019-10-21 23:05:15
 tags:
 - SpringMVC
-- 报错
 ---
 # 错误描述
 学习使用SpringMVC框架，在进行数据的插入时出现如下错误:

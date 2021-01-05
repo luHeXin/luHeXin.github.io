@@ -119,7 +119,6 @@
     <content type="text"><![CDATA[预先导入的包import org.springframework.data.domain.Page;import org.springframework.data.domain.PageRequest; Pageable概述1Page&lt;OrderMaster&gt; findByBuyerOpenid(String buyerOpenid, Pageable pageable); Pageable是Spring Data库中定义的一个接口，用于构造翻页查询，是所有分页相关信息的一个抽象，通过该接口，我们可以得到和分页相关所有信息（例如pageNumber、pageSize等），这样，Jpa就能够通过pageable参数来得到一个带分页信息的Sql语句。PageRequest是Pageable的实现。 接口123456789101112131415161718public interface Pageable &#123; int getPageNumber();//返回要返回的页面 int getPageSize();//返回要返回的项目的数量 long getOffset();//根据底层页面和页面大小返回偏移量 Sort getSort();//返回排序参数 Pageable next(); Pageable previousOrFirst(); Pageable first(); boolean hasPrevious();&#125; Page概述1Page&lt;OrderMaster&gt; result=repository.findByBuyerOpenid(OPENID,request); 用于储存查询的结果集。 接口1234567891011121314151617181920212223242526272829public interface Page&lt;T&gt; extends Iterable&lt;T&gt; &#123; int getNumber(); //当前第几页 返回当前页的数目。总是非负的 int getSize(); //返回当前页面的大小 int getTotalPages(); //返回分页总数 int getNumberOfElements(); //返回当前页上的元素数 long getTotalElements(); //返回元素总数 boolean hasPreviousPage(); //返回如果有上一页 boolean isFirstPage(); //返回当前页是否为第一页 boolean hasNextPage(); //返回如果有下一页 boolean isLastPage(); //返回当前页是否为最后一页 Iterator&lt;T&gt; iterator(); List&lt;T&gt; getContent(); //将所有数据返回为List boolean hasContent(); //返回数据是否有内容 Sort getSort(); //返回页的排序参数&#125; Pageable与Page实例采用单元测试的形式进行实例说明。 1234public interface OrderMasterRepository extends JpaRepository&lt;OrderMaster,String&gt; &#123; Page&lt;OrderMaster&gt; findByBuyerOpenid(String buyerOpenid, Pageable pageable);&#125; 123456789101112131415161718192021222324252627282930313233343536373839404142public class OrderMasterRepositoryTest &#123; private Logger logger= LoggerFactory.getLogger(OrderMasterRepositoryTest.class); @Autowired private OrderMasterRepository repository; private final String OPENID="110110"; @Test public void saveTest()&#123;//存储两条数据 OrderMaster orderMaster=new OrderMaster(); orderMaster.setOrderId("123456"); orderMaster.setBuyerName("师兄"); orderMaster.setBuyerPhone("23456789123"); orderMaster.setBuyerAddress("北京"); orderMaster.setBuyerOpenid("110110"); orderMaster.setOrderAmount(new BigDecimal(2.3)); OrderMaster result=repository.save(orderMaster); OrderMaster orderMaster1=new OrderMaster(); orderMaster1.setOrderId("789456"); orderMaster1.setBuyerName("师姐"); orderMaster1.setBuyerPhone("13222222222"); orderMaster1.setBuyerAddress("杭州"); orderMaster1.setBuyerOpenid("110110"); orderMaster1.setOrderAmount(new BigDecimal(6.7)); repository.save(orderMaster1); Assert.assertNotNull(result); &#125; @Test public void findByBuyerOpenid() &#123; //PageRequest request=new PageRequest(0,2);//从第1页开始，每页2个数据;Pageable实现：PageRequest PageRequest request=PageRequest.of(0,2);//此写法为新写法 Page&lt;OrderMaster&gt; result=repository.findByBuyerOpenid(OPENID,request); logger.info(result.toString());//Page 1 of 1(第一页共一页) Assert.assertNotNull(result.getTotalElements()); &#125;&#125;]]></content>
       <tags>
         <tag>Spring Boot</tag>
-        <tag>分页</tag>
       </tags>
   </entry>
   <entry>
@@ -147,7 +146,6 @@
     <content type="text"><![CDATA[错误描述学习使用SpringMVC框架，在进行数据的插入时出现如下错误: 问题原因哎，问题原因很简单sql传参与该字段在数据库的数据类型不匹配…… 网上其实很多针对于该问题的回答，几乎全是将问题归于字段在数据库的数据类型不匹配，这确实是对的，以SpringMVC为例，我的问题就是由于mapper中的SQL语句里的一个字段与数据库不匹配而造成的。 解决办法 查找sql传参与该字段在数据库的数据类型是不是匹配。 在可视化界面（plsql,navicat）里面执行一下自己的sql是不是有语法错误，可视化界面里面报的错误要比项目日志里面报的明确得多。 SQL语句与数据库中的字段可以相匹配，但是前端js代码中可能存在对非数据库字段进行例如插进数据库等操作，导致该问题的发生，因此还需留意前端代码关于数据的处理。]]></content>
       <tags>
         <tag>SpringMVC</tag>
-        <tag>报错</tag>
       </tags>
   </entry>
   <entry>
@@ -166,10 +164,10 @@
     <url>%2F2019%2F10%2F06%2FJavaIO%E4%B9%8BInputStream-OutputStream%E7%AE%80%E4%BB%8B-%E6%96%B9%E6%B3%95%E5%88%97%E8%A1%A8%E8%AF%B4%E6%98%8E%2F</url>
     <content type="text"><![CDATA[基本含义InputStream:输入字节流，是一个抽象类，包含了读取方法以及辅助方法。 OutputStream:输出字节流，是一个抽象类，包含了写入方法以及辅助方法。 常用方法详解InputStreamread() read() 从输入流中读取数据的下一个字节。返回 0 到 255 范围内的 int 字节值，如果因为已经到达流末尾而没有可用的字节，则返回值 -1。 方法将会一直阻塞,直到数据可用,检测到流的末尾或者抛出异常。 无参数的read() 是抽象方法,由实现类提供实现。 无参数的read()返回的数据为读取到的字节值，而有参数的则是读取到字节数组中,所以返回值为读取到的个数。 read方法关键点就是要么就是直接返回读取的字节，要么就是将读取到的字节放入字节数组中,字节数组是你传递进去的。close() 关闭流并释放与此流有关的系统资源,可能抛出IOException。 close方法是空方法。 示例代码12345678910111213141516171819202122232425262728public class IO &#123; public static void main(String[] args) throws IOException &#123; File file=new File("C:\\1.txt"); /** * 读取数据 * 为了防止中文乱码，一个汉字需三个字节 */ //输入流读取数据 InputStream inputStream = new FileInputStream(file); int length; byte[] bs = new byte[100];//设置缓冲byte数组接受读取文件内容 //一次读取一个字节 while ((length=inputStream.read(bs))!=-1) &#123;//读取数据存到bs中 System.out.print(new String(bs)); &#125; //关闭IO流 inputStream.close(); //方式二，会导致中文乱码,因为一个中文是三个字节// InputStream inputStream2=new FileInputStream(file);// int i;// while((i=inputStream2.read())!=-1) &#123;//读取的数据存到i中// System.out.println((char)i);// &#125;// inputStream2.close(); &#125;&#125; OutputStreamwrite(int b) 将指定的字节写入此输出流。 虽然参数是int，但写入的是byte。write(byte[] b) 将 b.length 个字节从指定的 byte 数组写入此输出流write(byte[] b,int off,int len) 将指定 byte 数组中从偏移量 off 开始的 len 个字节写入此输出流,write(b, off, len) 的常规协定是：将数组 b 中的某些字节按顺序写入输出流；元素 b[off] 是此操作写入的第一个字节，b[off+len-1] 是此操作写入的最后一个字节。flush() flush的含义为刷新,在写入数据时使用 之所以需要刷新,是因为有的输出流的写方法实现,可能已经缓冲了以前写入的任何字节,那么,这个方法用于提供能够立即将数据写入到磁盘的功能,不过,只是立即请求操作系统进行处理,而不保证这些字节实际已经写入到物理设备,比如磁盘。示例代码1234567891011121314151617public class IO &#123; public static void main(String[] args) throws IOException &#123; File file=new File("C:\\1.txt"); /** * 写入数据 */ //输出流写入数据,没有指定文件则创建 OutputStream outputStream = new FileOutputStream(file); // 写入数据 byte[] datas="你好".getBytes(); outputStream.write(datas); outputStream.flush();//内存中数据刷新到硬盘 // 关闭IO流 outputStream.close(); &#125;&#125; 运用字节流，复制文件示例代码123456789101112131415161718public class IO &#123; public static void main(String[] args) throws IOException &#123; /** * 复制文件 */ FileInputStream inputStream=new FileInputStream("C:\\1.txt"); FileOutputStream outputStream=new FileOutputStream("C:\\2.txt"); int i=0; while((i=inputStream.read())!=-1) &#123; outputStream.write(i); &#125; inputStream.close(); outputStream.flush(); outputStream.close(); System.out.println("复制完毕")&#125; 参考文章：JavaIO之InputStream OutputStream简介 方法列表说明]]></content>
       <categories>
-        <category>JAVA基础</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>JAVA基础</tag>
+        <tag>Java</tag>
         <tag>IO流</tag>
       </tags>
   </entry>
@@ -349,7 +347,6 @@
       </categories>
       <tags>
         <tag>Spring Boot</tag>
-        <tag>Spring Boot注解</tag>
       </tags>
   </entry>
   <entry>

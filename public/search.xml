@@ -12,6 +12,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[javax.imageio.IIOException:Can't read input file!问题解决]]></title>
+    <url>%2F2021%2F01%2F05%2Fjavax-imageio-IIOException-Can-t-read-input-file-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%2F</url>
+    <content type="text"><![CDATA[问题描述单元测试时，报错：javax.imageio.IIOException: Can’t read input file! 问题代码12345678910 private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();// 调用Thumbnails生成带有图片try &#123; Thumbnails.of(thumbnail.getImage()).size(200, 200) .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f) .outputQuality(0.8f).toFile(dest); &#125; catch (IOException e) &#123; logger.error(e.toString()); throw new RuntimeException("创建缩略图失败：" + e.toString()); &#125; 报错信息javax.imageio.IIOException: Can&#39;t read input file! 问题分析及解决图片的路径出了问题，图片是放在D:\JAVA_places\schoolShop\schoolShop\src\main\resources下的，在文件单元测试编译时，会被放在D:\JAVA_places\schoolShop\schoolShop\target\test-classes文件夹中。但是，在单元测试中不能读取D:\JAVA_places\schoolShop\schoolShop\src\main\resources中的内容，因此需将图片放到D:\JAVA_places\schoolShop\schoolShop\src\test\resources文件夹下，这样在编译执行的时候，文件便加载到D:\JAVA_places\schoolShop\schoolShop\target\test-classes文件夹中。当然，直接将图片复制到D:\JAVA_places\schoolShop\schoolShop\target\test-classes文件夹中也是可以解决该问题的。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT B1035 插入与归并 (25分)]]></title>
     <url>%2F2021%2F01%2F04%2FB1035%2F</url>
     <content type="text"><![CDATA[题目描述根据维基百科的定义： 插入排序是迭代算法，逐一获得输入数据，逐步产生有序的输出序列。每步迭代中，算法从输入序列中取出一元素，将之插入有序序列中正确的位置。如此迭代直到全部元素有序。 归并排序进行如下迭代操作：首先将原始序列看成 N 个只包含 1 个元素的有序子序列，然后每次迭代归并两个相邻的有序子序列，直到最后只剩下 1 个有序的序列。 现给定原始序列和由某排序算法产生的中间序列，请你判断该算法究竟是哪种排序算法？ 输入格式输入在第一行给出正整数 N (≤100)；随后一行给出原始序列的 N 个整数；最后一行给出由某排序算法产生的中间序列。这里假设排序的目标序列是升序。数字间以空格分隔。 输出格式首先在第 1 行中输出Insertion Sort表示插入排序、或Merge Sort表示归并排序；然后在第 2 行中输出用该排序算法再迭代一轮的结果序列。题目保证每组测试的结果是唯一的。数字间以空格分隔，且行首尾不得有多余空格。 输入样例 110 3 1 2 8 7 5 9 4 6 0 1 2 3 7 8 5 9 4 6 0 输出样例 1Insertion Sort 1 2 3 5 7 8 9 4 6 0 输入样例 210 3 1 2 8 7 5 9 4 0 6 1 3 2 8 5 7 4 9 0 6 输出样例 2Merge Sort 1 2 3 8 4 5 7 9 0 6 思路模拟插入和归并排序过程，每进行一次迭代，与输入样例的第三行数据相比较，查看数据是否相同，若判断结果为相同，则还需进行一次迭代。 但注意的一点便是初始数据不参与比较。 数列比较123456bool isSame(int a1[],int b1[])&#123; for(int i=0;i&lt;n;i++)&#123; if(a1[i]!=b1[i]) return false; &#125; return true;&#125; 插入排序12345678910111213int n;void InsertSort(int a[])&#123; for(int i=1 ; i&lt;n ; i++)&#123; int temp=a[i]; int j=i; while(j&gt;0 &amp;&amp; a[j-1]&gt;temp)&#123; //向前挪,前面的值赋给后面 a[j]=a[j-1]; j--; &#125; a[j]=temp; &#125;&#125; 归并排序12345678int n;void mergeSort(int a[])&#123; for(int i=2 ; i/2&lt;=n ; i*=2)&#123; for(int j=0 ; j&lt;n ; j+=i)&#123; sort(a + j , a + min(i + j , n)); &#125; &#125;&#125; 参考代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071#include&lt;cstdio&gt; #include&lt;algorithm&gt;#include&lt;cmath&gt;using namespace std;int n,a[101],b[101],ori[101];bool isSame(int a1[],int b1[])&#123; for(int i=0;i&lt;n;i++)&#123; if(a1[i]!=b1[i]) return false; &#125; return true;&#125;void show(int a1[])&#123; for(int i=0;i&lt;n;i++)&#123; printf("%d",a1[i]); if(i!=n-1) printf(" "); &#125;&#125;bool InsertSort()&#123; bool flag=false; for(int i=1;i&lt;n;i++)&#123; if(i!=1&amp;&amp;isSame(ori,b))&#123; flag=true; &#125; int temp=ori[i]; int j=i; while(j&gt;0&amp;&amp;ori[j-1]&gt;temp)&#123; //向前挪,前面的值赋给后面 ori[j]=ori[j-1]; j--; &#125; ori[j]=temp; if(flag==true) return true; &#125; return false;&#125;void mergeSort()&#123; bool flag=false; for(int i=2;i/2&lt;=n;i*=2)&#123; if(i!=2&amp;&amp;isSame(a,b))&#123; flag=true; &#125; for(int j=0;j&lt;n;j+=i)&#123; sort(a+j,a+min(i+j,n)); &#125; if(flag==true) return; &#125;&#125;int main()&#123; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;a[i]); ori[i]=a[i]; &#125; for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;b[i]); &#125; if(InsertSort())&#123; printf("Insertion Sort\n"); show(ori); &#125;else&#123; printf("Merge Sort\n"); mergeSort(); show(a); &#125; return 0; &#125;]]></content>
@@ -458,9 +469,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
+        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
-        <tag>博客美化</tag>
       </tags>
   </entry>
 </search>

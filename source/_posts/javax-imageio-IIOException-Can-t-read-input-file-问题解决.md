@@ -1,7 +1,7 @@
 ---
-title: 'javax.imageio.IIOException: Can't read input file!问题解决'
-date: 2021-01-05 22:19:53
-tags:
+title: javax.imageio.IIOException:Can't read input file!问题解决
+date: 2021-01-05 22:19:53 
+tags: 
 - Java
 categories: Java
 ---
@@ -11,16 +11,17 @@ categories: Java
 ## 问题代码
 
 ``` java
-    private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
 	// 调用Thumbnails生成带有图片
 	try {
-		Thumbnails.of(thumbnail.getImage()).size(200, 200)
-			.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
-			.outputQuality(0.8f).toFile(dest);
-		} catch (IOException e) {
-			logger.error(e.toString());
-			throw new RuntimeException("创建缩略图失败：" + e.toString());
-		}
+	Thumbnails.of(thumbnail.getImage()).size(200, 200)
+		.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
+		.outputQuality(0.8f).toFile(dest);
+	} catch (IOException e) {
+		logger.error(e.toString());
+		throw new RuntimeException("创建缩略图失败：" + e.toString());
+	}
+	
 ```
 
 ## 报错信息

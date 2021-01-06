@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[javax.imageio.IIOException:Can't read input file!问题解决]]></title>
     <url>%2F2021%2F01%2F05%2Fjavax-imageio-IIOException-Can-t-read-input-file-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%2F</url>
-    <content type="text"><![CDATA[问题描述单元测试时，报错：javax.imageio.IIOException: Can’t read input file! 问题代码12345678910 private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();// 调用Thumbnails生成带有图片try &#123; Thumbnails.of(thumbnail.getImage()).size(200, 200) .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f) .outputQuality(0.8f).toFile(dest); &#125; catch (IOException e) &#123; logger.error(e.toString()); throw new RuntimeException("创建缩略图失败：" + e.toString()); &#125; 报错信息javax.imageio.IIOException: Can&#39;t read input file! 问题分析及解决图片的路径出了问题，图片是放在D:\JAVA_places\schoolShop\schoolShop\src\main\resources下的，在文件单元测试编译时，会被放在D:\JAVA_places\schoolShop\schoolShop\target\test-classes文件夹中。但是，在单元测试中不能读取D:\JAVA_places\schoolShop\schoolShop\src\main\resources中的内容，因此需将图片放到D:\JAVA_places\schoolShop\schoolShop\src\test\resources文件夹下，这样在编译执行的时候，文件便加载到D:\JAVA_places\schoolShop\schoolShop\target\test-classes文件夹中。当然，直接将图片复制到D:\JAVA_places\schoolShop\schoolShop\target\test-classes文件夹中也是可以解决该问题的。]]></content>
+    <content type="text"><![CDATA[问题描述单元测试时，报错：javax.imageio.IIOException: Can’t read input file! 问题代码12345678910private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath(); // 调用Thumbnails生成带有图片 try &#123; Thumbnails.of(thumbnail.getImage()).size(200, 200) .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f) .outputQuality(0.8f).toFile(dest); &#125; catch (IOException e) &#123; logger.error(e.toString()); throw new RuntimeException("创建缩略图失败：" + e.toString()); &#125; 报错信息javax.imageio.IIOException: Can&#39;t read input file! 问题分析及解决图片的路径出了问题，图片是放在D:\JAVA_places\schoolShop\schoolShop\src\main\resources下的，在文件单元测试编译时，会被放在D:\JAVA_places\schoolShop\schoolShop\target\test-classes文件夹中。但是，在单元测试中不能读取D:\JAVA_places\schoolShop\schoolShop\src\main\resources中的内容，因此需将图片放到D:\JAVA_places\schoolShop\schoolShop\src\test\resources文件夹下，这样在编译执行的时候，文件便加载到D:\JAVA_places\schoolShop\schoolShop\target\test-classes文件夹中。当然，直接将图片复制到D:\JAVA_places\schoolShop\schoolShop\target\test-classes文件夹中也是可以解决该问题的。]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -469,9 +469,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
-        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
+        <tag>博客美化</tag>
       </tags>
   </entry>
 </search>

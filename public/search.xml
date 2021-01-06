@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java及其框架基本概念的理解]]></title>
+    <url>%2F2021%2F01%2F07%2FJava%E5%8F%8A%E5%85%B6%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%9A%84%E7%90%86%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[RESTful架构REST(即Representational State Transfer，译为，表现层状态转化)是一种互联网软件的架构原则，如果一个架构符合REST原则，就称它为RESTful架构。通俗的讲便是，“资源”在网络传输中以某种“表现形式(表现层)”进行“状态转化” 。 资源（Resource）我们可以把真实的对象数据称为资源。一个资源既可以是一个集合，也可以是单个个体。任何事物，只要有被引用到的必要，它就是一个资源。每种资源对应一个特定的URI(Uniform Resource Identifier)。 表现层（Representational）资源的表现形式，比如HTML格式、XML格式、JSON格式等。 RESTFUL是一种网络应用程序的设计风格和开发方式，基于HTTP，可以使用XML格式定义或JSON格式定义。 状态转化（State Transfer）互联网通信协议 HTTP 协议，是一个无状态协议，所有的资源状态都保存在服务器端。客户端通过特定的 HTTP 动词，对服务器端资源进行操作，实现”表现层状态转化”。 总结 每一个 URI (Uniform Resource Identifier) 代表一种资源； 客户端和服务器之间，传递这种资源的某种表现形式比如 json，xml，image,txt 等等； 客户端通过特定的 HTTP 动词(GET、POST、PUT、DELETE)，对服务器端资源进行操作，实现”表现层状态转化”。参考文章http://www.ruanyifeng.com/blog/2011/09/restful.html https://www.runoob.com/w3cnote/restful-architecture.html Java beanJava欠缺属性、事件、多重继承功能。所以，如果要在Java程序中实现一些面向对象编程的常见需求，只能手写大量胶水代码。Java Bean正是编写这套胶水代码的惯用模式或约定。 Java bean是表达实体和信息的规范，便于封装重用。通常与数据库中的表对应。也称为pojo，entity，domain。 特点 所有属性为private 提供默认构造方法 提供getter和setter 实现serializable接口 参考文章https://www.zhihu.com/question/19773379]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT B1043 输出PATest (20分)]]></title>
     <url>%2F2021%2F01%2F06%2FB1043%2F</url>
     <content type="text"><![CDATA[题目描述给定一个长度不超过 104 的仅由英文字母构成的字符串。请将字符重新调整顺序，按 PATestPATest.... 这样的顺序输出，并忽略其它字符。当然，六种字符的个数不一定是一样多的，若某种字符已经输出完，则余下的字符仍按 PATest 的顺序打印，直到所有字符都被输出。 输入格式输入在一行中给出一个长度不超过 104 的、仅由英文字母构成的非空字符串。 输出格式在一行中按题目要求输出排序后的字符串。题目保证输出非空。 输入样例redlesPayBestPATTopTeePHPereatitAPPT 输出样例PATestPATestPTetPTePePee 思路：统计字符串中P、A、T、e、s、t个字符的数目，然后按要求序列输出，并将其相应字符的数目减一，当某一字符数目为零时，不输出。 参考代码11234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include&lt;cstdio&gt;#include&lt;cstring&gt;int maxn=10010;int main()&#123; int n=0,countP=0,countA=0,countT=0,counte=0,counts=0,countt=0; char a[maxn]; memset(a,0,sizeof(a)); fgets(a,maxn,stdin); int len=strlen(a); for(int i=0;i&lt;len;i++)&#123; if(a[i]=='P') countP++; else if(a[i]=='A') countA++; else if(a[i]=='T') countT++; else if(a[i]=='e') counte++; else if(a[i]=='s') counts++; else if(a[i]=='t') countt++; &#125; for(int i=0;i&lt;len;i++)&#123; if(countP&gt;0)&#123; countP--; printf("P"); &#125; if(countA&gt;0)&#123; countA--; printf("A"); &#125; if(countT&gt;0)&#123; countT--; printf("T"); &#125; if(counte&gt;0)&#123; counte--; printf("e"); &#125; if(counts&gt;0)&#123; counts--; printf("s"); &#125; if(countt&gt;0)&#123; countt--; printf("t"); &#125; &#125; return 0;&#125; 参考代码2因为已知给定的字符串只含大小写英文字母，因此，用散列的思想更好一些。 123456789101112131415161718192021222324252627282930313233#include&lt;cstdio&gt;#include&lt;cstring&gt;int maxn=10010;char dict[6]=&#123;'P','A','T','e','s','t'&#125;;int main()&#123; char a[maxn]; int hash[6];//对应PATset六个字符，各个字符出现的次数; int n=0;//记录 PATset六个字符总数 memset(hash,0,sizeof(hash)); fgets(a,maxn,stdin); int len=strlen(a); for(int i=0;i&lt;len;i++)&#123; for(int j=0;j&lt;6;j++)&#123; if(dict[j]==a[i])&#123; hash[j]++; n++; &#125; &#125; &#125; while(n&gt;0)&#123; for(int i=0;i&lt;6;i++)&#123;//每一轮依次检查PATset六个字符 if(hash[i]&gt;0)&#123; printf("%c",dict[i]);//hash[i]记录的是字符个数，dict[i]对应字符内容 hash[i]--; n--; &#125; &#125; &#125; return 0;&#125;]]></content>
@@ -469,9 +480,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
+        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
-        <tag>博客美化</tag>
       </tags>
   </entry>
 </search>

@@ -105,14 +105,14 @@
   <meta name="description" content="RESTful架构REST(即Representational State Transfer，译为，表现层状态转化)是一种互联网软件的架构原则，如果一个架构符合REST原则，就称它为RESTful架构。通俗的讲便是，“资源”在网络传输中以某种“表现形式(表现层)”进行“状态转化” 。 资源（Resource）我们可以把真实的对象数据称为资源。一个资源既可以是一个集合，也可以是单个个体。任何事物，只">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java及其框架基本概念的理解">
+<meta property="og:title" content="Java相关概念的概述">
 <meta property="og:url" content="http://luHeXin.github.io/2021/01/07/Java及其框架基本概念的理解/index.html">
 <meta property="og:site_name" content="Lu&#39;s Blog">
 <meta property="og:description" content="RESTful架构REST(即Representational State Transfer，译为，表现层状态转化)是一种互联网软件的架构原则，如果一个架构符合REST原则，就称它为RESTful架构。通俗的讲便是，“资源”在网络传输中以某种“表现形式(表现层)”进行“状态转化” 。 资源（Resource）我们可以把真实的对象数据称为资源。一个资源既可以是一个集合，也可以是单个个体。任何事物，只">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-06T17:34:56.936Z">
+<meta property="og:updated_time" content="2021-01-07T07:30:30.432Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java及其框架基本概念的理解">
+<meta name="twitter:title" content="Java相关概念的概述">
 <meta name="twitter:description" content="RESTful架构REST(即Representational State Transfer，译为，表现层状态转化)是一种互联网软件的架构原则，如果一个架构符合REST原则，就称它为RESTful架构。通俗的讲便是，“资源”在网络传输中以某种“表现形式(表现层)”进行“状态转化” 。 资源（Resource）我们可以把真实的对象数据称为资源。一个资源既可以是一个集合，也可以是单个个体。任何事物，只">
 
 
@@ -132,7 +132,7 @@
 </script>
 
   
-  <title>Java及其框架基本概念的理解 | Lu's Blog</title>
+  <title>Java相关概念的概述 | Lu's Blog</title>
   
 
 
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java及其框架基本概念的理解
+          <h1 class="post-title" itemprop="name headline">Java相关概念的概述
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2021-01-07 00:58:41 / 修改时间：01:34:56" itemprop="dateCreated datePublished" datetime="2021-01-07T00:58:41+08:00">2021-01-07</time>
+              <time title="创建时间：2021-01-07 00:58:41 / 修改时间：15:30:30" itemprop="dateCreated datePublished" datetime="2021-01-07T00:58:41+08:00">2021-01-07</time>
             </span>
           
 
@@ -471,6 +471,27 @@
 <li>实现serializable接口</li>
 </ul>
 <h2 id="参考文章-1"><a href="#参考文章-1" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://www.zhihu.com/question/19773379" target="_blank" rel="noopener">https://www.zhihu.com/question/19773379</a></p>
+<hr>
+
+<h1 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h1><p>XML: extensiable markup language 指可扩展标记语言</p>
+<h2 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h2><p>在没有XML这种语言之前，使用String作为两个程序之间的通讯，但string无法描述关系型数据。<br><br>HTML 也是一种标志性语言，但其标签本身就缺少含义，所以被设计用来显示数据。<br><br>为了解决以上问题，引入XML，其用途为：</p>
+<ul>
+<li>配置文件</li>
+<li>传输数据</li>
+<li>存储数据<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2>XML 元素指的是从（且包括）开始标签直到（且包括）结束标签的部分。</li>
+</ul>
+<p>元素可包含其他元素、文本或者两者的混合物。元素也可以拥有属性。</p>
+<p>在XML中元素和标签并无差别。</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性是作为XML元素中的一部分的，提供关于元素的额外（附加）信息。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">person</span> <span class="attr">sex</span>=<span class="string">"female"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">firstname</span>&gt;</span>Anna<span class="tag">&lt;/<span class="name">firstname</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">lastname</span>&gt;</span>Smith<span class="tag">&lt;/<span class="name">lastname</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">person</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="XML解析"><a href="#XML解析" class="headerlink" title="XML解析"></a>XML解析</h2><p>XML解析就是读取XML的数据。<br><br>主要有如下两种方式：<br></p>
+<ul>
+<li><p>dom(Document Object Model)文档对象模型，是W3C组织推荐解析XML的一种方式。DOM解析会把XML文档加载到内存中，生成DOM树的元素都是以对象的形式存在的，通过操作这些对象就能够操作XML文档。</p>
+</li>
+<li><p>sax(Simple API For XML)，它是XML社区的标准，几乎所有XML解析器都支持它。sax是一种推式的机制,你创建一个sax 解析器,解析器在发现xml文档中的内容时就告诉你(把事件推给你)。 如何处理这些内容，由程序员自己决定。</p>
+</li>
+</ul>
 <hr>
       
     </div>
@@ -788,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RESTful架构"><span class="nav-number">1.</span> <span class="nav-text">RESTful架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#资源（Resource）"><span class="nav-number">1.1.</span> <span class="nav-text">资源（Resource）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表现层（Representational）"><span class="nav-number">1.2.</span> <span class="nav-text">表现层（Representational）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态转化（State-Transfer）"><span class="nav-number">1.3.</span> <span class="nav-text">状态转化（State Transfer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">1.5.</span> <span class="nav-text">参考文章</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-bean"><span class="nav-number">2.</span> <span class="nav-text">Java bean</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章-1"><span class="nav-number">2.2.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RESTful架构"><span class="nav-number">1.</span> <span class="nav-text">RESTful架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#资源（Resource）"><span class="nav-number">1.1.</span> <span class="nav-text">资源（Resource）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表现层（Representational）"><span class="nav-number">1.2.</span> <span class="nav-text">表现层（Representational）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态转化（State-Transfer）"><span class="nav-number">1.3.</span> <span class="nav-text">状态转化（State Transfer）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">1.5.</span> <span class="nav-text">参考文章</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-bean"><span class="nav-number">2.</span> <span class="nav-text">Java bean</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章-1"><span class="nav-number">2.2.</span> <span class="nav-text">参考文章</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XML"><span class="nav-number">3.</span> <span class="nav-text">XML</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用途"><span class="nav-number">3.1.</span> <span class="nav-text">用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素"><span class="nav-number">3.2.</span> <span class="nav-text">元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">3.3.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML解析"><span class="nav-number">3.4.</span> <span class="nav-text">XML解析</span></a></li></ol></li></ol></div>
             
 
           </div>

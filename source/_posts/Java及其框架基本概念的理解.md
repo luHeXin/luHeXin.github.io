@@ -1,5 +1,5 @@
 ---
-title: Java及其框架基本概念的理解
+title: Java相关概念的概述
 date: 2021-01-07 00:58:41
 tags: Java
 categories: Java
@@ -39,4 +39,36 @@ Java bean是表达实体和信息的规范，便于封装重用。通常与数�
 
 ## 参考文章
 https://www.zhihu.com/question/19773379
+<hr/>
+
+# XML
+XML: extensiable markup language 指可扩展标记语言
+## 用途 
+在没有XML这种语言之前，使用String作为两个程序之间的通讯，但string无法描述关系型数据。<br/>
+HTML 也是一种标志性语言，但其标签本身就缺少含义，所以被设计用来显示数据。<br/>
+为了解决以上问题，引入XML，其用途为：
+* 配置文件
+* 传输数据
+* 存储数据
+## 元素
+XML 元素指的是从（且包括）开始标签直到（且包括）结束标签的部分。
+
+元素可包含其他元素、文本或者两者的混合物。元素也可以拥有属性。
+
+在XML中元素和标签并无差别。
+## 属性
+属性是作为XML元素中的一部分的，提供关于元素的额外（附加）信息。
+``` XML
+<person sex="female">
+  <firstname>Anna</firstname>
+  <lastname>Smith</lastname>
+</person> 
+```
+## XML解析
+XML解析就是读取XML的数据。<br/>
+主要有如下两种方式：<br/>
+* dom(Document Object Model)文档对象模型，是W3C组织推荐解析XML的一种方式。DOM解析会把XML文档加载到内存中，生成DOM树的元素都是以对象的形式存在的，通过操作这些对象就能够操作XML文档。
+
+* sax(Simple API For XML)，它是XML社区的标准，几乎所有XML解析器都支持它。sax是一种推式的机制,你创建一个sax 解析器,解析器在发现xml文档中的内容时就告诉你(把事件推给你)。 如何处理这些内容，由程序员自己决定。
+
 <hr/>

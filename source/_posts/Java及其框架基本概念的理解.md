@@ -1,5 +1,5 @@
 ---
-title: Java及其框架的专业名词的汇总
+title: Java及其框架基本概念的理解
 date: 2021-01-07 00:58:41
 tags: Java
 categories: Java
@@ -15,13 +15,14 @@ RESTFUL是一种网络应用程序的设计风格和开发方式，基于HTTP，
 
 ## 状态转化（State Transfer）
 互联网通信协议 HTTP 协议，是一个无状态协议，所有的资源状态都保存在服务器端。客户端通过特定的 HTTP 动词，对服务器端资源进行操作，实现"表现层状态转化"。
+
 ## 总结
 * 每一个 URI (Uniform Resource Identifier) 代表一种资源；
 * 客户端和服务器之间，传递这种资源的某种表现形式比如 json，xml，image,txt 等等；
 * 客户端通过特定的 HTTP 动词(GET、POST、PUT、DELETE)，对服务器端资源进行操作，实现"表现层状态转化"。
-## 参考文章
-http://www.ruanyifeng.com/blog/2011/09/restful.html
 
+## 参考文章
+http://www.ruanyifeng.com/blog/2011/09/restful.html<br/>
 https://www.runoob.com/w3cnote/restful-architecture.html
 <hr/>
 

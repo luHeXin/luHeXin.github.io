@@ -103,7 +103,7 @@
 
 
   <meta name="description" content="简介本博客基于Hexo博客框架，主题选择的是NexT( NexT使用文档)。通过使用jQuery，为博客添加点击特效。   思路 通过jQuery click()函数，获取html标签中点击的事件，并调用相应方法  12$(&quot;html&quot;).click(function(e) &amp;#123;&amp;#125;   内置一个数组用来存储点击时出现的内容，通过jQuery设置返回的元素内容  123var a">
-<meta name="keywords" content="博客美化,点击特效,JS">
+<meta name="keywords" content="点击特效,JS,博客美化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客美化_点击特效的实现">
 <meta property="og:url" content="http://luHeXin.github.io/2019/07/30/博客点击特效/index.html">
@@ -509,7 +509,7 @@
 <ol start="2">
 <li>在如下路径：<br><code>\themes\next\layout\layout.swig</code><br>找到倒数第二行的标签的前面添加如下代码</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.special-effect %&#125;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"/js/special-effect.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.special-effect %&#125;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"/js/special-effect.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>在主题配置文件（\themes\next_congig.yml）末尾加入：</li>
@@ -544,11 +544,11 @@
         
         <div class="post-tags">
           
-            <a href="/tags/博客美化/" rel="tag"># 博客美化</a>
-          
             <a href="/tags/点击特效/" rel="tag"># 点击特效</a>
           
             <a href="/tags/JS/" rel="tag"># JS</a>
+          
+            <a href="/tags/博客美化/" rel="tag"># 博客美化</a>
           
         </div>
       
@@ -646,7 +646,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -693,7 +693,9 @@
         
           
         
-        <span class="site-state-item-count">15</span>
+          
+        
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -766,7 +768,9 @@
         
           
         
-        <span class="site-state-item-count">28</span>
+          
+        
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>

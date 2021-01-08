@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PAT B1082 射击比赛 (20分)]]></title>
+    <url>%2F2021%2F01%2F08%2FB1082%2F</url>
+    <content type="text"><![CDATA[题目描述本题目给出的射击比赛的规则非常简单，谁打的弹洞距离靶心最近，谁就是冠军；谁差得最远，谁就是菜鸟。本题给出一系列弹洞的平面坐标(x,y)，请你编写程序找出冠军和菜鸟。我们假设靶心在原点(0,0)。 输入格式输入在第一行中给出一个正整数 N（≤ 10 000）。随后 N 行，每行按下列格式给出： ID x y 其中 ID 是运动员的编号（由 4 位数字组成）；x 和 y 是其打出的弹洞的平面坐标(x,y)，均为整数，且 0 ≤ |x|, |y| ≤ 100。题目保证每个运动员的编号不重复，且每人只打 1 枪。 输出格式输出冠军和菜鸟的编号，中间空 1 格。题目保证他们是唯一的。 输入样例3 0001 5 7 1020 -1 3 0233 0 -1 输出样例0233 0001 参考代码12345678910111213141516171819202122232425262728293031#include&lt;cstdio&gt; #include&lt;algorithm&gt;using namespace std;const int maxn=10010;struct node&#123; //编号为四位数字，保留一位给'\0' ,因此字符数组共五位 char id[5]; int grade;&#125;;node athlete[maxn];bool cmp(node a,node b)&#123; return a.grade&lt;b.grade;&#125;int main()&#123; int n,x,y,distance; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%s %d %d",athlete[i].id,&amp;x,&amp;y); distance=x*x+y*y; athlete[i].grade=distance; &#125; sort(athlete,athlete+n,cmp); printf("%s %s",athlete[0].id,athlete[n-1].id); return 0;&#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT B1087 有多少不同的值 (20分)]]></title>
     <url>%2F2021%2F01%2F08%2FB1087%2F</url>
     <content type="text"><![CDATA[题目描述当自然数 n 依次取 1、2、3、……、N 时，算式 ⌊n/2⌋+⌊n/3⌋+⌊n/5⌋ 有多少个不同的值？（注：⌊x⌋ 为取整函数，表示不超过 x 的最大自然数，即 x 的整数部分。） 输入格式输入给出一个正整数 N (2≤N≤104)。 输出格式在一行中输出题面中算式取到的不同值的个数。 输入样例2017 输出样例1480 参考代码123456789101112131415161718192021#include&lt;cstdio&gt;#include&lt;cmath&gt;int main()&#123; //sum: 自然数i带入算式的计算结果 //自然数i带入算式计算，若sum变更,更新temp,令temp=sum,否则保持temp不变 //ans: 算式取到的不同值的个数 int n,sum,temp=-1,ans=0; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)&#123; sum=ceil(i/2)+ceil(i/3)+ceil(i/5); //若算式带入自然数i时，算式结果变化，更新temp if(temp!=sum)&#123; temp=sum; ans++; &#125; &#125; printf("%d",ans); return 0;&#125;]]></content>
@@ -568,9 +579,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
+        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
-        <tag>博客美化</tag>
       </tags>
   </entry>
 </search>

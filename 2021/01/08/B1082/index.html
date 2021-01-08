@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="问题链接：CCF201412-2 问题描述给定一个n×n的矩阵，左上角到右下角Z字形扫描输出该矩阵的元素。先输入正整数n，再输入n×n个整数。 题目分析模拟关键在于找到下标的变化规律，可以发现扫描过程中共有四种方向，即右，下，右上，左下四个方向每进行一次的右或下的扫描后,则会进行若干次的右上或左下的扫描。不难发现最后一次扫描必定是右或下,第一次扫描必定是右若此次是右扫描,且扫描位置在矩形的上边界,">
-<meta name="keywords" content="CCF,模拟">
+  <meta name="description" content="题目描述本题目给出的射击比赛的规则非常简单，谁打的弹洞距离靶心最近，谁就是冠军；谁差得最远，谁就是菜鸟。本题给出一系列弹洞的平面坐标(x,y)，请你编写程序找出冠军和菜鸟。我们假设靶心在原点(0,0)。 输入格式输入在第一行中给出一个正整数 N（≤ 10 000）。随后 N 行，每行按下列格式给出： ID x y 其中 ID 是运动员的编号（由 4 位数字组成）；x 和 y 是其打出的弹洞的平面坐">
+<meta name="keywords" content="PAT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CCF201412-2">
-<meta property="og:url" content="http://luHeXin.github.io/2020/04/19/csp201412-2/index.html">
+<meta property="og:title" content="PAT B1082 射击比赛 (20分)">
+<meta property="og:url" content="http://luHeXin.github.io/2021/01/08/B1082/index.html">
 <meta property="og:site_name" content="Lu&#39;s Blog">
-<meta property="og:description" content="问题链接：CCF201412-2 问题描述给定一个n×n的矩阵，左上角到右下角Z字形扫描输出该矩阵的元素。先输入正整数n，再输入n×n个整数。 题目分析模拟关键在于找到下标的变化规律，可以发现扫描过程中共有四种方向，即右，下，右上，左下四个方向每进行一次的右或下的扫描后,则会进行若干次的右上或左下的扫描。不难发现最后一次扫描必定是右或下,第一次扫描必定是右若此次是右扫描,且扫描位置在矩形的上边界,">
+<meta property="og:description" content="题目描述本题目给出的射击比赛的规则非常简单，谁打的弹洞距离靶心最近，谁就是冠军；谁差得最远，谁就是菜鸟。本题给出一系列弹洞的平面坐标(x,y)，请你编写程序找出冠军和菜鸟。我们假设靶心在原点(0,0)。 输入格式输入在第一行中给出一个正整数 N（≤ 10 000）。随后 N 行，每行按下列格式给出： ID x y 其中 ID 是运动员的编号（由 4 位数字组成）；x 和 y 是其打出的弹洞的平面坐">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-19T09:45:02.633Z">
+<meta property="og:updated_time" content="2021-01-08T14:48:31.228Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CCF201412-2">
-<meta name="twitter:description" content="问题链接：CCF201412-2 问题描述给定一个n×n的矩阵，左上角到右下角Z字形扫描输出该矩阵的元素。先输入正整数n，再输入n×n个整数。 题目分析模拟关键在于找到下标的变化规律，可以发现扫描过程中共有四种方向，即右，下，右上，左下四个方向每进行一次的右或下的扫描后,则会进行若干次的右上或左下的扫描。不难发现最后一次扫描必定是右或下,第一次扫描必定是右若此次是右扫描,且扫描位置在矩形的上边界,">
+<meta name="twitter:title" content="PAT B1082 射击比赛 (20分)">
+<meta name="twitter:description" content="题目描述本题目给出的射击比赛的规则非常简单，谁打的弹洞距离靶心最近，谁就是冠军；谁差得最远，谁就是菜鸟。本题给出一系列弹洞的平面坐标(x,y)，请你编写程序找出冠军和菜鸟。我们假设靶心在原点(0,0)。 输入格式输入在第一行中给出一个正整数 N（≤ 10 000）。随后 N 行，每行按下列格式给出： ID x y 其中 ID 是运动员的编号（由 4 位数字组成）；x 和 y 是其打出的弹洞的平面坐">
 
 
 
@@ -121,7 +121,7 @@
 
   
   
-  <link rel="canonical" href="http://luHeXin.github.io/2020/04/19/csp201412-2/">
+  <link rel="canonical" href="http://luHeXin.github.io/2021/01/08/B1082/">
 
 
 
@@ -132,7 +132,7 @@
 </script>
 
   
-  <title>CCF201412-2 | Lu's Blog</title>
+  <title>PAT B1082 射击比赛 (20分) | Lu's Blog</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2020/04/19/csp201412-2/">
+    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2021/01/08/B1082/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lu">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CCF201412-2
+          <h1 class="post-title" itemprop="name headline">PAT B1082 射击比赛 (20分)
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2020-04-19 17:23:32 / 修改时间：17:45:02" itemprop="dateCreated datePublished" datetime="2020-04-19T17:23:32+08:00">2020-04-19</time>
+              <time title="创建时间：2021-01-08 22:45:24 / 修改时间：22:48:31" itemprop="dateCreated datePublished" datetime="2021-01-08T22:45:24+08:00">2021-01-08</time>
             </span>
           
 
@@ -414,7 +414,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CCF计算机软件能力认证/" itemprop="url" rel="index"><span itemprop="name">CCF计算机软件能力认证</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-乙级/" itemprop="url" rel="index"><span itemprop="name">PAT 乙级</span></a></span>
 
                 
                 
@@ -449,16 +449,19 @@
       
 
       
-        <p>问题链接：<a href="http://118.190.20.162/view.page?gpid=T20" target="_blank" rel="noopener">CCF201412-2</a></p>
-<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>给定一个n×n的矩阵，左上角到右下角Z字形扫描输出该矩阵的元素。先输入正整数n，再输入n×n个整数。</p>
-<h1 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h1><p>模拟<br><br>关键在于找到下标的变化规律，可以发现扫描过程中共有四种方向，即右，下，右上，左下四个方向<br><br>每进行一次的右或下的扫描后,则会进行若干次的右上或左下的扫描。不难发现最后一次扫描必定是右或下,第一次扫描必定是右<br><br>若此次是右扫描,且扫描位置在矩形的上边界,则下次一定会进行若干次的左下扫描。直至到达矩形的左边界或下边界<br><br>若此次是右扫描,且扫描位置在矩形的上边界,则下次一定会进行若干次的右上扫描。直至到达矩形的右边界或上边界<br><br>同理，此次若为上扫描，亦然，不在此多加赘述。</p>
-<h1 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">int</span> a[n+<span class="number">1</span>][n+<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;=n; j++) &#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(n==<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;a[<span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;a[<span class="number">1</span>][<span class="number">1</span>]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> ii=<span class="number">1</span>,jj=<span class="number">1</span>;</span><br><span class="line">	<span class="comment">//flag1=1表示可以右走，-1为向下走，为0是代表斜着走 </span></span><br><span class="line">	<span class="comment">//flag2=1代表斜向上走 ,-1表示斜向下走</span></span><br><span class="line">	<span class="keyword">int</span> flag1=<span class="number">1</span>,flag2=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(flag1==<span class="number">1</span>)&#123;<span class="comment">//右走 </span></span><br><span class="line">			jj++;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;a[ii][jj]; </span><br><span class="line">			flag1=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(ii==<span class="number">1</span>) flag2=<span class="number">-1</span>;</span><br><span class="line">			<span class="keyword">if</span>(ii==n) flag2=<span class="number">1</span>;</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(flag1==<span class="number">-1</span>)&#123;<span class="comment">//下走 </span></span><br><span class="line">			ii++;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;a[ii][jj];</span><br><span class="line">			flag1=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(jj==<span class="number">1</span>) flag2=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(jj==n) flag2=<span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(ii&gt;=n&amp;&amp;jj&gt;=n) <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">" "</span>; </span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span>(flag2==<span class="number">-1</span>&amp;&amp;flag1==<span class="number">0</span>) &#123; <span class="comment">//斜向下走</span></span><br><span class="line">			ii++;</span><br><span class="line">			jj--;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;a[ii][jj]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(jj==<span class="number">1</span>&amp;&amp;ii!=n)&#123;</span><br><span class="line">				flag1=<span class="number">-1</span>;<span class="comment">//向下走</span></span><br><span class="line">				<span class="keyword">break</span>; </span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(ii==n)&#123;</span><br><span class="line">				flag1=<span class="number">1</span>;<span class="comment">//向右走</span></span><br><span class="line">				<span class="keyword">break</span>; </span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">while</span>(flag2==<span class="number">1</span>&amp;&amp;flag1==<span class="number">0</span>) &#123; <span class="comment">//斜向上走</span></span><br><span class="line">			ii--;</span><br><span class="line">			jj++;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;a[ii][jj]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">			<span class="keyword">if</span>(ii==<span class="number">1</span>&amp;&amp;jj!=n)&#123;</span><br><span class="line">				flag1=<span class="number">1</span>;<span class="comment">//向右走</span></span><br><span class="line">				<span class="keyword">break</span>; </span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(jj==n)&#123;</span><br><span class="line">				flag1=<span class="number">-1</span>;<span class="comment">//向下走</span></span><br><span class="line">				<span class="keyword">break</span>; </span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>本题目给出的射击比赛的规则非常简单，谁打的弹洞距离靶心最近，谁就是冠军；谁差得最远，谁就是菜鸟。本题给出一系列弹洞的平面坐标(x,y)，请你编写程序找出冠军和菜鸟。我们假设靶心在原点(0,0)。</p>
+<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h1><p>输入在第一行中给出一个正整数 N（≤ 10 000）。随后 N 行，每行按下列格式给出：</p>
+<p><code>ID x y</code></p>
+<p>其中 ID 是运动员的编号（由 4 位数字组成）；x 和 y 是其打出的弹洞的平面坐标(x,y)，均为整数，且 0 ≤ |x|, |y| ≤ 100。题目保证每个运动员的编号不重复，且每人只打 1 枪。</p>
+<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h1><p>输出冠军和菜鸟的编号，中间空 1 格。题目保证他们是唯一的。</p>
+<h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h1><p>3</p>
+<p>0001 5 7</p>
+<p>1020 -1 3</p>
+<p>0233 0 -1</p>
+<h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h1><p>0233 0001</p>
+<hr>
 
-<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul>
-<li>当n=1时，需特殊讨论</li>
-<li>因为赋值时，数组脚标从1至n的，因此开辟的数组大小为n+1</li>
-</ul>
-
+<h1 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">10010</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">	<span class="comment">//编号为四位数字，保留一位给'\0' ,因此字符数组共五位 </span></span><br><span class="line">	<span class="keyword">char</span> id[<span class="number">5</span>];</span><br><span class="line">	<span class="keyword">int</span> grade;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">node athlete[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node a,node b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.grade&lt;b.grade;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,x,y,distance;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s %d %d"</span>,athlete[i].id,&amp;x,&amp;y);</span><br><span class="line">		distance=x*x+y*y;</span><br><span class="line">		athlete[i].grade=distance;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(athlete,athlete+n,cmp);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s %s"</span>,athlete[<span class="number">0</span>].id,athlete[n<span class="number">-1</span>].id);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -488,9 +491,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/CCF/" rel="tag"># CCF</a>
-          
-            <a href="/tags/模拟/" rel="tag"># 模拟</a>
+            <a href="/tags/PAT/" rel="tag"># PAT</a>
           
         </div>
       
@@ -503,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/11/二叉搜索树先序遍历与后序遍历之间的转换/" rel="next" title="二叉搜索树先序遍历与后序遍历之间的转换">
-                <i class="fa fa-chevron-left"></i> 二叉搜索树先序遍历与后序遍历之间的转换
+              <a href="/2021/01/08/B1087/" rel="next" title="PAT B1087 有多少不同的值 (20分)">
+                <i class="fa fa-chevron-left"></i> PAT B1087 有多少不同的值 (20分)
               </a>
             
           </div>
@@ -512,10 +513,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/01/04/B1034/" rel="prev" title="PAT B1034 有理数四则运算 (20分)">
-                PAT B1034 有理数四则运算 (20分) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -770,7 +767,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题目分析"><span class="nav-number">2.</span> <span class="nav-text">题目分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考代码"><span class="nav-number">3.</span> <span class="nav-text">参考代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入样例"><span class="nav-number">4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出样例"><span class="nav-number">5.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考代码"><span class="nav-number">6.</span> <span class="nav-text">参考代码</span></a></li></ol></div>
             
 
           </div>

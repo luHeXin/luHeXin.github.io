@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="题目描述：用筛法求之N内的素数。 输入：N 输出：0～N的素数 样例输入：100 样例输出：2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97   素数定义：素数是指在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。 参考代码：12345678910111213141516171819#inclu">
-<meta name="keywords" content="蓝桥杯">
+  <meta name="description" content="题目描述下面是微博上流传的一张照片：“各位亲爱的同学们，鉴于大家有时需要使用 wifi，又怕耽误亲们的学习，现将 wifi 密码设置为下列数学题答案：A-1；B-2；C-3；D-4；请同学们自己作答，每两日一换。谢谢合作！！~”—— 老师们为了促进学生学习也是拼了…… 本题就要求你写程序把一系列题目的答案按照卷子上给出的对应关系翻译成 wifi 的密码。这里简单假设每道选择题都有 4 个选项，有且">
+<meta name="keywords" content="PAT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蓝桥杯 求N内的素数">
-<meta property="og:url" content="http://luHeXin.github.io/2019/08/31/蓝桥杯 N内素数/index.html">
+<meta property="og:title" content="PAT B1076 Wifi密码 (15分)">
+<meta property="og:url" content="http://luHeXin.github.io/2021/01/08/B1076/index.html">
 <meta property="og:site_name" content="Lu&#39;s Blog">
-<meta property="og:description" content="题目描述：用筛法求之N内的素数。 输入：N 输出：0～N的素数 样例输入：100 样例输出：2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97   素数定义：素数是指在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。 参考代码：12345678910111213141516171819#inclu">
+<meta property="og:description" content="题目描述下面是微博上流传的一张照片：“各位亲爱的同学们，鉴于大家有时需要使用 wifi，又怕耽误亲们的学习，现将 wifi 密码设置为下列数学题答案：A-1；B-2；C-3；D-4；请同学们自己作答，每两日一换。谢谢合作！！~”—— 老师们为了促进学生学习也是拼了…… 本题就要求你写程序把一系列题目的答案按照卷子上给出的对应关系翻译成 wifi 的密码。这里简单假设每道选择题都有 4 个选项，有且">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-31T07:10:12.849Z">
+<meta property="og:updated_time" content="2021-01-08T13:46:13.192Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蓝桥杯 求N内的素数">
-<meta name="twitter:description" content="题目描述：用筛法求之N内的素数。 输入：N 输出：0～N的素数 样例输入：100 样例输出：2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97   素数定义：素数是指在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。 参考代码：12345678910111213141516171819#inclu">
+<meta name="twitter:title" content="PAT B1076 Wifi密码 (15分)">
+<meta name="twitter:description" content="题目描述下面是微博上流传的一张照片：“各位亲爱的同学们，鉴于大家有时需要使用 wifi，又怕耽误亲们的学习，现将 wifi 密码设置为下列数学题答案：A-1；B-2；C-3；D-4；请同学们自己作答，每两日一换。谢谢合作！！~”—— 老师们为了促进学生学习也是拼了…… 本题就要求你写程序把一系列题目的答案按照卷子上给出的对应关系翻译成 wifi 的密码。这里简单假设每道选择题都有 4 个选项，有且">
 
 
 
@@ -121,7 +121,7 @@
 
   
   
-  <link rel="canonical" href="http://luHeXin.github.io/2019/08/31/蓝桥杯 N内素数/">
+  <link rel="canonical" href="http://luHeXin.github.io/2021/01/08/B1076/">
 
 
 
@@ -132,7 +132,7 @@
 </script>
 
   
-  <title>蓝桥杯 求N内的素数 | Lu's Blog</title>
+  <title>PAT B1076 Wifi密码 (15分) | Lu's Blog</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2019/08/31/蓝桥杯 N内素数/">
+    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2021/01/08/B1076/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lu">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">蓝桥杯 求N内的素数
+          <h1 class="post-title" itemprop="name headline">PAT B1076 Wifi密码 (15分)
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-08-31 14:58:00 / 修改时间：15:10:12" itemprop="dateCreated datePublished" datetime="2019-08-31T14:58:00+08:00">2019-08-31</time>
+              <time title="创建时间：2021-01-08 21:07:07 / 修改时间：21:46:13" itemprop="dateCreated datePublished" datetime="2021-01-08T21:07:07+08:00">2021-01-08</time>
             </span>
           
 
@@ -414,7 +414,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/蓝桥杯-素数/" itemprop="url" rel="index"><span itemprop="name">蓝桥杯 素数</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-乙级/" itemprop="url" rel="index"><span itemprop="name">PAT 乙级</span></a></span>
 
                 
                 
@@ -449,40 +449,18 @@
       
 
       
-        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><p>用筛法求之N内的素数。</p>
-<h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><p>N</p>
-<h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><p>0～N的素数</p>
-<h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><p>100</p>
-<h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><p>2</p>
-<p>3</p>
-<p>5</p>
-<p>7</p>
-<p>11</p>
-<p>13</p>
-<p>17</p>
-<p>19</p>
-<p>23</p>
-<p>29</p>
-<p>31</p>
-<p>37</p>
-<p>41</p>
-<p>43</p>
-<p>47</p>
-<p>53</p>
-<p>59</p>
-<p>61</p>
-<p>67</p>
-<p>71</p>
-<p>73</p>
-<p>79</p>
-<p>83</p>
-<p>89</p>
-<p>97</p>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>下面是微博上流传的一张照片：“各位亲爱的同学们，鉴于大家有时需要使用 wifi，又怕耽误亲们的学习，现将 wifi 密码设置为下列数学题答案：A-1；B-2；C-3；D-4；请同学们自己作答，每两日一换。谢谢合作！！~”—— 老师们为了促进学生学习也是拼了…… 本题就要求你写程序把一系列题目的答案按照卷子上给出的对应关系翻译成 wifi 的密码。这里简单假设每道选择题都有 4 个选项，有且只有 1 个正确答案。</p>
+<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h1><p>输入第一行给出一个正整数 N（≤ 100），随后 N 行，每行按照 编号-答案 的格式给出一道题的 4 个选项，T 表示正确选项，F 表示错误选项。选项间用空格分隔。</p>
+<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h1><p>在一行中输出 wifi 密码。</p>
+<h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span></span><br><span class="line">A-<span class="literal">T</span> B-<span class="literal">F</span> C-<span class="literal">F</span> D-<span class="literal">F</span></span><br><span class="line">C-<span class="literal">T</span> B-<span class="literal">F</span> A-<span class="literal">F</span> D-<span class="literal">F</span></span><br><span class="line">A-<span class="literal">F</span> D-<span class="literal">F</span> C-<span class="literal">F</span> B-<span class="literal">T</span></span><br><span class="line">B-<span class="literal">T</span> A-<span class="literal">F</span> C-<span class="literal">F</span> D-<span class="literal">F</span></span><br><span class="line">B-<span class="literal">F</span> D-<span class="literal">T</span> A-<span class="literal">F</span> C-<span class="literal">F</span></span><br><span class="line">A-<span class="literal">T</span> C-<span class="literal">F</span> B-<span class="literal">F</span> D-<span class="literal">F</span></span><br><span class="line">D-<span class="literal">T</span> B-<span class="literal">F</span> C-<span class="literal">F</span> A-<span class="literal">F</span></span><br><span class="line">C-<span class="literal">T</span> A-<span class="literal">F</span> B-<span class="literal">F</span> D-<span class="literal">F</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h1><p>13224143</p>
 <hr>
 
-<h1 id="素数定义："><a href="#素数定义：" class="headerlink" title="素数定义："></a>素数定义：</h1><p>素数是指在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。</p>
-<h1 id="参考代码："><a href="#参考代码：" class="headerlink" title="参考代码："></a>参考代码：</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> flag;<span class="comment">//flag为1，代表是素数；为0，代表非素数。</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		flag=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">2</span>;j&lt;=i/<span class="number">2</span>;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(i%j==<span class="number">0</span>) &#123;</span><br><span class="line">                flag=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">if</span>(flag==<span class="number">1</span>)&#123;</span><br><span class="line">		    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h1><ul>
+<li>输入格式是<code>编号-答案</code>,若编号及答案采用char类型变量，注意用getchar()吸收回车及空格。</li>
+<li>最多有N(≤ 100)行数据，所以WIFI密码长度最长为100个数字，因此无法用long long int保存最终的密码，可以采用字符数组表示，也可以处理每行数据得到结果之后立即输出(参考代码采用该种方法)。<h1 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">char</span> num,ans;</span><br><span class="line">	<span class="keyword">int</span> result=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">4</span>;j++)&#123;</span><br><span class="line">			getchar();</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%c-%c"</span>,&amp;num,&amp;ans);</span><br><span class="line">			<span class="keyword">if</span>(ans==<span class="string">'T'</span>) &#123;</span><br><span class="line">				result=num-<span class="string">'A'</span>+<span class="number">1</span>;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d"</span>,result);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -513,7 +491,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/蓝桥杯/" rel="tag"># 蓝桥杯</a>
+            <a href="/tags/PAT/" rel="tag"># PAT</a>
           
         </div>
       
@@ -526,8 +504,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/20/B1033/" rel="next" title="PAT B1033 旧键盘打字 (20 分)">
-                <i class="fa fa-chevron-left"></i> PAT B1033 旧键盘打字 (20 分)
+              <a href="/2021/01/08/B1063/" rel="next" title="PAT B1063 计算谱半径 (20分)">
+                <i class="fa fa-chevron-left"></i> PAT B1063 计算谱半径 (20分)
               </a>
             
           </div>
@@ -536,8 +514,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/07/蓝桥杯字符串的输入输出处理/" rel="prev" title="蓝桥杯 字符串的输入输出处理">
-                蓝桥杯 字符串的输入输出处理 <i class="fa fa-chevron-right"></i>
+              <a href="/2021/01/08/B1087/" rel="prev" title="PAT B1087 有多少不同的值 (20分)">
+                PAT B1087 有多少不同的值 (20分) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -793,7 +771,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入："><span class="nav-number">2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出："><span class="nav-number">3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入："><span class="nav-number">4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输出："><span class="nav-number">5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#素数定义："><span class="nav-number">6.</span> <span class="nav-text">素数定义：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考代码："><span class="nav-number">7.</span> <span class="nav-text">参考代码：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入样例"><span class="nav-number">4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出样例"><span class="nav-number">5.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意点"><span class="nav-number">6.</span> <span class="nav-text">注意点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考代码"><span class="nav-number">7.</span> <span class="nav-text">参考代码</span></a></li></ol></div>
             
 
           </div>

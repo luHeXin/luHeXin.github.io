@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PAT B1087 有多少不同的值 (20分)]]></title>
+    <url>%2F2021%2F01%2F08%2FB1087%2F</url>
+    <content type="text"><![CDATA[题目描述当自然数 n 依次取 1、2、3、……、N 时，算式 ⌊n/2⌋+⌊n/3⌋+⌊n/5⌋ 有多少个不同的值？（注：⌊x⌋ 为取整函数，表示不超过 x 的最大自然数，即 x 的整数部分。） 输入格式输入给出一个正整数 N (2≤N≤104)。 输出格式在一行中输出题面中算式取到的不同值的个数。 输入样例2017 输出样例1480 参考代码123456789101112131415161718192021#include&lt;cstdio&gt;#include&lt;cmath&gt;int main()&#123; //sum: 自然数i带入算式的计算结果 //自然数i带入算式计算，若sum变更,更新temp,令temp=sum,否则保持temp不变 //ans: 算式取到的不同值的个数 int n,sum,temp=-1,ans=0; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)&#123; sum=ceil(i/2)+ceil(i/3)+ceil(i/5); //若算式带入自然数i时，算式结果变化，更新temp if(temp!=sum)&#123; temp=sum; ans++; &#125; &#125; printf("%d",ans); return 0;&#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT B1076 Wifi密码 (15分)]]></title>
+    <url>%2F2021%2F01%2F08%2FB1076%2F</url>
+    <content type="text"><![CDATA[题目描述下面是微博上流传的一张照片：“各位亲爱的同学们，鉴于大家有时需要使用 wifi，又怕耽误亲们的学习，现将 wifi 密码设置为下列数学题答案：A-1；B-2；C-3；D-4；请同学们自己作答，每两日一换。谢谢合作！！~”—— 老师们为了促进学生学习也是拼了…… 本题就要求你写程序把一系列题目的答案按照卷子上给出的对应关系翻译成 wifi 的密码。这里简单假设每道选择题都有 4 个选项，有且只有 1 个正确答案。 输入格式输入第一行给出一个正整数 N（≤ 100），随后 N 行，每行按照 编号-答案 的格式给出一道题的 4 个选项，T 表示正确选项，F 表示错误选项。选项间用空格分隔。 输出格式在一行中输出 wifi 密码。 输入样例1234567898A-T B-F C-F D-FC-T B-F A-F D-FA-F D-F C-F B-TB-T A-F C-F D-FB-F D-T A-F C-FA-T C-F B-F D-FD-T B-F C-F A-FC-T A-F B-F D-F 输出样例13224143 注意点 输入格式是编号-答案,若编号及答案采用char类型变量，注意用getchar()吸收回车及空格。 最多有N(≤ 100)行数据，所以WIFI密码长度最长为100个数字，因此无法用long long int保存最终的密码，可以采用字符数组表示，也可以处理每行数据得到结果之后立即输出(参考代码采用该种方法)。参考代码1234567891011121314151617181920#include&lt;cstdio&gt;int main()&#123; int n; scanf("%d",&amp;n); char num,ans; int result=0; for(int i=0;i&lt;n;i++)&#123; for(int j=0;j&lt;4;j++)&#123; getchar(); scanf("%c-%c",&amp;num,&amp;ans); if(ans=='T') &#123; result=num-'A'+1; printf("%d",result); &#125; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT B1063 计算谱半径 (20分)]]></title>
     <url>%2F2021%2F01%2F08%2FB1063%2F</url>
     <content type="text"><![CDATA[题目描述：在数学中，矩阵的“谱半径”是指其特征值的模集合的上确界。换言之，对于给定的 n 个复数空间的特征值 { a1 + b1i , ⋯ , an + bni }，它们的模为实部与虚部的平方和的开方，而“谱半径”就是最大模。 现在给定一些复数空间的特征值，请你计算并输出这些特征值的谱半径。 输入格式：输入第一行给出正整数 N（≤ 10 000）是输入的特征值的个数。随后 N 行，每行给出 1 个特征值的实部和虚部，其间以空格分隔。注意：题目保证实部和虚部均为绝对值不超过 1000 的整数。 输出格式：在一行中输出谱半径，四舍五入保留小数点后 2 位。 输入案例：50 12 0-1 03 30 -3 输出案例：4.24 参考代码1234567891011121314151617181920#include&lt;cstdio&gt;#include&lt;cmath&gt;#include&lt;algorithm&gt;using namespace std;int main()&#123; int n; scanf("%d",&amp;n); double maxn=0.0,a,b,temp; for(int i=0;i&lt;n;i++)&#123; scanf("%lf %lf",&amp;a,&amp;b); temp=sqrt(a*a+b*b); if(temp&gt;maxn) maxn=temp; &#125; printf("%.2f",maxn); return 0;&#125;]]></content>

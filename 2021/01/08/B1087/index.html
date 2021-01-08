@@ -102,18 +102,18 @@
 
 
 
-  <meta name="description" content="题目描述：用筛法求之N内的素数。 输入：N 输出：0～N的素数 样例输入：100 样例输出：2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97   素数定义：素数是指在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。 参考代码：12345678910111213141516171819#inclu">
-<meta name="keywords" content="蓝桥杯">
+  <meta name="description" content="题目描述当自然数 n 依次取 1、2、3、……、N 时，算式 ⌊n/2⌋+⌊n/3⌋+⌊n/5⌋ 有多少个不同的值？（注：⌊x⌋ 为取整函数，表示不超过 x 的最大自然数，即 x 的整数部分。） 输入格式输入给出一个正整数 N (2≤N≤104)。 输出格式在一行中输出题面中算式取到的不同值的个数。 输入样例2017 输出样例1480   参考代码1234567891011121314151617">
+<meta name="keywords" content="PAT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蓝桥杯 求N内的素数">
-<meta property="og:url" content="http://luHeXin.github.io/2019/08/31/蓝桥杯 N内素数/index.html">
+<meta property="og:title" content="PAT B1087 有多少不同的值 (20分)">
+<meta property="og:url" content="http://luHeXin.github.io/2021/01/08/B1087/index.html">
 <meta property="og:site_name" content="Lu&#39;s Blog">
-<meta property="og:description" content="题目描述：用筛法求之N内的素数。 输入：N 输出：0～N的素数 样例输入：100 样例输出：2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97   素数定义：素数是指在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。 参考代码：12345678910111213141516171819#inclu">
+<meta property="og:description" content="题目描述当自然数 n 依次取 1、2、3、……、N 时，算式 ⌊n/2⌋+⌊n/3⌋+⌊n/5⌋ 有多少个不同的值？（注：⌊x⌋ 为取整函数，表示不超过 x 的最大自然数，即 x 的整数部分。） 输入格式输入给出一个正整数 N (2≤N≤104)。 输出格式在一行中输出题面中算式取到的不同值的个数。 输入样例2017 输出样例1480   参考代码1234567891011121314151617">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-31T07:10:12.849Z">
+<meta property="og:updated_time" content="2021-01-08T14:23:54.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蓝桥杯 求N内的素数">
-<meta name="twitter:description" content="题目描述：用筛法求之N内的素数。 输入：N 输出：0～N的素数 样例输入：100 样例输出：2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97   素数定义：素数是指在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。 参考代码：12345678910111213141516171819#inclu">
+<meta name="twitter:title" content="PAT B1087 有多少不同的值 (20分)">
+<meta name="twitter:description" content="题目描述当自然数 n 依次取 1、2、3、……、N 时，算式 ⌊n/2⌋+⌊n/3⌋+⌊n/5⌋ 有多少个不同的值？（注：⌊x⌋ 为取整函数，表示不超过 x 的最大自然数，即 x 的整数部分。） 输入格式输入给出一个正整数 N (2≤N≤104)。 输出格式在一行中输出题面中算式取到的不同值的个数。 输入样例2017 输出样例1480   参考代码1234567891011121314151617">
 
 
 
@@ -121,7 +121,7 @@
 
   
   
-  <link rel="canonical" href="http://luHeXin.github.io/2019/08/31/蓝桥杯 N内素数/">
+  <link rel="canonical" href="http://luHeXin.github.io/2021/01/08/B1087/">
 
 
 
@@ -132,7 +132,7 @@
 </script>
 
   
-  <title>蓝桥杯 求N内的素数 | Lu's Blog</title>
+  <title>PAT B1087 有多少不同的值 (20分) | Lu's Blog</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2019/08/31/蓝桥杯 N内素数/">
+    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2021/01/08/B1087/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lu">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">蓝桥杯 求N内的素数
+          <h1 class="post-title" itemprop="name headline">PAT B1087 有多少不同的值 (20分)
 
               
             
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2019-08-31 14:58:00 / 修改时间：15:10:12" itemprop="dateCreated datePublished" datetime="2019-08-31T14:58:00+08:00">2019-08-31</time>
+              <time title="创建时间：2021-01-08 21:07:29 / 修改时间：22:23:54" itemprop="dateCreated datePublished" datetime="2021-01-08T21:07:29+08:00">2021-01-08</time>
             </span>
           
 
@@ -414,7 +414,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/蓝桥杯-素数/" itemprop="url" rel="index"><span itemprop="name">蓝桥杯 素数</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-乙级/" itemprop="url" rel="index"><span itemprop="name">PAT 乙级</span></a></span>
 
                 
                 
@@ -449,39 +449,14 @@
       
 
       
-        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><p>用筛法求之N内的素数。</p>
-<h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><p>N</p>
-<h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><p>0～N的素数</p>
-<h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><p>100</p>
-<h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><p>2</p>
-<p>3</p>
-<p>5</p>
-<p>7</p>
-<p>11</p>
-<p>13</p>
-<p>17</p>
-<p>19</p>
-<p>23</p>
-<p>29</p>
-<p>31</p>
-<p>37</p>
-<p>41</p>
-<p>43</p>
-<p>47</p>
-<p>53</p>
-<p>59</p>
-<p>61</p>
-<p>67</p>
-<p>71</p>
-<p>73</p>
-<p>79</p>
-<p>83</p>
-<p>89</p>
-<p>97</p>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>当自然数 n 依次取 1、2、3、……、N 时，算式 ⌊n/2⌋+⌊n/3⌋+⌊n/5⌋ 有多少个不同的值？（注：⌊x⌋ 为取整函数，表示不超过 x 的最大自然数，即 x 的整数部分。）</p>
+<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h1><p>输入给出一个正整数 N (2≤N≤10<sup>4</sup>)。</p>
+<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h1><p>在一行中输出题面中算式取到的不同值的个数。</p>
+<h1 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h1><p>2017</p>
+<h1 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h1><p>1480</p>
 <hr>
 
-<h1 id="素数定义："><a href="#素数定义：" class="headerlink" title="素数定义："></a>素数定义：</h1><p>素数是指在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。</p>
-<h1 id="参考代码："><a href="#参考代码：" class="headerlink" title="参考代码："></a>参考代码：</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> flag;<span class="comment">//flag为1，代表是素数；为0，代表非素数。</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		flag=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">2</span>;j&lt;=i/<span class="number">2</span>;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(i%j==<span class="number">0</span>) &#123;</span><br><span class="line">                flag=<span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">		&#125; </span><br><span class="line">		<span class="keyword">if</span>(flag==<span class="number">1</span>)&#123;</span><br><span class="line">		    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">        &#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//sum: 自然数i带入算式的计算结果</span></span><br><span class="line">	<span class="comment">//自然数i带入算式计算，若sum变更,更新temp,令temp=sum,否则保持temp不变 </span></span><br><span class="line">    <span class="comment">//ans: 算式取到的不同值的个数</span></span><br><span class="line">	<span class="keyword">int</span> n,sum,temp=<span class="number">-1</span>,ans=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		sum=<span class="built_in">ceil</span>(i/<span class="number">2</span>)+<span class="built_in">ceil</span>(i/<span class="number">3</span>)+<span class="built_in">ceil</span>(i/<span class="number">5</span>);</span><br><span class="line">		<span class="comment">//若算式带入自然数i时，算式结果变化，更新temp</span></span><br><span class="line">		<span class="keyword">if</span>(temp!=sum)&#123;</span><br><span class="line">			temp=sum;</span><br><span class="line">			ans++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -513,7 +488,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/蓝桥杯/" rel="tag"># 蓝桥杯</a>
+            <a href="/tags/PAT/" rel="tag"># PAT</a>
           
         </div>
       
@@ -526,8 +501,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/20/B1033/" rel="next" title="PAT B1033 旧键盘打字 (20 分)">
-                <i class="fa fa-chevron-left"></i> PAT B1033 旧键盘打字 (20 分)
+              <a href="/2021/01/08/B1076/" rel="next" title="PAT B1076 Wifi密码 (15分)">
+                <i class="fa fa-chevron-left"></i> PAT B1076 Wifi密码 (15分)
               </a>
             
           </div>
@@ -535,10 +510,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/07/蓝桥杯字符串的输入输出处理/" rel="prev" title="蓝桥杯 字符串的输入输出处理">
-                蓝桥杯 字符串的输入输出处理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -793,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入："><span class="nav-number">2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出："><span class="nav-number">3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入："><span class="nav-number">4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输出："><span class="nav-number">5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#素数定义："><span class="nav-number">6.</span> <span class="nav-text">素数定义：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考代码："><span class="nav-number">7.</span> <span class="nav-text">参考代码：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入样例"><span class="nav-number">4.</span> <span class="nav-text">输入样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出样例"><span class="nav-number">5.</span> <span class="nav-text">输出样例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考代码"><span class="nav-number">6.</span> <span class="nav-text">参考代码</span></a></li></ol></div>
             
 
           </div>

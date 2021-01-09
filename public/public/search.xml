@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PAT B1093 字符串A+B (20分)]]></title>
+    <url>%2F2021%2F01%2F09%2FB1093%2F</url>
+    <content type="text"><![CDATA[题目描述给定两个字符串 A 和 B，本题要求你输出 A+B，即两个字符串的并集。要求先输出 A，再输出 B，但重复的字符必须被剔除。 输入格式：输入在两行中分别给出 A 和 B，均为长度不超过 106的、由可见 ASCII 字符 (即码值为32~126)和空格组成的、由回车标识结束的非空字符串。 输出格式：在一行中输出题面要求的 A 和 B 的和。 输入样例This is a sample test to show you_How it works 输出样例This ampletowyu_Hrk 参考代码1234567891011121314151617181920212223242526272829#include&lt;iostream&gt;#include&lt;cstring&gt;#include&lt;cstdio&gt;using namespace std;int main() &#123; string a,b; getline(cin,a); getline(cin,b); //flag[a[i]-0]==0表示字符a[i]从未出现 int flag[130]=&#123;0&#125;; //遍历第一个字符串 for(int i=0; i&lt;a.size(); i++) &#123; if(flag[a[i]-0]==0) &#123; printf("%c",a[i]); flag[a[i]-0]=1; &#125; &#125; //遍历第二个字符串 for(int i=0; i&lt;b.size(); i++) &#123; if(flag[b[i]-0]==0) &#123; printf("%c",b[i]); flag[b[i]-0]=1; &#125; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT B1091 N-自守数 (15分)]]></title>
+    <url>%2F2021%2F01%2F09%2FB1091%2F</url>
+    <content type="text"><![CDATA[题目描述如果某个数 K 的平方乘以 N 以后，结果的末尾几位数等于 K，那么就称这个数为“N-自守数”。例如 3×922=25392，而 25392 的末尾两位正好是 92，所以 92 是一个 3-自守数。 本题就请你编写程序判断一个给定的数字是否关于某个 N 是 N-自守数。 输入格式输入在第一行中给出正整数 M（≤20），随后一行给出 M 个待检测的、不超过 1000 的正整数。 输出格式对每个需要检测的数字，如果它是 N-自守数就在一行中输出最小的 N 和 NK2的值，以一个空格隔开；否则输出 No。注意题目保证 N&lt;10。 输入样例3 92 5 233 输出样例3 25392 1 25 No 参考代码12345678910111213141516171819202122232425262728293031323334#include&lt;cstdio&gt;#include&lt;cmath&gt;#include&lt;iostream&gt;using namespace std;//判断是否是关于n的自守数 bool judge(int k,int nk,int len)&#123; int a=(int)pow(10.0,len); if(k==nk%a) return true; return false;&#125;int main()&#123; int m,n,k,nk,flag; //需判断输入数字的位数，令输入为string型，调用string中的size()进行位数判断 string in; cin&gt;&gt;m; for(int i=0;i&lt;m;i++)&#123; flag=0; cin&gt;&gt;in; k=stoi(in); for(n=1;n&lt;10;n++)&#123; nk=n*k*k; if(judge(k,nk,in.size()))&#123; flag=1; break; &#125; &#125; if(flag==0) cout&lt;&lt;"No"&lt;&lt;endl; else cout&lt;&lt;n&lt;&lt;" "&lt;&lt;nk&lt;&lt;endl; &#125; return 0; &#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT B1083 是否存在相等的差 (20分)]]></title>
+    <url>%2F2021%2F01%2F09%2FB1083%2F</url>
+    <content type="text"><![CDATA[题目描述给定 N 张卡片，正面分别写上 1、2、……、N，然后全部翻面，洗牌，在背面分别写上 1、2、……、N。将每张牌的正反两面数字相减（大减小），得到 N 个非负差值，其中是否存在相等的差？ 输入格式输入第一行给出一个正整数 N（2 ≤ N ≤ 10 000），随后一行给出 1 到 N 的一个洗牌后的排列，第 i 个数表示正面写了 i 的那张卡片背面的数字。 输出格式按照“差值 重复次数”的格式从大到小输出重复的差值及其重复的次数，每行输出一个结果。 输入样例8 3 5 8 6 2 1 4 7 输出样例5 2 3 3 2 2 参考代码1234567891011121314151617181920#include&lt;cstdio&gt;#include&lt;cmath&gt;const int maxn=10010;int main()&#123; //count[i]表示第i个数字出现的次数 int count[maxn]=&#123;0&#125;; int n,temp,f; scanf("%d",&amp;n); for(int i=1;i&lt;=n;i++)&#123; scanf("%d",&amp;temp); f=fabs(temp-i); count[f]++; &#125; for(int i=n;i&gt;=0;i--)&#123; if(count[i]&gt;=2) printf("%d %d\n",i,count[i]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT B1077 互评成绩计算 (20分)]]></title>
+    <url>%2F2021%2F01%2F09%2FB1077%2F</url>
+    <content type="text"><![CDATA[题目描述在浙大的计算机专业课中，经常有互评分组报告这个环节。一个组上台介绍自己的工作，其他组在台下为其表现评分。最后这个组的互评成绩是这样计算的：所有其他组的评分中，去掉一个最高分和一个最低分，剩下的分数取平均分记为 G1；老师给这个组的评分记为G2。该组得分为 (G1+G2)/2，最后结果四舍五入后保留整数分。本题就要求你写个程序帮助老师计算每个组的互评成绩。 输入格式输入第一行给出两个正整数 N（&gt; 3）和 M，分别是分组数和满分，均不超过 100。随后 N 行，每行给出该组得到的 N 个分数（均保证为整型范围内的整数），其中第 1 个是老师给出的评分，后面 N−1 个是其他组给的评分。合法的输入应该是 [0,M] 区间内的整数，若不在合法区间内，则该分数须被忽略。题目保证老师的评分都是合法的，并且每个组至少会有 3 个来自同学的合法评分。 输出格式为每个组输出其最终得分。每个得分占一行。 输入样例12345676 5042 49 49 35 38 4136 51 50 28 -1 3040 36 41 33 47 4930 250 -25 27 45 3148 0 0 50 50 123443 41 36 29 42 29 输出样例123456423341313739 参考代码123456789101112131415161718192021222324252627282930313233343536373839#include&lt;cstdio&gt;#include&lt;cmath&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=101;int main() &#123; int n,m,temp,count,tempA[maxn]; scanf("%d %d",&amp;n,&amp;m); double stu[n]=&#123;0&#125;; //第i个学生 for(int i=0; i&lt;n; i++) &#123; count=0; //第j个成绩 for(int j=0; j&lt;n; j++) &#123; scanf("%d",&amp;temp); //有效成绩 if(temp&gt;=0&amp;&amp;temp&lt;=m) &#123; tempA[count++]=temp; &#125; &#125; //学生成绩排序 sort(tempA+1,tempA+count); int sum=0; //去掉最高分最低分 for(int k=2;k&lt;count-1;k++)&#123; sum+=tempA[k]; &#125; stu[i]=(tempA[0]+sum/(count-3.0))/2.0; &#125; for(int i=0;i&lt;n;i++)&#123; printf("%d\n",(int)round(stu[i])); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT B1070 结绳 (25分)]]></title>
+    <url>%2F2021%2F01%2F09%2FB1070%2F</url>
+    <content type="text"><![CDATA[题目描述给定一段一段的绳子，你需要把它们串成一条绳。每次串连的时候，是把两段绳子对折，再如下图所示套接在一起。这样得到的绳子又被当成是另一段绳子，可以再次对折去跟另一段绳子串连。每次串连后，原来两段绳子的长度就会减半。 给定 N 段绳子的长度，你需要找出它们能串成的绳子的最大长度。 输入格式每个输入包含 1 个测试用例。每个测试用例第 1 行给出正整数 N (2≤N≤104)；第 2 行给出 N 个正整数，即原始绳段的长度，数字间以空格分隔。所有整数都不超过104。 输出格式在一行中输出能够串成的绳子的最大长度。结果向下取整，即取为不超过最大长度的最近整数。 输入样例810 15 12 3 4 13 1 15 输出样例14 参考代码123456789101112131415161718192021222324252627282930#include&lt;cstdio&gt;#include&lt;cmath&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=10010;int arr[maxn];int main()&#123; int n; double sum=0.0; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;arr[i]); &#125; sort(arr,arr+n); arr[0]=arr[0]+arr[1]; for(int i=1;i&lt;n-1;i++)&#123; arr[i]=arr[i+1]; &#125; for(int i=0;i&lt;n-1;i++)&#123; //pow参数是double型，注意第一个参数类型转化即1/2.0 sum+=arr[i]*pow(1/2.0 , n-i-1); &#125; //保留小数的整数部分 printf("%d",(int)floor(sum)); return 0;&#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PAT B1064 朋友数 (20分)]]></title>
+    <url>%2F2021%2F01%2F09%2FB1064%2F</url>
+    <content type="text"><![CDATA[题目描述如果两个整数各位数字的和是一样的，则被称为是“朋友数”，而那个公共的和就是它们的“朋友证号”。例如 123 和 51 就是朋友数，因为 1+2+3 = 5+1 = 6，而 6 就是它们的朋友证号。给定一些整数，要求你统计一下它们中有多少个不同的朋友证号。 输入格式：输入第一行给出正整数 N。随后一行给出 N 个正整数，数字间以空格分隔。题目保证所有数字小于 104。 输出格式：首先第一行输出给定数字中不同的朋友证号的个数；随后一行按递增顺序输出这些朋友证号，数字间隔一个空格，且行末不得有多余空格。 输入样例：8123 899 51 998 27 33 36 12 输出样例：43 6 9 26 参考代码1234567891011121314151617181920212223242526272829303132#include&lt;cstdio&gt;#include&lt;algorithm&gt;#include&lt;set&gt;using namespace std;//各位数字求和 int sum(int n)&#123; int ans=0; while(n&gt;0)&#123; ans+=n%10; n=n/10; &#125; return ans;&#125;int main()&#123; int n,num=0,temp; set&lt;int&gt; a; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%d",&amp;temp); a.insert(sum(temp)); &#125; printf("%d\n",a.size()); //记录输出数字的个数，保证输出格式，即最后一个数字后没有空格 int output=0; for(set&lt;int&gt;::iterator it=a.begin();it!=a.end();it++)&#123; printf("%d",*it); if(output++!=a.size()-1) printf(" "); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>PAT 乙级</category>
+      </categories>
+      <tags>
+        <tag>PAT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[PAT B1082 射击比赛 (20分)]]></title>
     <url>%2F2021%2F01%2F08%2FB1082%2F</url>
     <content type="text"><![CDATA[题目描述本题目给出的射击比赛的规则非常简单，谁打的弹洞距离靶心最近，谁就是冠军；谁差得最远，谁就是菜鸟。本题给出一系列弹洞的平面坐标(x,y)，请你编写程序找出冠军和菜鸟。我们假设靶心在原点(0,0)。 输入格式输入在第一行中给出一个正整数 N（≤ 10 000）。随后 N 行，每行按下列格式给出： ID x y 其中 ID 是运动员的编号（由 4 位数字组成）；x 和 y 是其打出的弹洞的平面坐标(x,y)，均为整数，且 0 ≤ |x|, |y| ≤ 100。题目保证每个运动员的编号不重复，且每人只打 1 枪。 输出格式输出冠军和菜鸟的编号，中间空 1 格。题目保证他们是唯一的。 输入样例3 0001 5 7 1020 -1 3 0233 0 -1 输出样例0233 0001 参考代码12345678910111213141516171819202122232425262728293031#include&lt;cstdio&gt; #include&lt;algorithm&gt;using namespace std;const int maxn=10010;struct node&#123; //编号为四位数字，保留一位给'\0' ,因此字符数组共五位 char id[5]; int grade;&#125;;node athlete[maxn];bool cmp(node a,node b)&#123; return a.grade&lt;b.grade;&#125;int main()&#123; int n,x,y,distance; scanf("%d",&amp;n); for(int i=0;i&lt;n;i++)&#123; scanf("%s %d %d",athlete[i].id,&amp;x,&amp;y); distance=x*x+y*y; athlete[i].grade=distance; &#125; sort(athlete,athlete+n,cmp); printf("%s %s",athlete[0].id,athlete[n-1].id); return 0;&#125;]]></content>
@@ -579,9 +645,9 @@
         <category>博客美化</category>
       </categories>
       <tags>
-        <tag>博客美化</tag>
         <tag>点击特效</tag>
         <tag>JS</tag>
+        <tag>博客美化</tag>
       </tags>
   </entry>
 </search>

@@ -71,7 +71,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '7.2.0',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":5,"onmobile":false},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     fancybox: false,
@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Lu&#39;s Blog">
 <meta property="og:description" content="题目描述外观数列是指具有以下特点的整数序列： d, d1, d111, d113, d11231, d112213111, … 它从不等于 1 的数字 d 开始，序列的第 n+1 项是对第 n 项的描述。比如第 2 项表示第 1 项有 1 个 d，所以就是 d1；第 2 项是 1 个 d（对应 d1）和 1 个 1（对应 11），所以第 3 项就是 d111。又比如第 4 项是 d113，其描述就">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-10T15:27:09.030Z">
+<meta property="og:updated_time" content="2021-01-10T15:55:04.271Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT B1084外观数列 (20分)">
 <meta name="twitter:description" content="题目描述外观数列是指具有以下特点的整数序列： d, d1, d111, d113, d11231, d112213111, … 它从不等于 1 的数字 d 开始，序列的第 n+1 项是对第 n 项的描述。比如第 2 项表示第 1 项有 1 个 d，所以就是 d1；第 2 项是 1 个 d（对应 d1）和 1 个 1（对应 11），所以第 3 项就是 d111。又比如第 4 项是 d113，其描述就">
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2021-01-10 21:29:13 / 修改时间：23:27:09" itemprop="dateCreated datePublished" datetime="2021-01-10T21:29:13+08:00">2021-01-10</time>
+              <time title="创建时间：2021-01-10 21:29:13 / 修改时间：23:55:04" itemprop="dateCreated datePublished" datetime="2021-01-10T21:29:13+08:00">2021-01-10</time>
             </span>
           
 
@@ -460,7 +460,7 @@
 
 <h1 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h1><p>题目描述给的样例中第六轮的内容为d112213111，其含义为第四轮有<code>d</code> 1 个, <code>d</code> 后连续 2 个 <code>1</code> , 连续两个 <code>1</code> 后 1 个 <code>2</code> , <code>2</code> 后 1 个 <code>3</code> , <code>3</code> 后 1 个 <code>1</code> 。</p>
 <p>以此种方法定义的数列不仅描述了元素的个数还描述了数列的先后顺序。</p>
-<p>最初，我以为，该数列只描述元素的个数，例如第五轮是<code>d11231</code>，共有 <code>d</code> 1 个 ，<code>1</code> 3 个 ，<code>2</code> 1 个  , <code>3</code> 1个 。所以误认为第六轮应该是<code>d1132131</code>。在参考过<a href="https://www.liuchuo.net/archives/4646之后，我也将在参考代码2中给出这种理解的代码。" target="_blank" rel="noopener">https://www.liuchuo.net/archives/4646之后，我也将在参考代码2中给出这种理解的代码。</a></p>
+<p>最初，我以为，该数列只描述元素的个数，例如第五轮是<code>d11231</code>，共有 <code>d</code> 1 个 ，<code>1</code> 3 个 ，<code>2</code> 1 个  , <code>3</code> 1个 。所以误认为第六轮应该是<code>d1132131</code>。我将在参考代码2中给出这种理解的代码。</p>
 <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><ul>
 <li>由于每一轮结束后数组的长度不确定，因此，用<code>string</code>类型保存数组；</li>
 <li>设置<code>int i,j;</code>将i,j看成是两个指针，同时指向上一轮的字符串,以<br><code>d, d1, d111, d113, d11231, d112213111, ...</code><br>为例, 假设当前是第4轮循环(循环轮次从1开始)，则i和j指向第3轮的结果即d111；</li>

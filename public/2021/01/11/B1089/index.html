@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/sailboat.png?v=7.2.0">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-fill-left.min.css?v=1.0.2">
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":5,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/',
+      path: './public/search.xml'
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+
+
+  <meta name="description" content="题目描述以下文字摘自《灵机一动·好玩的数学》：“狼人杀”游戏分为狼人、好人两大阵营。在一局“狼人杀”游戏中，1 号玩家说：“2 号是狼人”，2 号玩家说：“3 号是好人”，3 号玩家说：“4 号是狼人”，4 号玩家说：“5 号是好人”，5 号玩家说：“4 号是好人”。已知这 5 名玩家中有 2 人扮演狼人角色，有 2 人说的不是实话，有狼人撒谎但并不是所有狼人都在撒谎。扮演狼人角色的是哪两号玩家？">
+<meta name="keywords" content="PAT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PAT B1089 狼人杀-简单版 (20分)">
+<meta property="og:url" content="http://luHeXin.github.io/2021/01/11/B1089/index.html">
+<meta property="og:site_name" content="Lu&#39;s Blog">
+<meta property="og:description" content="题目描述以下文字摘自《灵机一动·好玩的数学》：“狼人杀”游戏分为狼人、好人两大阵营。在一局“狼人杀”游戏中，1 号玩家说：“2 号是狼人”，2 号玩家说：“3 号是好人”，3 号玩家说：“4 号是狼人”，4 号玩家说：“5 号是好人”，5 号玩家说：“4 号是好人”。已知这 5 名玩家中有 2 人扮演狼人角色，有 2 人说的不是实话，有狼人撒谎但并不是所有狼人都在撒谎。扮演狼人角色的是哪两号玩家？">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-11T07:57:42.486Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PAT B1089 狼人杀-简单版 (20分)">
+<meta name="twitter:description" content="题目描述以下文字摘自《灵机一动·好玩的数学》：“狼人杀”游戏分为狼人、好人两大阵营。在一局“狼人杀”游戏中，1 号玩家说：“2 号是狼人”，2 号玩家说：“3 号是好人”，3 号玩家说：“4 号是狼人”，4 号玩家说：“5 号是好人”，5 号玩家说：“4 号是好人”。已知这 5 名玩家中有 2 人扮演狼人角色，有 2 人说的不是实话，有狼人撒谎但并不是所有狼人都在撒谎。扮演狼人角色的是哪两号玩家？">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://luHeXin.github.io/2021/01/11/B1089/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>PAT B1089 狼人杀-简单版 (20分) | Lu's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lu's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Learning ,Coding ,Summarizing and Advancing</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2021/01/11/B1089/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lu">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/timg (2).jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">PAT B1089 狼人杀-简单版 (20分)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-01-11 15:18:54 / 修改时间：15:57:42" itemprop="dateCreated datePublished" datetime="2021-01-11T15:18:54+08:00">2021-01-11</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PAT-乙级/" itemprop="url" rel="index"><span itemprop="name">PAT 乙级</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>以下文字摘自《灵机一动·好玩的数学》：“狼人杀”游戏分为狼人、好人两大阵营。在一局“狼人杀”游戏中，1 号玩家说：“2 号是狼人”，2 号玩家说：“3 号是好人”，3 号玩家说：“4 号是狼人”，4 号玩家说：“5 号是好人”，5 号玩家说：“4 号是好人”。已知这 5 名玩家中有 2 人扮演狼人角色，有 2 人说的不是实话，有狼人撒谎但并不是所有狼人都在撒谎。扮演狼人角色的是哪两号玩家？</p>
+<p>本题是这个问题的升级版：已知 N 名玩家中有 2 人扮演狼人角色，有 2 人说的不是实话，有狼人撒谎但并不是所有狼人都在撒谎。要求你找出扮演狼人角色的是哪几号玩家？</p>
+<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h1><p>输入在第一行中给出一个正整数 N（5≤N≤100）。随后 N 行，第 i 行给出第 i 号玩家说的话（1≤i≤N），即一个玩家编号，用正号表示好人，负号表示狼人。</p>
+<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h1><p>如果有解，在一行中按递增顺序输出 2 个狼人的编号，其间以空格分隔，行首尾不得有多余空格。如果解不唯一，则输出最小序列解 —— 即对于两个序列 A=a[1],…,a[M] 和 B=b[1],…,b[M]，若存在 0≤k&lt;M 使得 a[i]=b[i] （i≤k），且 a[k+1]&lt;b[k+1]，则称序列 A 小于序列 B。若无解则输出 No Solution。</p>
+<h1 id="输入样例-1"><a href="#输入样例-1" class="headerlink" title="输入样例 1"></a>输入样例 1</h1><p>5<br><br>-2<br><br>+3<br><br>-4<br><br>+5<br><br>+4</p>
+<h1 id="输出样例-1"><a href="#输出样例-1" class="headerlink" title="输出样例 1"></a>输出样例 1</h1><p>1 4</p>
+<h1 id="输入样例-2"><a href="#输入样例-2" class="headerlink" title="输入样例 2"></a>输入样例 2</h1><p>6<br><br>+6<br><br>+3<br><br>+1<br><br>-5<br><br>-2<br><br>+4<br></p>
+<h1 id="输出样例-2（解不唯一）"><a href="#输出样例-2（解不唯一）" class="headerlink" title="输出样例 2（解不唯一）"></a>输出样例 2（解不唯一）</h1><p>1 5</p>
+<h1 id="输入样例-3"><a href="#输入样例-3" class="headerlink" title="输入样例 3"></a>输入样例 3</h1><p>5<br><br>-2<br><br>-3<br><br>-4<br><br>-5<br><br>-1<br></p>
+<h1 id="输出样例-3"><a href="#输出样例-3" class="headerlink" title="输出样例 3"></a>输出样例 3</h1><p>No Solution</p>
+<hr>
+
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="如何确定第i个人是否说谎"><a href="#如何确定第i个人是否说谎" class="headerlink" title="如何确定第i个人是否说谎? "></a>如何确定第i个人是否说谎? <br></h2><p> 1、已知，第 i 行给出第 i 号玩家说的话（1≤i≤N），即一个玩家编号，用正号表示好人，负号表示狼人。<br></p>
+<p> 2、设置变量<code>a[i]</code>，记录第i个人说的话, <code>flag[i]</code>记录假设的情况下第i人是否是狼人(<code>flag[i]==-1(+1)</code> 表示第i个人是狼人(好人))。<br></p>
+<p> 3、先假设第<code>i</code>个人和第<code>j</code>个是狼人(<code>flag[i]=flag[j]=-1</code>)<br></p>
+<p> 4、从第一个人开始，遍历所有人说的话(1≤K≤n)。若第k个人说，第a[k]个人是狼人(小于零)或好人(大于零)，此时不确定他说的真实与否，但是，我们已经根据假设在<code>flag[]</code>中记录了所有人的身份(即flag[i]==-1 表示第i个人是狼人，+1表示好人)。所以将第k个人说的话(<code>a[k]</code>)与第abs(a[k])个人的真实身份(<code>flag[abs(a[k])]</code>)相比较,若不一致，即数字符号不同(<code>a[k]*flag[abs(a[k])]&lt;0</code>)，则说明第<code>k</code>个人说谎。</p>
+<h2 id="假设第i个人和第j个是狼人，如何判断假设成立？"><a href="#假设第i个人和第j个是狼人，如何判断假设成立？" class="headerlink" title="假设第i个人和第j个是狼人，如何判断假设成立？ "></a>假设第<code>i</code>个人和第<code>j</code>个是狼人，如何判断假设成立？ <br></h2><p>已知 N 名玩家中有 2 人扮演狼人角色，1个狼人说谎，一个好人说谎。<br><br>因此，判断第i个人说谎后，根据<code>flag[]</code>正负判断其身份，设置两个变量<code>lie1</code>和<code>lie2</code>。<code>lie1</code>:狼人说谎的个数， <code>lie1</code>:好人说谎的个数。若第<code>i</code>个人和第<code>j</code>个是狼人的假设遍历结束之后，<br><code>lie1==1&amp;&amp;lie1==1</code>则假设成立。若以经遍历了所有的假设，并且没有一种假设可以得到<code>lie1==1&amp;&amp;lie1==1</code>，输出<code>No Solution</code>。</p>
+<h1 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="comment">//a[i]记录第i个人说的话,flag[i]记录假设的情况下第i人是否是狼人</span></span><br><span class="line">	<span class="comment">// lie1狼人说谎的个数， lie2好人说谎的个数 </span></span><br><span class="line">	<span class="keyword">int</span> a[n+<span class="number">1</span>],flag[n+<span class="number">1</span>],lie1,lie2;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>; j&lt;=n; j++) &#123;</span><br><span class="line">            <span class="comment">//一种假设结束后重置某些变量</span></span><br><span class="line">			lie1=lie2=<span class="number">0</span>; </span><br><span class="line">			<span class="built_in">memset</span>(flag,<span class="number">1</span>,<span class="keyword">sizeof</span>(flag));</span><br><span class="line">			<span class="comment">//假设i，j为狼人</span></span><br><span class="line">			flag[i]=<span class="number">-1</span>;</span><br><span class="line">			flag[j]=<span class="number">-1</span>;</span><br><span class="line">			<span class="comment">//遍历假设(第i、j个人是两狼人)</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>; k&lt;=n; k++) &#123;</span><br><span class="line">				<span class="comment">//第k个人说 a[k]个人是狼人(小于零)，好人(大于零)，不确定真实与否 </span></span><br><span class="line">				<span class="comment">//flag[]记录了真实的记录了是否是狼人， flag[fabs(a[k])]==-1为狼人，为 1 则为好人</span></span><br><span class="line">				<span class="comment">//因此若 k人说的话(a[k]) ,与记录(flag[])不符(异号)则为说谎 </span></span><br><span class="line">				<span class="keyword">if</span>(a[k]*flag[<span class="built_in">abs</span>(a[k])]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">					<span class="comment">//第k个人说谎了，并且其为狼人 </span></span><br><span class="line">					<span class="keyword">if</span>(flag[k]==<span class="number">-1</span>) lie1++;</span><br><span class="line">					<span class="keyword">else</span> lie2++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//若满足一个狼人说谎，一个好人说谎则假设成立 </span></span><br><span class="line">			<span class="keyword">if</span>(lie1==<span class="number">1</span>&amp;&amp;lie2==<span class="number">1</span>)&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d %d"</span>,i,j);</span><br><span class="line">				<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"No Solution"</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/PAT/" rel="tag"># PAT</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/10/B1084/" rel="next" title="PAT B1084外观数列 (20分)">
+                <i class="fa fa-chevron-left"></i> PAT B1084外观数列 (20分)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/timg (2).jpg" alt="Lu">
+  
+  <p class="site-author-name" itemprop="name">Lu</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/luHeXin" title="GitHub &rarr; https://github.com/luHeXin" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:luhexin_mail@163.com" title="E-Mail &rarr; mailto:luhexin_mail@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入样例-1"><span class="nav-number">4.</span> <span class="nav-text">输入样例 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出样例-1"><span class="nav-number">5.</span> <span class="nav-text">输出样例 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入样例-2"><span class="nav-number">6.</span> <span class="nav-text">输入样例 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出样例-2（解不唯一）"><span class="nav-number">7.</span> <span class="nav-text">输出样例 2（解不唯一）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入样例-3"><span class="nav-number">8.</span> <span class="nav-text">输入样例 3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出样例-3"><span class="nav-number">9.</span> <span class="nav-text">输出样例 3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#思路"><span class="nav-number">10.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何确定第i个人是否说谎"><span class="nav-number">10.1.</span> <span class="nav-text">如何确定第i个人是否说谎? </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#假设第i个人和第j个是狼人，如何判断假设成立？"><span class="nav-number">10.2.</span> <span class="nav-text">假设第i个人和第j个是狼人，如何判断假设成立？ </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考代码"><span class="nav-number">11.</span> <span class="nav-text">参考代码</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lu</span>
+
+  
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+-->
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+ <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+
+        if(result)$(this).text('复制成功')
+        else $(this).text('复制失败')
+
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.2.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<script type="text/javascript" src="/js/special-effect.js"></script>
+
+
+</body>
+</html>

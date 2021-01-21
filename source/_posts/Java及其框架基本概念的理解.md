@@ -72,3 +72,21 @@ XML解析就是读取XML的数据。<br/>
 * sax(Simple API For XML)，它是XML社区的标准，几乎所有XML解析器都支持它。sax是一种推式的机制,你创建一个sax 解析器,解析器在发现xml文档中的内容时就告诉你(把事件推给你)。 如何处理这些内容，由程序员自己决定。
 
 <hr/>
+
+# jQuery
+jQuery是轻量级的JavaScript库，核心是选择器，用于获取页面元素
+
+<hr/>
+
+# Ajax
+Asynchronous JavaScript And XML(异步的JavaScript 和 XML)
+## 用途
+Ajax是用在Web上的技术，可以在不刷新页面的前提下，向服务器后台获取需要的数据，并动态进行页面局部加载。
+
+Ajax不是新的技术，不是W3C的标准。是由民间浏览器开发厂商提供的一种技术。
+## 使用流程
+* 创建XmlHttpRequest对象
+* 发送Ajax请求 ( 创建请求: xmlhttp.open(); 发送请求: xmlhttp.send() )
+* 处理服务器响应(通过JavaScript进行后续处理，使其显示在页面上)
+
+<hr/>

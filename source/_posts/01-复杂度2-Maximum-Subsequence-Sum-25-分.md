@@ -6,19 +6,7 @@ tags:
 categories: 浙大数据结构编程练习
 ---
 # Problem Description
-Given a sequence of K integers { N
-​1
-​​ , N
-​2
-​​ , ..., N
-​K
-​​  }. A continuous subsequence is defined to be { N
-​i
-​​ , N
-​i+1
-​​ , ..., N
-​j
-​​  } where 1≤i≤j≤K. The Maximum Subsequence is the continuous subsequence which has the largest sum of its elements. For example, given sequence { -2, 11, -4, 13, -5, -2 }, its maximum subsequence is { 11, -4, 13 } with the largest sum being 20.
+Given a sequence of K integers { N<sub>1</sub>, N<sub>2</sub>, ...,N<sub>k</sub> }. A continuous subsequence is defined to be {  N<sub>i</sub>,N<sub>i+1</sub>, ..., N<sub>j</sub>} where 1≤i≤j≤K. The Maximum Subsequence is the continuous subsequence which has the largest sum of its elements. For example, given sequence { -2, 11, -4, 13, -5, -2 }, its maximum subsequence is { 11, -4, 13 } with the largest sum being 20.
 
 Now you are supposed to find the largest sum, together with the first and the last numbers of the maximum subsequence.
 # Input Specification

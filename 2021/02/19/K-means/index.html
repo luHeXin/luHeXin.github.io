@@ -110,7 +110,7 @@
 <meta property="og:site_name" content="Lu&#39;s Blog">
 <meta property="og:description" content="K-means算法背景介绍什么是K-meansK-means算法是一种无监督的聚类算法(无监督：样本不包含标签) K-means算法的核心目标核心目标：将给定的数据划分成K个簇，并且给出每个簇的中心点，即质心 K-means算法举例已知八个二维坐标点分别为：A1(2,10)A2(2,5)A3(8,4)A4(5,8)A5(7,5)A6(6,4)A7(1,2)A8(4,9)  假设聚成三类，先随机指定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-02-19T14:22:57.978Z">
+<meta property="og:updated_time" content="2021-02-19T14:42:48.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="K-means聚类算法">
 <meta name="twitter:description" content="K-means算法背景介绍什么是K-meansK-means算法是一种无监督的聚类算法(无监督：样本不包含标签) K-means算法的核心目标核心目标：将给定的数据划分成K个簇，并且给出每个簇的中心点，即质心 K-means算法举例已知八个二维坐标点分别为：A1(2,10)A2(2,5)A3(8,4)A4(5,8)A5(7,5)A6(6,4)A7(1,2)A8(4,9)  假设聚成三类，先随机指定">
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2021-02-19 19:02:58 / 修改时间：22:22:57" itemprop="dateCreated datePublished" datetime="2021-02-19T19:02:58+08:00">2021-02-19</time>
+              <time title="创建时间：2021-02-19 19:02:58 / 修改时间：22:42:48" itemprop="dateCreated datePublished" datetime="2021-02-19T19:02:58+08:00">2021-02-19</time>
             </span>
           
 
@@ -461,7 +461,7 @@
 </li>
 <li><p>更新质心坐标：求每一个簇的平均值，作为新的质心，对于每一个坐标点，计算坐标点与质心的距离，重新划分簇。完成第二轮聚类迭代</p>
 </li>
-<li><p>进行多次迭代，直至聚类结果与上一轮相同为止，此时数据收敛</p>
+<li><p>进行多次迭代，直到达到某个中止条件（迭代次数、损失函数小于某一阈值等）。</p>
 </li>
 </ol>
 <h1 id="K-means算法具体步骤"><a href="#K-means算法具体步骤" class="headerlink" title="K-means算法具体步骤"></a>K-means算法具体步骤</h1><p>(1)数据预处理:剔除离群点、数据归一化、数据标准化<br>(2)初始化：随机选择K个中心点μ<sub>1</sub><sup>(0)</sup>，μ<sub>2</sub><sup>(0)</sup>，. . . ，μ<sub>k</sub><sup>(0)</sup>  (括号中的数字表示迭代次数)<br>(3)定义损失函数：指定机器学习算法学习的方向<br>$$ J(c,μ) = min \sum_{i=1}^K \sum_{x\in c_{i}}|| x - μ_{c_i}||^2 $$</p>

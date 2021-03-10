@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/sailboat.png?v=7.2.0">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-fill-left.min.css?v=1.0.2">
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":5,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":true,"show_result":true,"style":"mac"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    search: {
+      root: '/',
+      path: './public/search.xml'
+    },
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+
+
+  <meta name="description" content="1、堆栈？堆堆通常是一个可以被看做一棵完全二叉树的数组对象。没有使用父指针或者子指针。堆分为两种：最大堆和最小堆，两者的差别在于节点的排序方式。 在最大堆中，父节点的值比每一个子节点的值都要大。在最小堆中，父节点的值比每一个子节点的值都要小。这就是所谓的“堆属性”，并且这个属性对堆中的每一个节点都成立。使用堆的目的是将最大（或者最小）的节点放在最前面，从而快速的进行相关插入、删除操作，其搜索性能较">
+<meta name="keywords" content="北航">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复试总结">
+<meta property="og:url" content="http://luHeXin.github.io/2021/03/10/复试总结/index.html">
+<meta property="og:site_name" content="Lu&#39;s Blog">
+<meta property="og:description" content="1、堆栈？堆堆通常是一个可以被看做一棵完全二叉树的数组对象。没有使用父指针或者子指针。堆分为两种：最大堆和最小堆，两者的差别在于节点的排序方式。 在最大堆中，父节点的值比每一个子节点的值都要大。在最小堆中，父节点的值比每一个子节点的值都要小。这就是所谓的“堆属性”，并且这个属性对堆中的每一个节点都成立。使用堆的目的是将最大（或者最小）的节点放在最前面，从而快速的进行相关插入、删除操作，其搜索性能较">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-03-10T12:08:53.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="复试总结">
+<meta name="twitter:description" content="1、堆栈？堆堆通常是一个可以被看做一棵完全二叉树的数组对象。没有使用父指针或者子指针。堆分为两种：最大堆和最小堆，两者的差别在于节点的排序方式。 在最大堆中，父节点的值比每一个子节点的值都要大。在最小堆中，父节点的值比每一个子节点的值都要小。这就是所谓的“堆属性”，并且这个属性对堆中的每一个节点都成立。使用堆的目的是将最大（或者最小）的节点放在最前面，从而快速的进行相关插入、删除操作，其搜索性能较">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://luHeXin.github.io/2021/03/10/复试总结/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>复试总结 | Lu's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lu's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Learning ,Coding ,Summarizing and Advancing</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="javascript:;" class="popup-trigger">
+          
+            <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://luHeXin.github.io/2021/03/10/复试总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lu HeXin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/timg (2).jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lu's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">复试总结
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-03-10 16:48:14 / 修改时间：20:08:53" itemprop="dateCreated datePublished" datetime="2021-03-10T16:48:14+08:00">2021-03-10</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/北航/" itemprop="url" rel="index"><span itemprop="name">北航</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          
+
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1、堆栈？"><a href="#1、堆栈？" class="headerlink" title="1、堆栈？"></a>1、堆栈？</h1><h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p>堆通常是一个可以被看做一棵完全二叉树的数组对象。没有使用父指针或者子指针。堆分为两种：最大堆和最小堆，两者的差别在于节点的排序方式。</p>
+<p>在最大堆中，父节点的值比每一个子节点的值都要大。在最小堆中，父节点的值比每一个子节点的值都要小。这就是所谓的“堆属性”，并且这个属性对堆中的每一个节点都成立。<br>使用堆的目的是将最大（或者最小）的节点放在最前面，从而快速的进行相关插入、删除操作，其搜索性能较差</p>
+<h3 id="堆的应用"><a href="#堆的应用" class="headerlink" title="堆的应用"></a>堆的应用</h3><p>1.优先级队列</p>
+<p>2.海量数据中找出最大的前k个数<br>具体做法是，</p>
+<ol>
+<li>创建一个有k个元素的小堆</li>
+<li>利用循环，将最后一个元素和第一个元素进行替换，然后进行向下调整使其满足小堆的性质，如果这个数比根节点都小，那就直接舍弃，否则进行调整，直到这个堆里面所有的数据都是你要找的最大的那几个数为止，这样再进行打印就可以了</li>
+</ol>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>一种后进先出的数据结构</p>
+<h3 id="栈的应用"><a href="#栈的应用" class="headerlink" title="栈的应用"></a>栈的应用</h3><ol>
+<li>括号匹配问题</li>
+<li>递归问题，递归过程退回的顺序是它前行顺序的逆序。显然这符合栈的存储方式。</li>
+<li>“撤销”操作</li>
+</ol>
+<h1 id="2、大数据量怎么进行排序？"><a href="#2、大数据量怎么进行排序？" class="headerlink" title="2、大数据量怎么进行排序？"></a>2、大数据量怎么进行排序？</h1><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>分治，将一个复杂的问题通过分解抽象成若干个简单的问题<br>步骤：<br>1、从大数据中抽取样本，将需要排序的数据切分为多个样本数大致相等的区间，例如：1-100，101-300…<br>2、将大数据文件切分为多个小数据文件，这里要考虑IO次数和硬件资源问题，例如可将小数据文件数设定为1G（要预留内存给执行时的程序使用）<br>3、使用最优的算法对小数据文件的数据进行排序，将排序结果按照步骤1划分的区间进行存储<br>4、对各个数据区间内的排序结果文件进行处理，最终每个区间得到一个排序结果的文件<br>5、将各个区间的排序结果合并，通过分治将大数据变成小数据进行处理，再合并。</p>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>位图法是利用一位代表一个数字，例如3位上为1,则说明3在数据中出现过，若为0，则说明3在数据中没有出现过。适用于大规模数据，但数据状态又不是很多的情况。</p>
+<h1 id="3、不使用中间变量，交换两个数的值"><a href="#3、不使用中间变量，交换两个数的值" class="headerlink" title="3、不使用中间变量，交换两个数的值"></a>3、不使用中间变量，交换两个数的值</h1><p>使用加减乘除运算，例如<br>a = a * b</p>
+<p>b = a / b</p>
+<p>a = a / b</p>
+<h1 id="4、给出一个不知长度的整数序列，如何求均值？"><a href="#4、给出一个不知长度的整数序列，如何求均值？" class="headerlink" title="4、给出一个不知长度的整数序列，如何求均值？"></a>4、给出一个不知长度的整数序列，如何求均值？</h1><p>由于长度未知，所以需要考虑是否会类型溢出，应该使用字符串来保存数据，当进行求和及求平均时，注意设置进位。</p>
+<h1 id="5、变量类型的取值范围及大小"><a href="#5、变量类型的取值范围及大小" class="headerlink" title="5、变量类型的取值范围及大小"></a>5、变量类型的取值范围及大小</h1><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>取值范围</th>
+<th>大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td>-2<sup>31</sup> ~ +(2<sup>31</sup>-1)</td>
+<td>4字节</td>
+</tr>
+<tr>
+<td>long long</td>
+<td>-2<sup>63</sup> ~ +(2<sup>63</sup>-1)</td>
+<td>8字节</td>
+</tr>
+<tr>
+<td>float</td>
+<td>-2<sup>128</sup> ~ +2<sup>128</sup> ( 实际精度6~7位 )</td>
+<td>4字节</td>
+</tr>
+<tr>
+<td>double</td>
+<td>-2<sup>1024</sup> ~ +2<sup>1024</sup> ( 实际精度15~16位 )</td>
+<td>8字节</td>
+</tr>
+<tr>
+<td>char</td>
+<td>-128~+128</td>
+<td>1字节</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>false or true</td>
+<td>1字节</td>
+</tr>
+</tbody></table>
+<h1 id="8、C、C-、C-与java的区别"><a href="#8、C、C-、C-与java的区别" class="headerlink" title="8、C、C++、C#与java的区别"></a>8、C、C++、C#与java的区别</h1><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>C语言是面向过程的语言，它诞生的非常早，C语言的目标就是要比汇编方便使用，同时也不要损失汇编的表达能力。所以，C语言的源代码基本上可以非常容易的对应到汇编代码，而且可以不需要什么运行环境的支持。<br>C语言相对与汇编语言不需要关心寄存器的各种细节， 所以大大的提升了通用计算逻辑的程序编写速度。C语言的特点就是简单容易编译，灵活贴近底层，直观管理数据存储。<br>C语言中没有集合类型。</p>
+<h2 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h2><p>由于C语言只是单纯的抽象通用计算机，所以在后期的工程实践中发现了一些问题， 如C语言需要自己手工管理各种计算机资源，而且C语言函数变量名缺少有效的隔离， 难以组织超大型软件工程等，在继承了C的特性下（通用计算逻辑零代价，发展出了C++这种编程语言，在C语言的基础上增加了重要的资源管理(RAII语意)， 结构化抽象（面向对象编程）， 增加编码速度的函数式编程（C++11后）， 改进部分难以理解的语法（增加了模版函数）。C++的意图是在C之上提供更高级的抽象， 给编译器和程序库作者更多的优化空间， 并保留C的特性以便在需要的时候做一些指定的逻辑（有时候高级语法会让编译器迷惑，给出的解并不一定是最优解）。虽然C++继承了C的绝大部分语法，但是在语言的设计上，C++并不是C的超集。</p>
+<h2 id="C-2"><a href="#C-2" class="headerlink" title="C"></a>C</h2><p>C#面向对象，抽象层次高，运行时支持丰富（如垃圾回收等），类库丰富。所以，它易用，同时兼顾运行效率。C#与Java类似，编译后得到的还不是机器代码，而是运行在虚拟机中的元指令。C#对安全性做了更多的考虑，没有指针，不能直接操作内存，自动实现内存管理。<br>C#定义数组时，数组长度可以是变量，C语言动态分配内存则需用到malloc函数，C#的foreach可用于数组和集合的遍历等。</p>
+<h2 id="java"><a href="#java" class="headerlink" title="java"></a>java</h2>
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/北航/" rel="tag"><i class="fa fa-tag"></i>北航</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/02/19/K-means/" rel="next" title="K-means聚类算法">
+                <i class="fa fa-chevron-left"></i> K-means聚类算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/timg (2).jpg" alt="Lu HeXin">
+  
+  <p class="site-author-name" itemprop="name">Lu HeXin</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/luHeXin" title="GitHub &rarr; https://github.com/luHeXin" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:luhexin_mail@163.com" title="E-Mail &rarr; mailto:luhexin_mail@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、堆栈？"><span class="nav-number">1.</span> <span class="nav-text">1、堆栈？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆"><span class="nav-number">1.1.</span> <span class="nav-text">堆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#堆的应用"><span class="nav-number">1.1.1.</span> <span class="nav-text">堆的应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈"><span class="nav-number">1.2.</span> <span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栈的应用"><span class="nav-number">1.2.1.</span> <span class="nav-text">栈的应用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、大数据量怎么进行排序？"><span class="nav-number">2.</span> <span class="nav-text">2、大数据量怎么进行排序？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一"><span class="nav-number">2.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二"><span class="nav-number">2.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、不使用中间变量，交换两个数的值"><span class="nav-number">3.</span> <span class="nav-text">3、不使用中间变量，交换两个数的值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、给出一个不知长度的整数序列，如何求均值？"><span class="nav-number">4.</span> <span class="nav-text">4、给出一个不知长度的整数序列，如何求均值？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、变量类型的取值范围及大小"><span class="nav-number">5.</span> <span class="nav-text">5、变量类型的取值范围及大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8、C、C-、C-与java的区别"><span class="nav-number">6.</span> <span class="nav-text">8、C、C++、C#与java的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">6.1.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-1"><span class="nav-number">6.2.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-2"><span class="nav-number">6.3.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java"><span class="nav-number">6.4.</span> <span class="nav-text">java</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lu HeXin</span>
+
+  
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+-->
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.2.0"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<script type="text/javascript" src="/js/special-effect.js"></script>
+
+
+</body>
+</html>
